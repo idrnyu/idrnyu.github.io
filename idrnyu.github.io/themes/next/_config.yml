@@ -240,7 +240,7 @@ post_wordcount:
   wordcount: true
   min2read: true
   totalcount: false
-  separated_meta: true
+  separated_meta: false
 
 # 订阅微信公众号
 # Wechat Subscriber
