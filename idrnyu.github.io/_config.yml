@@ -92,4 +92,4 @@ deploy:
   # repository: git@github.com:idrnyu/idrnyu.github.io.git  # 提交到的仓库   SSH 
   repo: https://github.com/idrnyu/idrnyu.github.io.git
   branch: master  # 提交到 master 分支
-  message: 添加加载进度条，修改点击效果，添加阅读时间，改标签图标了
+  # message: 添加加载进度条，修改点击效果，添加阅读时间，改标签图标了
