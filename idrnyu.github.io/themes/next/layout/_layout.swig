@@ -96,6 +96,9 @@
   {% include '_third-party/exturl.swig' %}
 </body>
 
-<!-- 页面点击小红心 -->
-<script type="text/javascript" src="/js/src/love.js"></script>
+  {% if theme.clicklive %}
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/src/love.js"></script>
+  {% endif %}
+
 </html>

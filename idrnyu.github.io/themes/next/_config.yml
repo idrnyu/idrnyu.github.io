@@ -836,3 +836,7 @@ passage_end_tag:
 # Fireworks
 # 点击爆炸动画效果
 fireworks: false
+
+# clicklive
+# 点击红心效果
+clicklive: true
