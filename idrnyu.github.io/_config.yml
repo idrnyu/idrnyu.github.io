@@ -95,8 +95,8 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git   # 使用 Git 提交
-  repository: ssh://git@github.com:idrnyu/idrnyu.github.io.git  # 提交到的仓库   SSH 
-  # repo: https://github.com/idrnyu/idrnyu.github.io.git
+  # repository: git@github.com:idrnyu/idrnyu.github.io.git  # 提交到的仓库   SSH 
+  repo: https://github.com/idrnyu/idrnyu.github.io.git
   branch: master  # 提交到 master 分支
   message: 添加来必力评论功能，添加背景动画
 

@@ -719,7 +719,7 @@ three_waves: false
 canvas_lines: false
 
 # canvas_sphere
-canvas_sphere: true
+canvas_sphere: false
 
 # Only fit scheme Pisces
 # Canvas-ribbon
@@ -834,4 +834,5 @@ passage_end_tag:
 
 
 # Fireworks
-fireworks: true
+# 点击爆炸动画效果
+fireworks: false
