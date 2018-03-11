@@ -27,7 +27,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: 'Demo/**'   # Demo文件夹下不被编译
 
 # Writing
 # 文章布局、写作格式的定义，不修改
@@ -98,5 +98,5 @@ deploy:
   # repository: git@github.com:idrnyu/idrnyu.github.io.git  # 提交到的仓库   SSH 
   repo: https://github.com/idrnyu/idrnyu.github.io.git
   branch: master  # 提交到 master 分支
-  message: 添加来必力评论功能，添加背景动画
+  # message: 添加404页面
 

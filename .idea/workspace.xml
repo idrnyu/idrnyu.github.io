@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6679cf74-221c-44f8-861b-c68c5eeb1e77" name="默认的" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/404.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/WGS-48坐标转换为GCJ-02.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/以前简单个人主页，部分内容在里里面.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/_config.yml" afterPath="$PROJECT_DIR$/idrnyu.github.io/_config.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml" afterPath="$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig" afterPath="$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/themes/next/languages/zh-Hans.yml" afterPath="$PROJECT_DIR$/idrnyu.github.io/themes/next/languages/zh-Hans.yml" />
     </list>
     <ignored path="Blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,12 +28,12 @@
     <favorites_list name="Blog" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="_layout.swig" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="_layout.swig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6790541">
-              <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state vertical-scroll-proportion="-66.5">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -37,8 +42,34 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.357143">
+              <caret line="804" column="44" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
+              <folding>
+                <marker date="1520781754832" expanded="true" signature="1551:1868" placeholder="favicon:" />
+                <marker date="1520781754832" expanded="true" signature="2115:3147" placeholder="footer:" />
+                <marker date="1520781754832" expanded="true" signature="2496:3147" placeholder="theme:" />
+                <marker date="1520781754832" expanded="true" signature="4276:4526" placeholder="menu:" />
+                <marker date="1520781754832" expanded="true" signature="4555:4781" placeholder="menu_icons:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="学习搭建博客.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md">
+          <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="841" column="4" selection-start-line="841" selection-start-column="0" selection-end-line="841" selection-end-column="4" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hello-world.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7753378">
+              <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -52,8 +83,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml" />
         <option value="$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig" />
+        <option value="$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml" />
+        <option value="$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md" />
       </list>
     </option>
   </component>
@@ -100,6 +132,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -149,8 +182,22 @@
               <option name="myItemId" value="themes" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="next" />
+              <option name="myItemId" value="Blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="idrnyu.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="source" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -168,13 +215,16 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="themes" />
+              <option name="myItemId" value="source" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,7 +307,7 @@
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42351046" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -296,18 +346,92 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="841" column="4" selection-start-line="841" selection-start-column="0" selection-end-line="841" selection-end-column="4" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1520781754832" expanded="true" signature="1551:1868" placeholder="favicon:" />
+            <marker date="1520781754832" expanded="true" signature="2115:3147" placeholder="footer:" />
+            <marker date="1520781754832" expanded="true" signature="2496:3147" placeholder="theme:" />
+            <marker date="1520781754832" expanded="true" signature="4276:4526" placeholder="menu:" />
+            <marker date="1520781754832" expanded="true" signature="4555:4781" placeholder="menu_icons:" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6790541">
-          <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="841" column="4" selection-start-line="841" selection-start-column="0" selection-end-line="841" selection-end-column="4" />
+          <folding>
+            <marker date="1520781754832" expanded="true" signature="1551:1868" placeholder="favicon:" />
+            <marker date="1520781754832" expanded="true" signature="2115:3147" placeholder="footer:" />
+            <marker date="1520781754832" expanded="true" signature="2496:3147" placeholder="theme:" />
+            <marker date="1520781754832" expanded="true" signature="4276:4526" placeholder="menu:" />
+            <marker date="1520781754832" expanded="true" signature="4555:4781" placeholder="menu_icons:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-66.5">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/categories/index.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.357143">
+          <caret line="804" column="44" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
+          <folding>
+            <marker date="1520781754832" expanded="true" signature="1551:1868" placeholder="favicon:" />
+            <marker date="1520781754832" expanded="true" signature="2115:3147" placeholder="footer:" />
+            <marker date="1520781754832" expanded="true" signature="2496:3147" placeholder="theme:" />
+            <marker date="1520781754832" expanded="true" signature="4276:4526" placeholder="menu:" />
+            <marker date="1520781754832" expanded="true" signature="4555:4781" placeholder="menu_icons:" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7753378">
+          <caret line="37" column="61" selection-start-line="37" selection-start-column="61" selection-end-line="37" selection-end-column="61" />
           <folding />
         </state>
       </provider>

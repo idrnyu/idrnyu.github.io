@@ -104,12 +104,11 @@ menu:
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
-  #commonweal: /404/ || heartbeat
+  commonweal: /404.html || heartbeat
 
 # Enable/Disable menu icons.
 menu_icons:
   enable: true
-
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -701,7 +700,7 @@ pace: false
 #pace-theme-fill-left
 #pace-theme-flash
 # pace-theme-loading-bar
-# pace-theme-mac-osx  
+# pace-theme-mac-osx
 # pace-theme-minimal
 # For example
 # pace_theme: pace-theme-center-simple
