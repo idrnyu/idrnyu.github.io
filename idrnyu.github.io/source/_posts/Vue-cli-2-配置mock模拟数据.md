@@ -2,7 +2,8 @@
 title: Vue-cli 2.* 配置mock模拟数据
 date: 2018-03-12 21:14:19
 tags: [Web前端,Vue,mock模拟请求数据]
-categories: [Vue,Web]
+categories: 
+- Vue
 ---
 
 <img src="/Dom/imgs/2018_03_12/m4.png" width="70%"/>

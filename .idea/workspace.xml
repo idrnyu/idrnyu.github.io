@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6679cf74-221c-44f8-861b-c68c5eeb1e77" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m3.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m4.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m5.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m6.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/m7.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/Vue-cli-2-配置mock模拟数据.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/WGS-48转火星坐标.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/WGS-48坐标转换为GCJ-02.md" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/c1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/c2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/c3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/c4.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_12/c5.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/使用Cordova打包vue-cli构建的项目为APP配置.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/_config.yml" afterPath="$PROJECT_DIR$/idrnyu.github.io/_config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/Vue-cli-2-配置mock模拟数据.md" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/Vue-cli-2-配置mock模拟数据.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/WGS-48转火星坐标.html" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/WGS-48转火星坐标.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/以前简单个人主页，部分内容在里里面.md" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/以前简单个人主页，部分内容在里里面.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md" />
     </list>
     <ignored path="Blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,41 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_layout.swig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
+      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="804" column="44" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="学习搭建博客.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="hello-world.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.36486486">
-              <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.7432432">
+              <caret line="100" column="27" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -85,6 +55,7 @@
         <option value="$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig" />
         <option value="$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml" />
         <option value="$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md" />
+        <option value="$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md" />
       </list>
     </option>
   </component>
@@ -305,7 +276,13 @@
       <option name="project" value="LOCAL" />
       <updated>1520784267746</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="修改地理坐标转换博客，添加vue-cli 配置mock模拟数据">
+      <created>1520862828649</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1520862828649</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -314,7 +291,7 @@
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17708333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25442833" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="版本控制" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25281805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -345,7 +322,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="next 皮肤测试上传" />
     <MESSAGE value="添加404错误页面，以前的个人页面" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加404错误页面，以前的个人页面" />
+    <MESSAGE value="修改地理坐标转换博客，添加vue-cli 配置mock模拟数据" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改地理坐标转换博客，添加vue-cli 配置mock模拟数据" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -376,11 +354,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="804" column="44" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -416,14 +417,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/categories/index.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -431,9 +424,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36486486">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/layout/_layout.swig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59574467">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/themes/next/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-0.44858155">
           <caret line="804" column="44" selection-start-line="804" selection-start-column="44" selection-end-line="804" selection-end-column="44" />
           <folding />
         </state>
@@ -441,16 +449,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/学习搭建博客.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.20212767">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/source/_posts/hello-world.md">
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36486486">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.7432432">
+          <caret line="100" column="27" selection-start-line="100" selection-start-column="11" selection-end-line="100" selection-end-column="27" />
           <folding />
         </state>
       </provider>
