@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6679cf74-221c-44f8-861b-c68c5eeb1e77" name="默认的" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/Dom/imgs/2018_03_13/313stmADC.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/_posts/STM32的ADC及内部温度传感器的使用.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/idrnyu.github.io/source/GNAME" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/idrnyu.github.io/_config.yml" afterPath="$PROJECT_DIR$/idrnyu.github.io/_config.yml" />
     </list>
@@ -29,8 +28,8 @@
       <file leaf-file-name="_config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/idrnyu.github.io/_config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42905405">
-              <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.46114865">
+              <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -94,8 +93,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -281,7 +280,13 @@
       <option name="project" value="LOCAL" />
       <updated>1520867026992</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加stm32内部adc和内部温度计使用简介">
+      <created>1520910985314</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1520910985314</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -323,13 +328,22 @@
     <MESSAGE value="添加404错误页面，以前的个人页面" />
     <MESSAGE value="修改地理坐标转换博客，添加vue-cli 配置mock模拟数据" />
     <MESSAGE value="添加cordova打包vue博客" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加cordova打包vue博客" />
+    <MESSAGE value="添加stm32内部adc和内部温度计使用简介" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加stm32内部adc和内部温度计使用简介" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/idrnyu.github.io/_config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -452,8 +466,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/idrnyu.github.io/_config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42905405">
-          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.46114865">
+          <caret line="90" column="14" selection-start-line="90" selection-start-column="14" selection-end-line="90" selection-end-column="14" />
           <folding />
         </state>
       </provider>

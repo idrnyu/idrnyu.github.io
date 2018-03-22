@@ -98,5 +98,5 @@ deploy:
   # repository: git@github.com:idrnyu/idrnyu.github.io.git  # 提交到的仓库   SSH 
   repo: https://github.com/idrnyu/idrnyu.github.io.git
   branch: master  # 提交到 master 分支
-  # message: 添加cordova打包vue博客
+  # message: 添加域名解析
 
