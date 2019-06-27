@@ -168,7 +168,8 @@ categories:
         // b = a * (1 - f)
         // ee = (a^2 - b^2) / a^2;
 		
-		var pi = 3.14159265358979324;
+		// var pi = 3.14159265358979324;
+		var pi = 3.1415926535897932384626;
 		var a = 6378245.0;
 		var ee = 0.00669342162296594323;
 		
@@ -192,8 +193,10 @@ categories:
 			dLon = (dLon * 180.0) / (a / sqrtMagic * Math.cos(radLat) * pi);
 			mgLat = wgLat + dLat;
 			mgLon = wgLon + dLon;
-			mgLat=mgLat + 0.00000009;
-			mgLon=mgLon + 0.00000029;  //这两个最微距离纠偏 可能没太大用处
+			// mgLat=mgLat + 0.00000009;
+			// mgLon=mgLon + 0.00000029;  //这两个最微距离纠偏 可能没太大用处
+			mgLat = mgLat + 0.000000154;
+    	mgLon = mgLon + 0.00000030;
 			
 			return [mgLon,mgLat];
 		}
