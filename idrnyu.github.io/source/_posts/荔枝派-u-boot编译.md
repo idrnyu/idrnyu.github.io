@@ -185,6 +185,8 @@ https://blog.csdn.net/u010257920/article/details/52422393
 
 https://blog.csdn.net/u011847345/article/details/110727544
 
+https://whycan.com/t_4193_6.html
+
 需要在 `u-boot` 的 `v3s-spi-experimental `分支下
 
 `make ARCH=arm menuconfig` 打开u-boot菜单配置
