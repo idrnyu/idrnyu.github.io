@@ -178,17 +178,30 @@ time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- 2>&1 | tee build.log # 编
 
 `SPL / TPL` 外设配置
 
+`Device Drivers` 设配驱动配置
+
 ## 2、配置 SPI Flash 
 
 `由于目前Uboot环境变量固定存放在1MB位置之内，所有留给uboot的空间固定到flash前1MB的位置不变。每个分区的大小必须是擦除块大小的整数倍，XT25F128B的擦除块大小是64KB。`
+
+| 分区序号 |   分区大小   |  分区描述  |        地址空间及分区名        |
+| :------: | :----------: | :--------: | :----------------------------: |
+|   mtd0   |     1MB      | spl+uboot  | 0x0000000-0x0100000 : “uboot”  |
+|   mtd1   |     64KB     |  dtb文件   |   0x0100000-0x0110000: “dtb”   |
+|   mtd2   |     4MB      | linux内核  | 0x0110000-0x0510000 : “kernel” |
+|   mtd3   | 10MiB 960KiB | 根文件系统 | 0x0510000-0x1000000 : “rootfs” |
 
 ### 2.1、配置 u-boot 支持 Nor Flash 
 
 `荔枝派 zero 上面焊接了一个 芯天下 的 Nor Flash 型号为：XT25F128B 16MByte。`
 
-需要在 `u-boot` 的 `v3s-spi-experimental `分支下
+需要将 `u-boot` 切换到 `v3s-spi-experimental `分支下
 
 `make ARCH=arm menuconfig` 打开u-boot菜单配置
+
+在 u-boot 配置下选择自己对应的 SPI Flash 对应的芯片厂商
+
+XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  所以选中 `Winbond SPI flash support`
 
 ```
 Device Drivers  ---> 
@@ -211,22 +224,11 @@ Device Drivers  --->
     │ │          [*] Support for SPI Flash on Allwinner SoCs in SPL                             │ │
 ```
 
-在 u-boot 配置下选择自己对应的 SPI Flash 对应的芯片公司
-
-XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  所以选中 Winbond SPI flash support 
-
-| 分区序号 |   分区大小   |  分区描述  |        地址空间及分区名        |
-| :------: | :----------: | :--------: | :----------------------------: |
-|   mtd0   |     1MB      | spl+uboot  | 0x0000000-0x0100000 : “uboot”  |
-|   mtd1   |     64KB     |  dtb文件   |   0x0100000-0x0110000: “dtb”   |
-|   mtd2   |     4MB      | linux内核  | 0x0110000-0x0510000 : “kernel” |
-|   mtd3   | 10MiB 960KiB | 根文件系统 | 0x0510000-0x1000000 : “rootfs” |
-
 ### 2.2、配置 uboot 默认环境变量对Nor Flash的支持
 
 `在 include/configs/sun8i.h 中添加 CONFIG_BOOTCOMMAND 和 CONFIG_BOOTARGS 环境变量设置`
 
-命令：`vim include/configs/sun8i.h` 在 `#include <configs/sunxi-common.h> 前面添加以下代码`
+命令：`vim include/configs/sun8i.h` 在 `#include <configs/sunxi-common.h>` 前面添加以下代码
 
 ```c
 #define CONFIG_BOOTCOMMAND   "sf probe 0; "                           \
@@ -241,7 +243,7 @@ XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  所以�
 #### （1）、环境命令解析：
 
 - `sf probe 0;`   初始化 Flash 设备 （CS 拉低）
-- `sf read 0x41800000 0x100000 0x10000;`   从 Flash 0x100000 （1MB） 位置读取 dtb 放到内存  0x41800000 偏移地址。如果时 bsp 的 bin， 则是 0x41d00000 偏移地址。
+- `sf read 0x41800000 0x100000 0x10000;`   从 Flash 0x100000 （1MB） 位置读取 dtb 放到内存  0x41800000 偏移地址。如果是 bsp 的 bin， 则是 0x41d00000 偏移地址。
 - `sf read 0x41000000 0x110000 0x400000;`    从 Flash 0x110000 （1MB + 64KB） 位置读取 dtb 放到内存 0x41000000 偏移地址。
 - `bootz 0x41000000 - 0x41800000`    启动内核  0x41000000 内核地址；0x41800000 dtb 地址。
 
@@ -250,6 +252,8 @@ XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  所以�
 - `console=ttyS0,115200 earlyprintk panic=5 rootwait`    在串口0输出信息  115200 波特率
 - `mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2`   spi32766.0 是设备名，后面是分区大小，名字，读写属性。
 - `root=31:03`    表示根文件系统时 mtd3；jffs2 格式。
+
+### 2.3、配置 dtb 支持 Nor Flash @TODO
 
 # 三、u-boot  SPI Flash 烧录
 
