@@ -213,7 +213,7 @@ Device Drivers  --->
 
 在 u-boot 配置下选择自己对应的 SPI Flash 对应的芯片公司
 
-XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  随意选中 Winbond SPI flash support 
+XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  所以选中 Winbond SPI flash support 
 
 | 分区序号 |   分区大小   |  分区描述  |        地址空间及分区名        |
 | :------: | :----------: | :--------: | :----------------------------: |
@@ -250,10 +250,6 @@ XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  随意�
 - `console=ttyS0,115200 earlyprintk panic=5 rootwait`    在串口0输出信息  115200 波特率
 - `mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2`   spi32766.0 是设备名，后面是分区大小，名字，读写属性。
 - `root=31:03`    表示根文件系统时 mtd3；jffs2 格式。
-
-
-
-
 
 # 三、u-boot  SPI Flash 烧录
 
@@ -320,37 +316,48 @@ sudo sunxi-fel spiflash-write 地址 长度 存放数据的文件路径
 
 >- <strong>TF卡和 spi flash 都没有可启动的镜像</strong>
 >
->  TF卡空或者不插，spi flash 内容为空，上吊就会自动进入 fel 下载模式
+>TF卡空或者不插，spi flash 内容为空，上吊就会自动进入 fel 下载模式
 >
 >- <strong>TF卡中有进入FEL模式的特殊固件 `el-sdboot.sunxi` </strong>
 >
->  如果 spi flash 有启动镜像，那么需要在 TF 卡中烧录一个 sunxi 提供的启动工具，那么插入该 TF 卡上电会进入 fel 模式；
+>如果 spi flash 有启动镜像，那么需要在 TF 卡中烧录一个 sunxi 提供的启动工具，那么插入该 TF 卡上电会进入 fel 模式；
 >
->  命令： `dd if=fel-sdboot.sunxi of=/dev/mmcblk0 bs=1024 seek=8`
+>命令： `dd if=fel-sdboot.sunxi of=/dev/mmcblk0 bs=1024 seek=8`
 >
 >- <strong>上电时将 SPI_MISO 引脚拉为低电平</strong>
 >
->  该引脚为 `boot` 引脚，上电时如果检测到该引脚为低电平就会进入 fel 下载模式。
+>该引脚为 `boot` 引脚，上电时如果检测到该引脚为低电平就会进入 fel 下载模式。
 
-# 三、配置 u-boot
+## 3、准备烧录uboot（SPI Flash）
 
-命令执行：`make ARCH=arm menuconfig` 使用菜单形势配置u-boot
+```bash
+//检查是否可以探测到芯片信息：
+sudo sunxi-fel -l
+//确认是否成功进入fel模式：
+sudo sunxi-fel ver
+```
 
-![202203122156](/Dom/imgs/2022_03_12/202203122156.png)
+![20220325151309](/Dom/imgs/2022_03_12/20220325151309.png)
 
-## 简单配置
+### 3.1、烧录到 RAM 中执行，以 uboot file-with-spl 形式运行（单次运行，测试使用）
 
-`Architecture select` 架构选择  选择arm架构
+```bash
+sudo sunxi-fel uboot u-boot-sunxi-with-spl.bin
 
-`ARM architecture` arm架构配置  lcd配置  ddr配置  芯片选型 等
+//或者执行烧录地址
+sudo sunxi-fel -p write 0x40000000 u-boot-sunxi-with-spl.bin
+sudo sunxi-fel exec 0x40000000
+```
 
-![202203122214](/Dom/imgs/2022_03_12/202203122214.png)
+### 3.2、烧录到 SPI Flash （烧录完成后重新上电）
 
-`Boot images` cpu时钟配置 等
+```bash
+sudo sunxi-fel -p spiflash-write 0 u-boot-sunxi-with-spl.bin
+```
 
-`delay in seconds before automatically booting` uboot开机的时候等待时间 默认为2s
+![uboot烧录成功后Uart0输出的日志](/Dom/imgs/2022_03_12/20220325153053.png)
 
-`SPL / TPL` 外设配置
+
 
 ## 配置 SPI Flash @TODO
 
@@ -367,17 +374,6 @@ https://blog.csdn.net/u010257920/article/details/52422393
 https://blog.csdn.net/u011847345/article/details/110727544
 
 https://whycan.com/t_4193_6.html
-
-需要在 `u-boot` 的 `v3s-spi-experimental `分支下
-
-`make ARCH=arm menuconfig` 打开u-boot菜单配置
-
-```
-Device Drivers  ---> 
-	SPI Flash Support  ---> 
-```
-
-
 
 #  附录
 
