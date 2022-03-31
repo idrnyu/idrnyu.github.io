@@ -1,5 +1,5 @@
 ---
-title: 荔枝派_u-boot编译
+title: 荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash）
 date: 2022-03-12 12:58:52
 tags:
 ---
@@ -254,6 +254,7 @@ Device Drivers  --->
 - `root=31:03`    表示根文件系统时 mtd3；jffs2 格式。
 
 ### 2.3、配置 dtb 支持 Nor Flash @TODO
+# 设备树驱动程序 @TODO
 
 # 三、u-boot  SPI Flash 烧录
 
@@ -360,24 +361,6 @@ sudo sunxi-fel -p spiflash-write 0 u-boot-sunxi-with-spl.bin
 ```
 
 ![uboot烧录成功后Uart0输出的日志](/Dom/imgs/2022_03_12/20220325153053.png)
-
-
-
-## 配置 SPI Flash @TODO
-
-https://blog.csdn.net/qq_28877125/article/details/113665441
-
-https://blog.csdn.net/qq_28877125/article/details/113736282
-
-https://blog.csdn.net/p1279030826/article/details/112672535
-
-https://whycan.com/t_561.html
-
-https://blog.csdn.net/u010257920/article/details/52422393
-
-https://blog.csdn.net/u011847345/article/details/110727544
-
-https://whycan.com/t_4193_6.html
 
 #  附录
 
