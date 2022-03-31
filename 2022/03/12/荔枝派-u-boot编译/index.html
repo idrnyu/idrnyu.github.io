@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 4px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/logo/idrnyu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/logo/idrnyu.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/logo/idrnyu.jpg?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/logo/idrnyu.jpg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="idrnyu, iDRnYu, web前端, idrnyu, iDRnYu, 51单片机, STM32, C语言">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装python2.7sudo apt insta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash）">
+<meta property="og:url" content="http://yoursite.com/2022/03/12/荔枝派-u-boot编译/index.html">
+<meta property="og:site_name" content="iDRnYu">
+<meta property="og:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装python2.7sudo apt insta">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/image-20220312201449693.png">
+<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/202203122156.png">
+<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/202203122214.png">
+<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325151309.png">
+<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325153053.png">
+<meta property="og:updated_time" content="2022-03-31T13:39:12.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash）">
+<meta name="twitter:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装python2.7sudo apt insta">
+<meta name="twitter:image" content="http://yoursite.com/Dom/imgs/2022_03_12/image-20220312201449693.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2022/03/12/荔枝派-u-boot编译/">
+
+
+
+
+
+  <title>荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash） | iDRnYu</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">iDRnYu</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">🔥⛄💦 -- 🌲🌴🍀</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            站点404
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/03/12/荔枝派-u-boot编译/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="🔥⛄💦">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/logo/idrnyu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iDRnYu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-03-12T12:58:52+08:00">
+                2022-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,994
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  14
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="一、基础编译"><a href="#一、基础编译" class="headerlink" title="一、基础编译"></a>一、基础编译</h1><p><code>linux（ubuntu）</code>、<code>git</code>、<code>python2</code>、<code>全志v3s</code>、<code>5寸电阻触摸屏（RTB屏）</code>、<code>USB TO UART</code></p>
+<h2 id="1、安装python2"><a href="#1、安装python2" class="headerlink" title="1、安装python2"></a>1、安装python2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update <span class="comment"># 更新源</span></span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt-get install python2.7 <span class="comment"># 安装python2.7</span></span><br><span class="line">sudo apt install python-pip <span class="comment"># 安装python2.7对应的pip</span></span><br><span class="line"></span><br><span class="line">python -V <span class="comment"># 查看python版本验证是否安装成功</span></span><br><span class="line">pyp -V <span class="comment">#</span></span><br><span class="line"></span><br><span class="line">ls /usr/bin/pip  <span class="comment"># 查看安装目录</span></span><br><span class="line">ls /usr/bin/python*</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如需卸载 python2.7 与 python-pip 执行下面两条命令</span></span><br><span class="line">sudo apt-get purge python2.7</span><br><span class="line">sudo apt-get purge --auto-remove python2.7  <span class="comment"># 卸载python 及其依赖</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python2 与 python3 不兼容</span></span><br><span class="line"><span class="comment"># 如果系统有安装python3 则需要重新安装python2 因为编译u-boot时的工具链里面需要python2的环境 否则报错</span></span><br></pre></td></tr></table></figure>
+<h2 id="2、安装交叉编译器与工具链"><a href="#2、安装交叉编译器与工具链" class="headerlink" title="2、安装交叉编译器与工具链"></a>2、安装交叉编译器与工具链</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gcc-arm-linux-gnueabihf</span><br><span class="line"><span class="comment"># ARMHF 架构交叉编译器 安装此版本 gcc-linaro-6.3.1-2017.02-x86_64_arm-linux-gnueabihf (需手动下载)</span></span><br><span class="line"></span><br><span class="line">device-tree-compiler</span><br><span class="line"><span class="comment"># ARM Linux 设备树  DTC (device tree compiler) 将.dts编译为.dtb的工具  dtc编译器</span></span><br><span class="line"></span><br><span class="line">libncurses5-dev</span><br><span class="line"><span class="comment"># curses库 游标移动及屏幕的显示库</span></span><br></pre></td></tr></table></figure>
+<h3 id="gcc-arm-linux-gnueabihf-安装"><a href="#gcc-arm-linux-gnueabihf-安装" class="headerlink" title="gcc-arm-linux-gnueabihf  安装"></a>gcc-arm-linux-gnueabihf  安装</h3><p>链接: <a href="https://pan.baidu.com/s/1VjjnR4zSwde1HUAbgcg64A?pwd=4jbn" target="_blank" rel="noopener">https://pan.baidu.com/s/1VjjnR4zSwde1HUAbgcg64A?pwd=4jbn</a> 提取码: 4jbn 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">tar xvf gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf.tar.xz <span class="comment"># 解压</span></span><br><span class="line">sudo mv gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf /opt/ <span class="comment"># 移动解压后的文件到linux /opt/目录下</span></span><br><span class="line">sudo vim /etc/bash.bashrc  <span class="comment"># 编辑添加环境变量（永久生效）</span></span><br><span class="line"><span class="comment"># 在 `/etc/bash.basher` 文件中添加下面一行环境变量</span></span><br><span class="line">PATH=<span class="string">"<span class="variable">$PATH</span>:/opt/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/bin"</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">source</span> /etc/bash.bashrc <span class="comment"># 重新激活 可以在所有用户生效</span></span><br><span class="line">arm-linux-gnueabihf-gcc -v <span class="comment"># 查看交叉编译器版本号 确认是否配置成功</span></span><br></pre></td></tr></table></figure>
+<h3 id="device-tree-compiler-安装"><a href="#device-tree-compiler-安装" class="headerlink" title="device-tree-compiler  安装"></a>device-tree-compiler  安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install device-tree-compiler <span class="comment"># 使用 apt-get 安装</span></span><br></pre></td></tr></table></figure>
+<h3 id="libncurses5-dev-安装"><a href="#libncurses5-dev-安装" class="headerlink" title="libncurses5-dev 安装"></a>libncurses5-dev 安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install libncurses5-dev</span><br></pre></td></tr></table></figure>
+<h2 id="3、下载u-boot源码并编译"><a href="#3、下载u-boot源码并编译" class="headerlink" title="3、下载u-boot源码并编译"></a>3、下载u-boot源码并编译</h2><h3 id="下载-u-boot"><a href="#下载-u-boot" class="headerlink" title="下载 u-boot"></a>下载 u-boot</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用 git 从 github clone 下来荔枝派官方u-boot v3s主线分支</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Lichee-Pi/u-boot.git -b v3s-current</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者克隆包含 spi-flash 驱动的体验版本uboot（适用于spi flash烧录），该驱动目前尚未合并到主线</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/Lichee-Pi/u-boot.git -b v3s-spi-experimental</span><br><span class="line"></span><br><span class="line"><span class="comment"># clone 网络错误请使用代理</span></span><br><span class="line">git <span class="built_in">clone</span> https://github.com.cnpmjs.org/***   <span class="comment"># 后面带git地址</span></span><br><span class="line"><span class="comment"># 或者使用镜像代理</span></span><br><span class="line">https://gitclone.com/</span><br></pre></td></tr></table></figure>
+<h3 id="u-boot-目录结构"><a href="#u-boot-目录结构" class="headerlink" title="u-boot 目录结构"></a>u-boot 目录结构</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">├── api                存放uboot提供的API接口函数</span><br><span class="line">├── arch               平台相关的部分我们只需要关心这个目录下的ARM文件夹</span><br><span class="line">│   ├──arm</span><br><span class="line">│   │   └──cpu</span><br><span class="line">│   │   │   └──armv7</span><br><span class="line">│   │   └──dts</span><br><span class="line">│   │   │   └──*.dts   存放设备的dts,也就是设备配置相关的引脚信息</span><br><span class="line">├── board              对于不同的平台的开发板对应的代码</span><br><span class="line">├── cmd                顾名思义，大部分的命令的实现都在这个文件夹下面。</span><br><span class="line">├── common             公共的代码</span><br><span class="line">├── configs            各个板子的对应的配置文件都在里面，我们的Lichee配置也在里面</span><br><span class="line">├── disk               对磁盘的一些操作都在这个文件夹里面，例如分区等。</span><br><span class="line">├── doc                参考文档，这里面有很多跟平台等相关的使用文档。</span><br><span class="line">├── drivers            各式各样的驱动文件都在这里面</span><br><span class="line">├── dts                一种树形结构（device tree）这个应该是uboot新的语法</span><br><span class="line">├── examples           官方给出的一些样例程序</span><br><span class="line">├── fs                 文件系统，uboot会用到的一些文件系统</span><br><span class="line">├── include            头文件，所有的头文件都在这个文件夹下面</span><br><span class="line">├── lib                一些常用的库文件在这个文件夹下面</span><br><span class="line">├── Licenses           这个其实跟编译无关了，就是一些license的声明</span><br><span class="line">├── net                网络相关的，需要用的小型网络协议栈</span><br><span class="line">├── post               上电自检程序</span><br><span class="line">├── scripts            编译脚本和Makefile文件</span><br><span class="line">├── spl                second program loader，即相当于二级uboot启动。</span><br><span class="line">├── <span class="built_in">test</span>               小型的单元测试程序。</span><br><span class="line">└── tools              里面有很多uboot常用的工具。</span><br></pre></td></tr></table></figure>
+<h3 id="编译-u-boot"><a href="#编译-u-boot" class="headerlink" title="编译 u-boot"></a>编译 u-boot</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> u-boot <span class="comment"># 打开 u-boot 目录</span></span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LicheePi_Zero_800x480LCD_defconfig <span class="comment"># 配置uboot</span></span><br><span class="line"><span class="comment"># 设置 make 宏</span></span><br><span class="line"><span class="comment"># ARCH：编译arch/arm下的代码；</span></span><br><span class="line"><span class="comment"># CROSS_COMPILE：编译器选arm-linux-gnueabihf-；</span></span><br><span class="line"><span class="comment"># LicheePi_Zero_800x480LCD_defconfig 使用 config 下 800*480LCD 的屏幕配置</span></span><br><span class="line"><span class="comment"># 或者使用 LicheePi_Zero480x272LCD_defconfig 或 LicheePi_Zero_defconfig 屏幕配置</span></span><br><span class="line"><span class="comment"># 也可以直接执行 `make LicheePi_Zero_800x480LCD_defconfig` 对荔枝派 Zero 显示设备进行配置</span></span><br><span class="line"></span><br><span class="line">make ARCH=arm menuconfig  <span class="comment"># 打开配置菜单对u-boot配置</span></span><br><span class="line"></span><br><span class="line">gongyu@DESKTOP-RQ1MEDL:/mnt/f/work/Lichee_Pi/u-boot$ make ARCH=arm menuconfig</span><br><span class="line">  HOSTCC  scripts/kconfig/mconf.o</span><br><span class="line">&lt;<span class="built_in">command</span>-line&gt;: fatal error: curses.h: No such file or directory</span><br><span class="line">compilation terminated.</span><br><span class="line">make[1]: *** [scripts/Makefile.host:116: scripts/kconfig/mconf.o] Error 1</span><br><span class="line">make: *** [Makefile:478: menuconfig] Error 2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果运行展开配置菜单报错 需要安装 libncurses5-dev</span></span><br><span class="line">sudo apt-get install libncurses5-dev</span><br><span class="line"></span><br><span class="line">time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- 2&gt;&amp;1 | tee build.log <span class="comment"># 编译u-boot 并输入日志</span></span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_03_12/image-20220312201449693.png" alt="image-20220312201449693"></p>
+<p><strong style="color: red;"> 配置完u-boot后再编译 </strong></p>
+<p>编译完成后，在当前目录下生成了 u-boot-sunxi-with-spl.bin ，可以烧录到8K偏移处启动。（tf卡）</p>
+<h1 id="二、u-boot-配置"><a href="#二、u-boot-配置" class="headerlink" title="二、u-boot 配置"></a>二、u-boot 配置</h1><p>命令执行：<code>make ARCH=arm menuconfig</code> 使用菜单形势配置u-boot</p>
+<p><img src="/Dom/imgs/2022_03_12/202203122156.png" alt="202203122156"></p>
+<h2 id="1、简单配置"><a href="#1、简单配置" class="headerlink" title="1、简单配置"></a>1、简单配置</h2><p><code>Architecture select</code> 架构选择  选择arm架构</p>
+<p><code>ARM architecture</code> arm架构配置  lcd配置  ddr配置  芯片选型 等</p>
+<p><img src="/Dom/imgs/2022_03_12/202203122214.png" alt="202203122214"></p>
+<p><code>Boot images</code> cpu时钟配置 等</p>
+<p><code>delay in seconds before automatically booting</code> uboot开机的时候等待时间 默认为2s</p>
+<p><code>SPL / TPL</code> 外设配置</p>
+<p><code>Device Drivers</code> 设配驱动配置</p>
+<h2 id="2、配置-SPI-Flash"><a href="#2、配置-SPI-Flash" class="headerlink" title="2、配置 SPI Flash"></a>2、配置 SPI Flash</h2><p><code>由于目前Uboot环境变量固定存放在1MB位置之内，所有留给uboot的空间固定到flash前1MB的位置不变。每个分区的大小必须是擦除块大小的整数倍，XT25F128B的擦除块大小是64KB。</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">分区序号</th>
+<th style="text-align:center">分区大小</th>
+<th style="text-align:center">分区描述</th>
+<th style="text-align:center">地址空间及分区名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">mtd0</td>
+<td style="text-align:center">1MB</td>
+<td style="text-align:center">spl+uboot</td>
+<td style="text-align:center">0x0000000-0x0100000 : “uboot”</td>
+</tr>
+<tr>
+<td style="text-align:center">mtd1</td>
+<td style="text-align:center">64KB</td>
+<td style="text-align:center">dtb文件</td>
+<td style="text-align:center">0x0100000-0x0110000: “dtb”</td>
+</tr>
+<tr>
+<td style="text-align:center">mtd2</td>
+<td style="text-align:center">4MB</td>
+<td style="text-align:center">linux内核</td>
+<td style="text-align:center">0x0110000-0x0510000 : “kernel”</td>
+</tr>
+<tr>
+<td style="text-align:center">mtd3</td>
+<td style="text-align:center">10MiB 960KiB</td>
+<td style="text-align:center">根文件系统</td>
+<td style="text-align:center">0x0510000-0x1000000 : “rootfs”</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-1、配置-u-boot-支持-Nor-Flash"><a href="#2-1、配置-u-boot-支持-Nor-Flash" class="headerlink" title="2.1、配置 u-boot 支持 Nor Flash"></a>2.1、配置 u-boot 支持 Nor Flash</h3><p><code>荔枝派 zero 上面焊接了一个 芯天下 的 Nor Flash 型号为：XT25F128B 16MByte。</code></p>
+<p>需要将 <code>u-boot</code> 切换到 <code>v3s-spi-experimental</code>分支下</p>
+<p><code>make ARCH=arm menuconfig</code> 打开u-boot菜单配置</p>
+<p>在 u-boot 配置下选择自己对应的 SPI Flash 对应的芯片厂商</p>
+<p>XT25F128B 与 Winbond 公司的 w25qxxx 系列的 flash 兼容性很高  所以选中 <code>Winbond SPI flash support</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Device Drivers  ---&gt; </span><br><span class="line">	SPI Flash Support  ---&gt; </span><br><span class="line">     ┌───────────────────────────────────────────────────────────────────────────────────────────┐ </span><br><span class="line">    │ │          [*] Enable Driver Model for SPI flash                                          │ │</span><br><span class="line">    │ │          [*] Legacy SPI Flash Interface support                                         │ │</span><br><span class="line">    │ │          [ ]   SPI flash Bank/Extended address register support                         │ │</span><br><span class="line">    │ │          [ ]   Atmel SPI flash support                                                  │ │</span><br><span class="line">    │ │          [ ]   EON SPI flash support                                                    │ │</span><br><span class="line">    │ │          [ ]   GigaDevice SPI flash support                                             │ │</span><br><span class="line">    │ │          [ ]   Macronix SPI flash support                                               │ │</span><br><span class="line">    │ │          [ ]   Spansion SPI flash support                                               │ │</span><br><span class="line">    │ │          [ ]   STMicro SPI flash support                                                │ │</span><br><span class="line">    │ │          [ ]   SST SPI flash support                                                    │ │</span><br><span class="line">    │ │          [*]   Winbond SPI flash support                                                │ │</span><br><span class="line">    │ │          [*]   Use small 4096 B erase sectors                                           │ │</span><br><span class="line">    │ │          [ ]   AT45xxx DataFlash support                                                │ │</span><br><span class="line">    │ │          [ ]   SPI Flash MTD support                                                    │ │</span><br><span class="line">    │ │          [*] Support for SPI Flash on Allwinner SoCs in SPL                             │ │</span><br></pre></td></tr></table></figure>
+<h3 id="2-2、配置-uboot-默认环境变量对Nor-Flash的支持"><a href="#2-2、配置-uboot-默认环境变量对Nor-Flash的支持" class="headerlink" title="2.2、配置 uboot 默认环境变量对Nor Flash的支持"></a>2.2、配置 uboot 默认环境变量对Nor Flash的支持</h3><p><code>在 include/configs/sun8i.h 中添加 CONFIG_BOOTCOMMAND 和 CONFIG_BOOTARGS 环境变量设置</code></p>
+<p>命令：<code>vim include/configs/sun8i.h</code> 在 <code>#include &lt;configs/sunxi-common.h&gt;</code> 前面添加以下代码</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONFIG_BOOTCOMMAND   <span class="meta-string">"sf probe 0; "</span>                           \</span></span><br><span class="line">                             <span class="string">"sf read 0x41800000 0x100000 0x10000; "</span>  \</span><br><span class="line">                             <span class="string">"sf read 0x41000000 0x110000 0x400000; "</span> \</span><br><span class="line">                             <span class="string">"bootz 0x41000000 - 0x41800000"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONFIG_BOOTARGS      <span class="meta-string">"console=ttyS0,115200 earlyprintk panic=5 rootwait "</span> \</span></span><br><span class="line">                             <span class="string">"mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2"</span></span><br></pre></td></tr></table></figure>
+<h4 id="（1）、环境命令解析："><a href="#（1）、环境命令解析：" class="headerlink" title="（1）、环境命令解析："></a>（1）、环境命令解析：</h4><ul>
+<li><code>sf probe 0;</code>   初始化 Flash 设备 （CS 拉低）</li>
+<li><code>sf read 0x41800000 0x100000 0x10000;</code>   从 Flash 0x100000 （1MB） 位置读取 dtb 放到内存  0x41800000 偏移地址。如果是 bsp 的 bin， 则是 0x41d00000 偏移地址。</li>
+<li><code>sf read 0x41000000 0x110000 0x400000;</code>    从 Flash 0x110000 （1MB + 64KB） 位置读取 dtb 放到内存 0x41000000 偏移地址。</li>
+<li><code>bootz 0x41000000 - 0x41800000</code>    启动内核  0x41000000 内核地址；0x41800000 dtb 地址。</li>
+</ul>
+<h4 id="（2）、启动参数解析："><a href="#（2）、启动参数解析：" class="headerlink" title="（2）、启动参数解析："></a>（2）、启动参数解析：</h4><ul>
+<li><code>console=ttyS0,115200 earlyprintk panic=5 rootwait</code>    在串口0输出信息  115200 波特率</li>
+<li><code>mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2</code>   spi32766.0 是设备名，后面是分区大小，名字，读写属性。</li>
+<li><code>root=31:03</code>    表示根文件系统时 mtd3；jffs2 格式。</li>
+</ul>
+<h3 id="2-3、配置-dtb-支持-Nor-Flash-TODO"><a href="#2-3、配置-dtb-支持-Nor-Flash-TODO" class="headerlink" title="2.3、配置 dtb 支持 Nor Flash @TODO"></a>2.3、配置 dtb 支持 Nor Flash @TODO</h3><h1 id="三、u-boot-SPI-Flash-烧录"><a href="#三、u-boot-SPI-Flash-烧录" class="headerlink" title="三、u-boot  SPI Flash 烧录"></a>三、u-boot  SPI Flash 烧录</h1><h2 id="1、全志-sunxi-tools-烧录工具安装"><a href="#1、全志-sunxi-tools-烧录工具安装" class="headerlink" title="1、全志 sunxi-tools 烧录工具安装"></a>1、全志 <code>sunxi-tools</code> 烧录工具安装</h2><h3 id="1-1、安装"><a href="#1-1、安装" class="headerlink" title="1.1、安装"></a>1.1、安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装依赖包</span></span><br><span class="line">sudo apt-get install pkg-config pkgconf zlib1g-dev libusb-1.0-0-dev</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取源码</span></span><br><span class="line"><span class="comment"># v3s 分支</span></span><br><span class="line">git <span class="built_in">clone</span> -b v3s https://github.com/Icenowy/sunxi-tools.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># v3s spiflash 分支</span></span><br><span class="line">git <span class="built_in">clone</span> -b v3s-spi https://github.com/Icenowy/sunxi-tools.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># f1c100s 分支</span></span><br><span class="line">git <span class="built_in">clone</span> -b f1c100s https://github.com/Icenowy/sunxi-tools.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># f1c100s-spiflash 分支</span></span><br><span class="line">git <span class="built_in">clone</span> -b f1c100s-spiflash https://github.com/Icenowy/sunxi-tools.git</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入源码文件夹</span></span><br><span class="line"><span class="built_in">cd</span> sunxi-tools</span><br><span class="line"><span class="comment"># 编译和安装</span></span><br><span class="line">make &amp;&amp; sudo make install</span><br></pre></td></tr></table></figure>
+<h3 id="1-2、基础用法"><a href="#1-2、基础用法" class="headerlink" title="1.2、基础用法"></a>1.2、基础用法</h3><p>参考 <a href="http://nano.lichee.pro/step_by_step/two_sunxi-tools.html" target="_blank" rel="noopener">[编译和使用sunxi-tools]</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出所有芯片的信息：</span></span><br><span class="line">sudo sunxi-fel -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看芯片信息：</span></span><br><span class="line">sudo sunxi-fel ver</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载并执行uboot的spl</span></span><br><span class="line">sudo sunxi-fel spl 文件名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示spiflash的信息 </span></span><br><span class="line">sudo sunxi-fel spiflash-info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 调用指定地址的函数 </span></span><br><span class="line">sudo sunxi-fel <span class="built_in">exec</span> 地址</span><br><span class="line"></span><br><span class="line"><span class="comment"># 把文件内容写入内存指定地址(-p是显示写入进度) </span></span><br><span class="line">sudo sunxi-fel -p write 地址 文件名</span><br><span class="line"></span><br><span class="line"><span class="comment"># 读取spiflash指定地址的数据并写入到文件 </span></span><br><span class="line">sudo sunxi-fel spiflash-read 地址 长度 存放数据的文件路径</span><br><span class="line"></span><br><span class="line"><span class="comment"># 写入指定文件的指定长度的内容到spiflash的指定地址 </span></span><br><span class="line">sudo sunxi-fel spiflash-write 地址 长度 存放数据的文件路径</span><br></pre></td></tr></table></figure>
+<h2 id="2、进入-FEL-模式使用-sunxi-fel-工具烧录-（全志专用工具）"><a href="#2、进入-FEL-模式使用-sunxi-fel-工具烧录-（全志专用工具）" class="headerlink" title="2、进入 FEL 模式使用 sunxi-fel 工具烧录 （全志专用工具）"></a>2、进入 FEL 模式使用 <code>sunxi-fel</code> 工具烧录 （全志专用工具）</h2><blockquote>
+<ul>
+<li><strong>TF卡和 spi flash 都没有可启动的镜像</strong></li>
+</ul>
+<p>TF卡空或者不插，spi flash 内容为空，上吊就会自动进入 fel 下载模式</p>
+<ul>
+<li><strong>TF卡中有进入FEL模式的特殊固件 <code>el-sdboot.sunxi</code> </strong></li>
+</ul>
+<p>如果 spi flash 有启动镜像，那么需要在 TF 卡中烧录一个 sunxi 提供的启动工具，那么插入该 TF 卡上电会进入 fel 模式；</p>
+<p>命令： <code>dd if=fel-sdboot.sunxi of=/dev/mmcblk0 bs=1024 seek=8</code></p>
+<ul>
+<li><strong>上电时将 SPI_MISO 引脚拉为低电平</strong></li>
+</ul>
+<p>该引脚为 <code>boot</code> 引脚，上电时如果检测到该引脚为低电平就会进入 fel 下载模式。</p>
+</blockquote>
+<h2 id="3、准备烧录uboot（SPI-Flash）"><a href="#3、准备烧录uboot（SPI-Flash）" class="headerlink" title="3、准备烧录uboot（SPI Flash）"></a>3、准备烧录uboot（SPI Flash）</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//检查是否可以探测到芯片信息：</span><br><span class="line">sudo sunxi-fel -l</span><br><span class="line">//确认是否成功进入fel模式：</span><br><span class="line">sudo sunxi-fel ver</span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_03_12/20220325151309.png" alt="20220325151309"></p>
+<h3 id="3-1、烧录到-RAM-中执行，以-uboot-file-with-spl-形式运行（单次运行，测试使用）"><a href="#3-1、烧录到-RAM-中执行，以-uboot-file-with-spl-形式运行（单次运行，测试使用）" class="headerlink" title="3.1、烧录到 RAM 中执行，以 uboot file-with-spl 形式运行（单次运行，测试使用）"></a>3.1、烧录到 RAM 中执行，以 uboot file-with-spl 形式运行（单次运行，测试使用）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo sunxi-fel uboot u-boot-sunxi-with-spl.bin</span><br><span class="line"></span><br><span class="line">//或者执行烧录地址</span><br><span class="line">sudo sunxi-fel -p write 0x40000000 u-boot-sunxi-with-spl.bin</span><br><span class="line">sudo sunxi-fel <span class="built_in">exec</span> 0x40000000</span><br></pre></td></tr></table></figure>
+<h3 id="3-2、烧录到-SPI-Flash-（烧录完成后重新上电）"><a href="#3-2、烧录到-SPI-Flash-（烧录完成后重新上电）" class="headerlink" title="3.2、烧录到 SPI Flash （烧录完成后重新上电）"></a>3.2、烧录到 SPI Flash （烧录完成后重新上电）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sunxi-fel -p spiflash-write 0 u-boot-sunxi-with-spl.bin</span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_03_12/20220325153053.png" alt="uboot烧录成功后Uart0输出的日志"></p>
+<h2 id="配置-SPI-Flash-TODO"><a href="#配置-SPI-Flash-TODO" class="headerlink" title="配置 SPI Flash @TODO"></a>配置 SPI Flash @TODO</h2><p><a href="https://blog.csdn.net/qq_28877125/article/details/113665441" target="_blank" rel="noopener">https://blog.csdn.net/qq_28877125/article/details/113665441</a></p>
+<p><a href="https://blog.csdn.net/qq_28877125/article/details/113736282" target="_blank" rel="noopener">https://blog.csdn.net/qq_28877125/article/details/113736282</a></p>
+<p><a href="https://blog.csdn.net/p1279030826/article/details/112672535" target="_blank" rel="noopener">https://blog.csdn.net/p1279030826/article/details/112672535</a></p>
+<p><a href="https://whycan.com/t_561.html" target="_blank" rel="noopener">https://whycan.com/t_561.html</a></p>
+<p><a href="https://blog.csdn.net/u010257920/article/details/52422393" target="_blank" rel="noopener">https://blog.csdn.net/u010257920/article/details/52422393</a></p>
+<p><a href="https://blog.csdn.net/u011847345/article/details/110727544" target="_blank" rel="noopener">https://blog.csdn.net/u011847345/article/details/110727544</a></p>
+<p><a href="https://whycan.com/t_4193_6.html" target="_blank" rel="noopener">https://whycan.com/t_4193_6.html</a></p>
+<h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -s /opt/工具 /usr/<span class="built_in">local</span>/bin/工具  <span class="comment"># 将opt目录下指定的文件 软连接到 /usr/local/bin/文件 中（创建快捷方式）</span></span><br><span class="line">sudo mv /工具 /opt/ <span class="comment"># 将的文件移动到 opt 下</span></span><br><span class="line">tar -xJf 工具.tar.xz  <span class="comment"># 解压指定压缩包（不显示进度，静默解压）</span></span><br><span class="line">tar -xvf 工具.tar.xz  <span class="comment"># 解压指定压缩包（显示详细解压进度）</span></span><br><span class="line">sudo apt-get purge 工具 <span class="comment"># 卸载指定工具</span></span><br><span class="line">sudo apt-get purge --auto-remove 工具  <span class="comment"># 卸载指定工具 及其依赖</span></span><br><span class="line">rm -rf 文件或者文件夹  <span class="comment"># 删除指定的文件或者文件夹</span></span><br><span class="line">mkdir 文件夹 <span class="comment"># 创建文件夹</span></span><br><span class="line">sudo cp ./文件 /某某文件夹  <span class="comment"># 将指定的文件拷贝到指定的文件目录</span></span><br><span class="line"></span><br><span class="line">ls /usr/bin/python <span class="comment"># 查看运行目录下是否有安装指定的应用</span></span><br><span class="line">ls /usr/<span class="built_in">local</span>/bin/python <span class="comment"># 查看本地运行目录下是否有安装的指定应用</span></span><br><span class="line">ls /usr/bin/pyth* <span class="comment"># 模糊查询</span></span><br><span class="line"></span><br><span class="line">dmesg | grep tty <span class="comment"># 查看串口设备</span></span><br><span class="line"></span><br><span class="line">sudo tzselect <span class="comment"># 修改系统时区</span></span><br><span class="line">sudo hwclock --systohc <span class="comment"># 时区同步到硬件</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------  END --<i class="fa fa-paw"></i>-- 感谢您的阅读 -------------</div>
+    
+</div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/27/STM32F1-DAPLink源码编译/" rel="next" title="STM32F1-DAPLink源码编译">
+                <i class="fa fa-chevron-left"></i> STM32F1-DAPLink源码编译
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript">
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMzgyMy8xMDM3Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/logo/idrnyu.jpg" alt="🔥⛄💦">
+            
+              <p class="site-author-name" itemprop="name">🔥⛄💦</p>
+              <p class="site-description motion-element" itemprop="description">idrnyu，51单片机，STM32，ARM，C，web前端</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、基础编译"><span class="nav-number">1.</span> <span class="nav-text">一、基础编译</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、安装python2"><span class="nav-number">1.1.</span> <span class="nav-text">1、安装python2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、安装交叉编译器与工具链"><span class="nav-number">1.2.</span> <span class="nav-text">2、安装交叉编译器与工具链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gcc-arm-linux-gnueabihf-安装"><span class="nav-number">1.2.1.</span> <span class="nav-text">gcc-arm-linux-gnueabihf  安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#device-tree-compiler-安装"><span class="nav-number">1.2.2.</span> <span class="nav-text">device-tree-compiler  安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#libncurses5-dev-安装"><span class="nav-number">1.2.3.</span> <span class="nav-text">libncurses5-dev 安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、下载u-boot源码并编译"><span class="nav-number">1.3.</span> <span class="nav-text">3、下载u-boot源码并编译</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载-u-boot"><span class="nav-number">1.3.1.</span> <span class="nav-text">下载 u-boot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#u-boot-目录结构"><span class="nav-number">1.3.2.</span> <span class="nav-text">u-boot 目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编译-u-boot"><span class="nav-number">1.3.3.</span> <span class="nav-text">编译 u-boot</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、u-boot-配置"><span class="nav-number">2.</span> <span class="nav-text">二、u-boot 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、简单配置"><span class="nav-number">2.1.</span> <span class="nav-text">1、简单配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、配置-SPI-Flash"><span class="nav-number">2.2.</span> <span class="nav-text">2、配置 SPI Flash</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1、配置-u-boot-支持-Nor-Flash"><span class="nav-number">2.2.1.</span> <span class="nav-text">2.1、配置 u-boot 支持 Nor Flash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2、配置-uboot-默认环境变量对Nor-Flash的支持"><span class="nav-number">2.2.2.</span> <span class="nav-text">2.2、配置 uboot 默认环境变量对Nor Flash的支持</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#（1）、环境命令解析："><span class="nav-number">2.2.2.1.</span> <span class="nav-text">（1）、环境命令解析：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#（2）、启动参数解析："><span class="nav-number">2.2.2.2.</span> <span class="nav-text">（2）、启动参数解析：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3、配置-dtb-支持-Nor-Flash-TODO"><span class="nav-number">2.2.3.</span> <span class="nav-text">2.3、配置 dtb 支持 Nor Flash @TODO</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、u-boot-SPI-Flash-烧录"><span class="nav-number">3.</span> <span class="nav-text">三、u-boot  SPI Flash 烧录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、全志-sunxi-tools-烧录工具安装"><span class="nav-number">3.1.</span> <span class="nav-text">1、全志 sunxi-tools 烧录工具安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1、安装"><span class="nav-number">3.1.1.</span> <span class="nav-text">1.1、安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2、基础用法"><span class="nav-number">3.1.2.</span> <span class="nav-text">1.2、基础用法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、进入-FEL-模式使用-sunxi-fel-工具烧录-（全志专用工具）"><span class="nav-number">3.2.</span> <span class="nav-text">2、进入 FEL 模式使用 sunxi-fel 工具烧录 （全志专用工具）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、准备烧录uboot（SPI-Flash）"><span class="nav-number">3.3.</span> <span class="nav-text">3、准备烧录uboot（SPI Flash）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1、烧录到-RAM-中执行，以-uboot-file-with-spl-形式运行（单次运行，测试使用）"><span class="nav-number">3.3.1.</span> <span class="nav-text">3.1、烧录到 RAM 中执行，以 uboot file-with-spl 形式运行（单次运行，测试使用）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2、烧录到-SPI-Flash-（烧录完成后重新上电）"><span class="nav-number">3.3.2.</span> <span class="nav-text">3.2、烧录到 SPI Flash （烧录完成后重新上电）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-SPI-Flash-TODO"><span class="nav-number">3.4.</span> <span class="nav-text">配置 SPI Flash @TODO</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附录"><span class="nav-number">4.</span> <span class="nav-text">附录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">😁😂🔥⛄💦</span>
+
+  
+</div>
+
+
+  <div class="powered-by"> <a class="theme-link" target="_blank" href="https://idrnyu.github.io/">iDRnYu</a> idrnyu博客首页</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">项目 &mdash; <a class="theme-link" target="_blank" href="https://github.com/idrnyu">iDRnYu项目首页</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+
+  
+    <!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/js/src/love.js"></script>
+  
+
+</html>
