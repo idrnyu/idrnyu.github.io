@@ -2,6 +2,7 @@
 title: 荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash）
 date: 2022-03-12 12:58:52
 tags:
+comments: false
 ---
 
 # 一、基础编译 
