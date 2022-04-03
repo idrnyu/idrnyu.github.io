@@ -1,5 +1,5 @@
 ---
-title: 荔枝派_u-boot编译 （@TODO UART输出会报错，需要写设备树驱动spi flash）
+title: 荔枝派_u-boot编译
 date: 2022-03-12 12:58:52
 tags:
 comments: false
@@ -21,6 +21,15 @@ sudo apt install python-pip # 安装python2.7对应的pip
 python -V # 查看python版本验证是否安装成功
 pyp -V #
 
+# 如果python -V 无法读取到版本信息 或者不是2.7的版本  需要创建一个快捷方式（软连接）
+ls /usr/bin/python*  # 查看python安装状态
+
+irtualBox:~/Lichee_Pi/u-boot$ ls /usr/bin/python*
+/usr/bin/python2.7  /usr/bin/python3  /usr/bin/python3.8
+
+# 创建软连接
+sudo ln -s /usr/bin/python2.7 /usr/bin/python
+
 ls /usr/bin/pip  # 查看安装目录
 ls /usr/bin/python*
 
@@ -32,8 +41,7 @@ sudo apt-get purge --auto-remove python2.7  # 卸载python 及其依赖
 # 如果系统有安装python3 则需要重新安装python2 因为编译u-boot时的工具链里面需要python2的环境 否则报错
 
 ````
-
-
+![python](/Dom/imgs/2022_03_12/python.png)
 
 ## 2、安装交叉编译器与工具链
 
@@ -138,18 +146,36 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LicheePi_Zero_800x480LCD_defcon
 # 或者使用 LicheePi_Zero480x272LCD_defconfig 或 LicheePi_Zero_defconfig 屏幕配置
 # 也可以直接执行 `make LicheePi_Zero_800x480LCD_defconfig` 对荔枝派 Zero 显示设备进行配置
 
+# 如果配置命令失败（错误信息如下）
+#--------------------------------------------------------------------------------
+gongyu@gongyu-VirtualBox:~/Lichee_Pi/u-boot$ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- LicheePi_Zero_800x480LCD_defconfig
+  HOSTCC  scripts/basic/fixdep
+/bin/sh: 1: cc: not found
+make[1]: *** [scripts/Makefile.host:99：scripts/basic/fixdep] 错误 127
+make: *** [Makefile:398：scripts_basic] 错误 2
+#--------------------------------------------------------------------------------
+# 如果配置命令失败 需要安装 bison、flex 这两个包
+sudo apt install bison flex
+```
+![makeError1](/Dom/imgs/2022_03_12/makeError1.png)
+
+
+```bash
 make ARCH=arm menuconfig  # 打开配置菜单对u-boot配置
 
+# 如果运行展开配置菜单报错（错误信息如下）
+#--------------------------------------------------------------------------------
 gongyu@DESKTOP-RQ1MEDL:/mnt/f/work/Lichee_Pi/u-boot$ make ARCH=arm menuconfig
   HOSTCC  scripts/kconfig/mconf.o
 <command-line>: fatal error: curses.h: No such file or directory
 compilation terminated.
 make[1]: *** [scripts/Makefile.host:116: scripts/kconfig/mconf.o] Error 1
 make: *** [Makefile:478: menuconfig] Error 2
-
+#--------------------------------------------------------------------------------
 # 如果运行展开配置菜单报错 需要安装 libncurses5-dev
 sudo apt-get install libncurses5-dev
 
+# 配置菜单配置完成后编辑并输入bin文件
 time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- 2>&1 | tee build.log # 编译u-boot 并输入日志
 ```
 
@@ -241,6 +267,8 @@ Device Drivers  --->
                              "mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2"
 ```
 
+![config_sun8i_h](/Dom/imgs/2022_03_12/config_sun8i_h.png)
+
 #### （1）、环境命令解析：
 
 - `sf probe 0;`   初始化 Flash 设备 （CS 拉低）
@@ -254,8 +282,68 @@ Device Drivers  --->
 - `mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2`   spi32766.0 是设备名，后面是分区大小，名字，读写属性。
 - `root=31:03`    表示根文件系统时 mtd3；jffs2 格式。
 
-### 2.3、配置 dtb 支持 Nor Flash @TODO
-# 设备树驱动程序 @TODO
+### 2.3、配置 dtb 支持 Nor Flash （设备树驱动程序 ）@TODO
+
+暂时不配置spi设备树，将uboot烧录到v3s中也可以运行，只是串口会输出错误信息，屏幕正常显示 log 和uboot版本信息
+
+```bash
+Hit any key to stop autoboot:  0 
+SF: unrecognized JEDEC id bytes: 0b, 40, 18
+Failed to initialize SPI flash at 0:0 (error -2)
+No SPI flash selected. Please run `sf probe'
+No SPI flash selected. Please run `sf probe'
+=> 
+```
+
+#### （1）、修改uboot  spi_flash.c 文件
+
+先查找错误位置 `vim drivers/mtd/spi/spi_flash.c`
+
+![ubootError2](/Dom/imgs/2022_03_12/ubootError2.png)
+
+添加XT25F128B SPI Flash id 到 `spi_flash_ids.c` `drivers/mtd/spi/spi_flash_ids.c`
+
+由于需要移植的 flash 芯片特性和 w25qxxx 系列的 flash 相似，所以可以直接复制过来，修改后如下
+
+![editspi_flash](/Dom/imgs/2022_03_12/editspi_flash.png)
+
+0x0b4018 是uboot报错的id `SF: unrecognized JEDEC id bytes: 0b, 40, 18`
+
+```bash
+# 配置数据格式如下
+/* Used when the "_ext_id" is two bytes at most */
+#define INFO(_jedec_id, _ext_id, _sector_size, _n_sectors, _flags)    \
+        .id = {                         \
+            ...
+        .id_len = (!(_jedec_id) ? 0 : (3 + ((_ext_id) ? 2 : 0))),   \
+        .sector_size = (_sector_size),              \
+        .n_sectors = (_n_sectors),              \
+        .page_size = 256,                   \
+        .flags = (_flags),
+```
+
+#### （2）、修改dts配置添加spi flash节点
+
+修改 `vim arch/arm/dts/sun8i-v3s-licheepi-zero.dts` 文件
+
+修改设备树中的 flash 相关的声明，添加上新增加的 flash 型号
+
+```bash
+&spi0 {
+	status = "okay";
+	
+	xt25f128b:xt25f128b@0 {
+		compatible = "winbond, xt25f128b", "jedec,spi-nor";
+		reg = <0x0>;
+		spi-max-frequency = <50000000>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+	};
+};
+```
+![editdtsSpiFlash](/Dom/imgs/2022_03_12/editdtsSpiFlash.png)
+
+#### （3）、重新编译uboot 并烧录
 
 # 三、u-boot  SPI Flash 烧录
 
@@ -266,12 +354,24 @@ Device Drivers  --->
 ```bash
 # 安装依赖包
 sudo apt-get install pkg-config pkgconf zlib1g-dev libusb-1.0-0-dev
+```
+<span style="color: red;">安装时可能会报错</span>
+![installError1](/Dom/imgs/2022_03_12/installError1.png)
 
+好像 pkg-config 要后面装
+```bash
+sudo apt-get install pkgconf
+sudo apt-get install zlib1g-dev
+sudo apt-get install libusb-1.0-0-dev
+sudo apt-get install pkg-config
+```
+
+```bash
 # 获取源码
 # v3s 分支
 git clone -b v3s https://github.com/Icenowy/sunxi-tools.git
 
-# v3s spiflash 分支
+# v3s spiflash 分支 （荔枝派 Zero spi 版本）
 git clone -b v3s-spi https://github.com/Icenowy/sunxi-tools.git
 
 # f1c100s 分支
@@ -362,6 +462,10 @@ sudo sunxi-fel -p spiflash-write 0 u-boot-sunxi-with-spl.bin
 ```
 
 ![uboot烧录成功后Uart0输出的日志](/Dom/imgs/2022_03_12/20220325153053.png)
+
+u-boot运行效果
+
+![ubootimg1](/Dom/imgs/2022_03_12/ubootimg1.jpg)
 
 #  附录
 
