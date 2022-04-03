@@ -1,0 +1,31 @@
+---
+title: "github push 报错：remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead." 
+date: 2022-04-03 21:55:02
+tags:
+---
+
+在 github push 的时候会出现报错信息
+
+```bash
+# 报错详情：
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: unable to access 'https://github.com/idrnyu/esp8266.git/': The requested URL returned error: 403
+```
+
+> 原因：自2021年8月13日起，github不再支持使用密码push的方式
+
+> 解决方案：两种
+>
+> 一、 使用SSH
+> 二、使用Personal access token
+
+# 法一：使用SSH
+
+## 一、生成 ssh-key
+
+```
+# -t：指明你要使用的加密算法；-C：指明你的GitHub登录邮箱；-f：指明你想让你生成的密钥文件放在哪里。执行命令后，会生成两个文件，私钥的名字就是你命令中写的名字，公钥的名字比私钥的名字多了.pub后缀
+ssh-keygen -t ed25519 -C "your@mail.com" -f "github ssh key存放的路径"
+```
+
