@@ -282,9 +282,9 @@ Device Drivers  --->
 - `mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2`   spi32766.0 是设备名，后面是分区大小，名字，读写属性。
 - `root=31:03`    表示根文件系统时 mtd3；jffs2 格式。
 
-### 2.3、配置 dtb 支持 Nor Flash （设备树驱动程序 ）@TODO
+### 2.3、配置 spi id
 
-暂时不配置spi设备树，将uboot烧录到v3s中也可以运行，只是串口会输出错误信息，屏幕正常显示 log 和uboot版本信息
+暂时不配置spi id，将uboot烧录到v3s中也可以运行，只是串口会输出错误信息，屏幕正常显示 log 和uboot版本信息
 
 ```bash
 Hit any key to stop autoboot:  0 
@@ -322,28 +322,7 @@ No SPI flash selected. Please run `sf probe'
         .flags = (_flags),
 ```
 
-#### （2）、修改dts配置添加spi flash节点
-
-修改 `vim arch/arm/dts/sun8i-v3s-licheepi-zero.dts` 文件
-
-修改设备树中的 flash 相关的声明，添加上新增加的 flash 型号
-
-```bash
-&spi0 {
-	status = "okay";
-	
-	xt25f128b:xt25f128b@0 {
-		compatible = "winbond, xt25f128b", "jedec,spi-nor";
-		reg = <0x0>;
-		spi-max-frequency = <50000000>;
-		#address-cells = <1>;
-		#size-cells = <1>;
-	};
-};
-```
-![editdtsSpiFlash](/Dom/imgs/2022_03_12/editdtsSpiFlash.png)
-
-#### （3）、重新编译uboot 并烧录
+#### （2）、重新编译uboot 并烧录
 
 # 三、u-boot  SPI Flash 烧录
 
