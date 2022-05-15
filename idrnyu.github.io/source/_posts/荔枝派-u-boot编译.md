@@ -304,6 +304,7 @@ No SPI flash selected. Please run `sf probe'
 添加XT25F128B SPI Flash id 到 `spi_flash_ids.c` `drivers/mtd/spi/spi_flash_ids.c`
 
 由于需要移植的 flash 芯片特性和 w25qxxx 系列的 flash 相似，所以可以直接复制过来，修改后如下
+`{"xt25f128b",      INFO(0x0b4018, 0x0,  64 * 1024,   256, RD_FULL | WR_QPP | SECT_4K) },`
 
 ![editspi_flash](/Dom/imgs/2022_03_12/editspi_flash.png)
 
