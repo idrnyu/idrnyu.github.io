@@ -4,9 +4,7 @@ date: 2022-05-15 19:18:21
 tags:
 ---
 
-# 一、 编译Linux内核
-
-## 1、 获取Linux内核源码
+# 一、 获取Linux内核源码
 
 ```bash
 git clone https://github.com/Lichee-Pi/linux.git
@@ -16,7 +14,7 @@ git clone https://github.com/Lichee-Pi/linux.git
 
 ！！！文件大小大概有 2.54G
 
-## 2、 内核选项配置
+# 二、 内核选项配置
 
 执行 `make ARCH=arm menuconfig` 打开内核配置菜单
 
@@ -34,7 +32,7 @@ git clone https://github.com/Lichee-Pi/linux.git
 
 ![menuconfigJffs2File](/Dom/imgs/2022_04_07/menuconfigJffs2File.png)
 
-## 3、修改设备树文件，使其支持 SPI Flash
+# 三、修改设备树文件，使其支持 SPI Flash
 
 修改设备树文件
 
@@ -60,7 +58,7 @@ vim arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
 
 `xt25f128b` 此型号必须是在uboot中设备树支持的spi设备
 
-## 4、 内核编译
+# 四、 内核编译
 
 ！！！ 此命令将会还原以上的 `menuconfig` 的一系列配置  如果还原需要重新 `make ARCH=arm menuconfig` 来配置 `make ARCH=arm licheepi_zero_defconfig `
 
@@ -83,9 +81,9 @@ gongyu@gongyu-VirtualBox:~/Lichee_Pi/linux$ ls arch/arm/boot/
 bootp  compressed  dts  Image  install.sh  Makefile  zImage
 ```
 
-### 编译错误
+## 编译错误
 
-#### 错误信息1
+### 错误信息1
 
 ```bash
 error New address family defined, please update secclass_map.
@@ -105,7 +103,7 @@ error New address family defined, please update secclass_map.
 
 ![zimageCompileError1pass2](/Dom/imgs/2022_04_07/zimageCompileError1pass2.png)
 
-#### 错误信息2
+### 错误信息2
 
 ```bash
 fatal error: openssl/opensslv.h: No such file or directory
@@ -119,7 +117,7 @@ fatal error: openssl/opensslv.h: No such file or directory
 sudo apt-get install libssl-dev
 ```
 
-#### 错误信息3
+### 错误信息3
 
 ```bash
 没有规则可制作目标“debian/canonical-revoked-certs.pem”，由“certs/x509_revocation_list” 需求。 停止。
