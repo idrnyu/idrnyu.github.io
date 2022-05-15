@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325151309.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325153053.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/ubootimg1.jpg">
-<meta property="og:updated_time" content="2022-04-07T14:42:05.317Z">
+<meta property="og:updated_time" content="2022-05-15T10:38:46.692Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="荔枝派_u-boot编译">
 <meta name="twitter:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,313
+                  3,323
                 </span>
               
 
@@ -512,7 +512,7 @@
 <h4 id="（1）、修改uboot-spi-flash-c-文件"><a href="#（1）、修改uboot-spi-flash-c-文件" class="headerlink" title="（1）、修改uboot  spi_flash.c 文件"></a>（1）、修改uboot  spi_flash.c 文件</h4><p>先查找错误位置 <code>vim drivers/mtd/spi/spi_flash.c</code></p>
 <p><img src="/Dom/imgs/2022_03_12/ubootError2.png" alt="ubootError2"></p>
 <p>添加XT25F128B SPI Flash id 到 <code>spi_flash_ids.c</code> <code>drivers/mtd/spi/spi_flash_ids.c</code></p>
-<p>由于需要移植的 flash 芯片特性和 w25qxxx 系列的 flash 相似，所以可以直接复制过来，修改后如下</p>
+<p>由于需要移植的 flash 芯片特性和 w25qxxx 系列的 flash 相似，所以可以直接复制过来，修改后如下<br><code>{&quot;xt25f128b&quot;,      INFO(0x0b4018, 0x0,  64 * 1024,   256, RD_FULL | WR_QPP | SECT_4K) },</code></p>
 <p><img src="/Dom/imgs/2022_03_12/editspi_flash.png" alt="editspi_flash"></p>
 <p>0x0b4018 是uboot报错的id <code>SF: unrecognized JEDEC id bytes: 0b, 40, 18</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 配置数据格式如下</span></span><br><span class="line">/* Used when the <span class="string">"_ext_id"</span> is two bytes at most */</span><br><span class="line"><span class="comment">#define INFO(_jedec_id, _ext_id, _sector_size, _n_sectors, _flags)    \</span></span><br><span class="line">        .id = &#123;                         \</span><br><span class="line">            ...</span><br><span class="line">        .id_len = (!(_jedec_id) ? 0 : (3 + ((_ext_id) ? 2 : 0))),   \</span><br><span class="line">        .sector_size = (_sector_size),              \</span><br><span class="line">        .n_sectors = (_n_sectors),              \</span><br><span class="line">        .page_size = 256,                   \</span><br><span class="line">        .flags = (_flags),</span><br></pre></td></tr></table></figure>
@@ -588,6 +588,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2022/04/03/荔枝派-linux内核编译/" rel="prev" title="荔枝派-linux内核编译">
+                荔枝派-linux内核编译 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -688,7 +692,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
