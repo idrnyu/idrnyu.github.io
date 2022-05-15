@@ -56,7 +56,19 @@ vim arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts
 };
 ```
 
-`xt25f128b` 此型号必须是在uboot中设备树支持的spi设备
+`xt25f128b` 此型号必须是在 `drivers/mtd/spi-nor/spi-nor.c` 中支持的spi设备
+
+修改 `drivers/mtd/spi-nor/spi-nor.c` 文件
+
+```bash
+vim drivers/mtd/spi-nor/spi-nor.c
+```
+添加以下代码
+```c
+{ "xt25f128b", INFO(0x0b4018, 0, 64 * 1024, 256, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
+```
+![spiFlash](/Dom/imgs/2022_04_07/menuconfigJffs2File.png)
+
 
 # 四、 内核编译
 
