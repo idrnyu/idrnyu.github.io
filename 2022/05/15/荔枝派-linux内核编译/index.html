@@ -107,13 +107,13 @@
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/menuconfigDeviceMTD.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/menuconfigDeviceMTD-sub.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/menuconfigJffs2File.png">
-<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/menuconfigJffs2File.png">
+<meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/spiFlash.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/zimageCompileError1.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/zimageCompileError1pass.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/zimageCompileError1pass2.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/zimageCompileError2.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_04_07/zimageCompileError3.png">
-<meta property="og:updated_time" content="2022-05-15T13:50:36.344Z">
+<meta property="og:updated_time" content="2022-05-15T13:59:14.772Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="荔枝派-linux内核编译">
 <meta name="twitter:description" content="一、 获取Linux内核源码1git clone https://github.com/Lichee-Pi/linux.git 源码切换到最新分支 zero-4.13.y ！！！文件大小大概有 2.54G 二、 内核选项配置执行 make ARCH=arm menuconfig 打开内核配置菜单  进入 Device Drivers &amp;gt; Memory Technology Device (M">
@@ -443,7 +443,7 @@
 <p>修改 <code>drivers/mtd/spi-nor/spi-nor.c</code> 文件</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim drivers/mtd/spi-nor/spi-nor.c</span><br></pre></td></tr></table></figure>
 <p>添加以下代码<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123; <span class="string">"xt25f128b"</span>, INFO(<span class="number">0x0b4018</span>, <span class="number">0</span>, <span class="number">64</span> * <span class="number">1024</span>, <span class="number">256</span>, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) &#125;,</span><br></pre></td></tr></table></figure></p>
-<p><img src="/Dom/imgs/2022_04_07/menuconfigJffs2File.png" alt="spiFlash"></p>
+<p><img src="/Dom/imgs/2022_04_07/spiFlash.png" alt="spiFlash"></p>
 <h1 id="四、-内核编译"><a href="#四、-内核编译" class="headerlink" title="四、 内核编译"></a>四、 内核编译</h1><p>！！！ 此命令将会还原以上的 <code>menuconfig</code> 的一系列配置  如果还原需要重新 <code>make ARCH=arm menuconfig</code> 来配置 <code>make ARCH=arm licheepi_zero_defconfig</code></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure>
 <p>或者使用 -jn 来加速编译 n = 参与编译的内核个数</p>
