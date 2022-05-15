@@ -67,7 +67,7 @@ vim drivers/mtd/spi-nor/spi-nor.c
 ```c
 { "xt25f128b", INFO(0x0b4018, 0, 64 * 1024, 256, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) },
 ```
-![spiFlash](/Dom/imgs/2022_04_07/menuconfigJffs2File.png)
+![spiFlash](/Dom/imgs/2022_04_07/spiFlash.png)
 
 
 # 四、 内核编译
