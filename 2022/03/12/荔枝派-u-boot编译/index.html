@@ -96,12 +96,12 @@
 
 
 
-<meta name="description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
+<meta name="description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RGB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
 <meta property="og:type" content="article">
 <meta property="og:title" content="荔枝派_u-boot编译">
 <meta property="og:url" content="http://yoursite.com/2022/03/12/荔枝派-u-boot编译/index.html">
 <meta property="og:site_name" content="iDRnYu">
-<meta property="og:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
+<meta property="og:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RGB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/python.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/makeError1.png">
@@ -115,10 +115,10 @@
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325151309.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325153053.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/ubootimg1.jpg">
-<meta property="og:updated_time" content="2022-05-15T10:38:46.692Z">
+<meta property="og:updated_time" content="2022-05-16T11:29:13.715Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="荔枝派_u-boot编译">
-<meta name="twitter:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
+<meta name="twitter:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RGB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
 <meta name="twitter:image" content="http://yoursite.com/Dom/imgs/2022_03_12/python.png">
 
 
@@ -424,8 +424,9 @@
       
 
       
-        <h1 id="一、基础编译"><a href="#一、基础编译" class="headerlink" title="一、基础编译"></a>一、基础编译</h1><p><code>linux（ubuntu）</code>、<code>git</code>、<code>python2</code>、<code>全志v3s</code>、<code>5寸电阻触摸屏（RTB屏）</code>、<code>USB TO UART</code></p>
+        <h1 id="一、基础编译"><a href="#一、基础编译" class="headerlink" title="一、基础编译"></a>一、基础编译</h1><p><code>linux（ubuntu）</code>、<code>git</code>、<code>python2</code>、<code>全志v3s</code>、<code>5寸电阻触摸屏（RGB屏）</code>、<code>USB TO UART</code></p>
 <h2 id="1、安装python2"><a href="#1、安装python2" class="headerlink" title="1、安装python2"></a>1、安装python2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update <span class="comment"># 更新源</span></span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt-get install python2.7 <span class="comment"># 安装python2.7</span></span><br><span class="line">sudo apt install python-pip <span class="comment"># 安装python2.7对应的pip</span></span><br><span class="line"></span><br><span class="line">python -V <span class="comment"># 查看python版本验证是否安装成功</span></span><br><span class="line">pyp -V <span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果python -V 无法读取到版本信息 或者不是2.7的版本  需要创建一个快捷方式（软连接）</span></span><br><span class="line">ls /usr/bin/python*  <span class="comment"># 查看python安装状态</span></span><br><span class="line"></span><br><span class="line">irtualBox:~/Lichee_Pi/u-boot$ ls /usr/bin/python*</span><br><span class="line">/usr/bin/python2.7  /usr/bin/python3  /usr/bin/python3.8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建软连接</span></span><br><span class="line">sudo ln -s /usr/bin/python2.7 /usr/bin/python</span><br><span class="line"></span><br><span class="line">ls /usr/bin/pip  <span class="comment"># 查看安装目录</span></span><br><span class="line">ls /usr/bin/python*</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如需卸载 python2.7 与 python-pip 执行下面两条命令</span></span><br><span class="line">sudo apt-get purge python2.7</span><br><span class="line">sudo apt-get purge --auto-remove python2.7  <span class="comment"># 卸载python 及其依赖</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python2 与 python3 不兼容</span></span><br><span class="line"><span class="comment"># 如果系统有安装python3 则需要重新安装python2 因为编译u-boot时的工具链里面需要python2的环境 否则报错</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><img src="/Dom/imgs/2022_03_12/python.png" alt="python"></p>
 <h2 id="2、安装交叉编译器与工具链"><a href="#2、安装交叉编译器与工具链" class="headerlink" title="2、安装交叉编译器与工具链"></a>2、安装交叉编译器与工具链</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gcc-arm-linux-gnueabihf</span><br><span class="line"><span class="comment"># ARMHF 架构交叉编译器 安装此版本 gcc-linaro-6.3.1-2017.02-x86_64_arm-linux-gnueabihf (需手动下载)</span></span><br><span class="line"></span><br><span class="line">device-tree-compiler</span><br><span class="line"><span class="comment"># ARM Linux 设备树  DTC (device tree compiler) 将.dts编译为.dtb的工具  dtc编译器</span></span><br><span class="line"></span><br><span class="line">libncurses5-dev</span><br><span class="line"><span class="comment"># curses库 游标移动及屏幕的显示库</span></span><br></pre></td></tr></table></figure>
 <h3 id="gcc-arm-linux-gnueabihf-安装"><a href="#gcc-arm-linux-gnueabihf-安装" class="headerlink" title="gcc-arm-linux-gnueabihf  安装"></a>gcc-arm-linux-gnueabihf  安装</h3><p>链接: <a href="https://pan.baidu.com/s/1VjjnR4zSwde1HUAbgcg64A?pwd=4jbn" target="_blank" rel="noopener">https://pan.baidu.com/s/1VjjnR4zSwde1HUAbgcg64A?pwd=4jbn</a> 提取码: 4jbn 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
@@ -692,7 +693,7 @@ var jiathis_config={
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

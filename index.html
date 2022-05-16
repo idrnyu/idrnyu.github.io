@@ -313,6 +313,340 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/05/16/荔枝派-SPI-Flash烧录/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="🔥⛄💦">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/logo/idrnyu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iDRnYu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/05/16/荔枝派-SPI-Flash烧录/" itemprop="url">荔枝派_SPI-Flash烧录</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-16T20:59:10+08:00">
+                2022-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  414
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>烧录 <code>uboot</code> <code>Linux主线Kernel</code> <code>buildroot文件系统</code> 到 全志v3s；</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://localhost:4000/2022/03/12/荔枝派-u-boot编译/</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"><span class="attribute">http://localhost:4000/2022/05/15/荔枝派-linux内核编译/</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"><span class="attribute">http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/</span></span><br></pre></td></tr></table></figure>
+<h1 id="一、-准备烧录文件"><a href="#一、-准备烧录文件" class="headerlink" title="一、 准备烧录文件"></a>一、 准备烧录文件</h1><ol>
+<li>uboot编译后的产物：<code>u-boot-sunxi-with-spl.bin</code>;</li>
+<li>linux内核编译后的产物：<code>arch/arm/boot/zImage</code> 和 <code>arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</code>;</li>
+<li>buildroot根文件系统编译后的产物：<code>output/images/rootfs.tar</code>;</li>
+</ol>
+<p>将4个文件放在一个文件夹下 如 v0.1</p>
+<h1 id="二、-将根文件系统生成jffs2-img"><a href="#二、-将根文件系统生成jffs2-img" class="headerlink" title="二、 将根文件系统生成jffs2.img"></a>二、 将根文件系统生成jffs2.img</h1><p>使用使用各种文件系统生成工具生成的文件系统文件一般都类似是： <code>rootfs.tar</code> 的压缩包文件，这个是无法没有办法适应nor flash的需要使用转换的工具软件转成类似<code>jffs2.img</code>的文件。</p>
+<p>安装 jffs2 文件系统制作工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mtd-utils</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2022/05/16/荔枝派-SPI-Flash烧录/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/05/16/荔枝派-buildroot文件系统编译/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="🔥⛄💦">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/logo/idrnyu.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iDRnYu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2022/05/16/荔枝派-buildroot文件系统编译/" itemprop="url">荔枝派_buildroot文件系统编译</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-05-16T19:24:38+08:00">
+                2022-05-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                  <span class="post-meta-divider">|</span>
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  214
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="一、-获取buildroot文件系统源码"><a href="#一、-获取buildroot文件系统源码" class="headerlink" title="一、 获取buildroot文件系统源码"></a>一、 获取buildroot文件系统源码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget https://buildroot.org/downloads/buildroot-2019.08.tar.gz  <span class="comment"># 下载源码</span></span><br><span class="line">tar xvf buildroot-2019.08.tar.gz  <span class="comment"># 解压</span></span><br><span class="line"><span class="built_in">cd</span> buildroot-2019.08</span><br></pre></td></tr></table></figure>
+<h1 id="二、-配置buildroot"><a href="#二、-配置buildroot" class="headerlink" title="二、 配置buildroot"></a>二、 配置buildroot</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make menuconfig  <span class="comment"># 配置buildroot文件系统</span></span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_05_16/menuconfig.png" alt="menuconfig"></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2022/05/16/荔枝派-buildroot文件系统编译/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/05/15/荔枝派-linux内核编译/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -416,14 +750,12 @@
 
       
         
-          
-          一、 获取Linux内核源码1git clone https://github.com/Lichee-Pi/linux.git
-源码切换到最新分支 zero-4.13.y
-！！！文件大小大概有 2.54G
-二、 内核选项配置执行 make ARCH=arm menuconfig 打开内核配置菜单
+          <h1 id="一、-获取Linux内核源码"><a href="#一、-获取Linux内核源码" class="headerlink" title="一、 获取Linux内核源码"></a>一、 获取Linux内核源码</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Lichee-Pi/linux.git</span><br></pre></td></tr></table></figure>
+<p><code>源码切换到最新分支 zero-4.13.y</code></p>
+<p style="color: red;"> ！！！文件大小大概有 2.54G </p>
 
-
-          ...
+<h1 id="二、-内核选项配置"><a href="#二、-内核选项配置" class="headerlink" title="二、 内核选项配置"></a>二、 内核选项配置</h1><p>执行 <code>make ARCH=arm menuconfig</code> 打开内核配置菜单</p>
+<p><img src="/Dom/imgs/2022_04_07/menuconfigHome.png" alt="menuconfigHome"></p>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/05/15/荔枝派-linux内核编译/#more" rel="contents">
@@ -582,10 +914,8 @@
 
       
         
-          
-          一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RTB屏）、USB TO UART
-1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo 
-          ...
+          <h1 id="一、基础编译"><a href="#一、基础编译" class="headerlink" title="一、基础编译"></a>一、基础编译</h1><p><code>linux（ubuntu）</code>、<code>git</code>、<code>python2</code>、<code>全志v3s</code>、<code>5寸电阻触摸屏（RGB屏）</code>、<code>USB TO UART</code></p>
+<h2 id="1、安装python2"><a href="#1、安装python2" class="headerlink" title="1、安装python2"></a>1、安装python2</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update <span class="comment"># 更新源</span></span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt-get install python2.7 <span class="comment"># 安装python2.7</span></span><br><span class="line">sudo apt install python-pip <span class="comment"># 安装python2.7对应的pip</span></span><br><span class="line"></span><br><span class="line">python -V <span class="comment"># 查看python版本验证是否安装成功</span></span><br><span class="line">pyp -V <span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果python -V 无法读取到版本信息 或者不是2.7的版本  需要创建一个快捷方式（软连接）</span></span><br><span class="line">ls /usr/bin/python*  <span class="comment"># 查看python安装状态</span></span><br><span class="line"></span><br><span class="line">irtualBox:~/Lichee_Pi/u-boot$ ls /usr/bin/python*</span><br><span class="line">/usr/bin/python2.7  /usr/bin/python3  /usr/bin/python3.8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建软连接</span></span><br><span class="line">sudo ln -s /usr/bin/python2.7 /usr/bin/python</span><br><span class="line"></span><br><span class="line">ls /usr/bin/pip  <span class="comment"># 查看安装目录</span></span><br><span class="line">ls /usr/bin/python*</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如需卸载 python2.7 与 python-pip 执行下面两条命令</span></span><br><span class="line">sudo apt-get purge python2.7</span><br><span class="line">sudo apt-get purge --auto-remove python2.7  <span class="comment"># 卸载python 及其依赖</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python2 与 python3 不兼容</span></span><br><span class="line"><span class="comment"># 如果系统有安装python3 则需要重新安装python2 因为编译u-boot时的工具链里面需要python2的环境 否则报错</span></span><br></pre></td></tr></table></figure>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2022/03/12/荔枝派-u-boot编译/#more" rel="contents">
@@ -1670,375 +2000,6 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/Vue-cli-2-配置mock模拟数据/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="🔥⛄💦">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/logo/idrnyu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iDRnYu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/12/Vue-cli-2-配置mock模拟数据/" itemprop="url">Vue-cli 2.* 配置mock模拟数据</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T21:14:19+08:00">
-                2018-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Vue/" itemprop="url" rel="index">
-                    <span itemprop="name">Vue</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  624
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><img src="/Dom/imgs/2018_03_12/m4.png" width="70%"></p>
-<h2 id="mockjs介绍："><a href="#mockjs介绍：" class="headerlink" title="mockjs介绍："></a>mockjs介绍：</h2><blockquote>
-<p>你是否遇见过，前端开发过程中需要数据测试，但后端却迟迟没给你，没感情了分手吧。<br>是否遇见过需要亲自收集各种各样的数据。<br>那mock.js便可以很好的帮你解决问题。有了它前端就可以事先模拟数据，前提是和后端约定好了数据接口，怎样的数据。使用mock就可以生成你要的数据了，从而实现开发时前后端分离。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/12/Vue-cli-2-配置mock模拟数据/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></blockquote></div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/12/WGS-48转火星坐标/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="🔥⛄💦">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/logo/idrnyu.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="iDRnYu">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/12/WGS-48转火星坐标/" itemprop="url">WGS-48坐标转GCJ-02页面</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T20:31:40+08:00">
-                2018-03-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/单片机/" itemprop="url" rel="index">
-                    <span itemprop="name">单片机</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                  <span class="post-meta-divider">|</span>
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  136
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  1
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <img src="https://idrnyu.github.io/idrnyu1/img/gps.png" width="40%" style="display:none">
-玩过GPS模块的大侠们都应该知道，在中国用GPS模块接收卫星坐标是标准的大地坐标， 但是我国国土测绘局将绘制的地图是经过加偏后发布公开的，那么我们得到的原始GPS 数据套用在中国地图上是有较大的偏移的…………
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/12/WGS-48转火星坐标/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2091,7 +2052,7 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

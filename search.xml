@@ -9,31 +9,54 @@
 ]]></content>
   </entry>
   <entry>
-    <title>STM32F1-DAPLink源码编译</title>
-    <url>/2019/06/27/STM32F1-DAPLink%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<h1 id="DAPLink也带有虚拟串口-web-usb-U盘拖拽下载功能"><a href="#DAPLink也带有虚拟串口-web-usb-U盘拖拽下载功能" class="headerlink" title="DAPLink也带有虚拟串口  web-usb   U盘拖拽下载功能"></a>DAPLink也带有虚拟串口  web-usb   U盘拖拽下载功能</h1><pre><code>DAPLink电路  GitHub  ARM官方
-https://github.com/ARMmbed/mbed-HDK-Eagle-Projects
-DAPLink源码  GitHub  ARM官方 开发文档
-https://github.com/ARMmbed/DAPLink/blob/master/docs/DEVELOPERS-GUIDE.md
-
-淘宝买的Daplink
-http://www.eemaker.com/daplink-data.html  资料在这
-
-别人把DAPLink移植到STLink上
-https://bh3nvn.github.io/2019/05/DAPLink2STlink/
-</code></pre><p>步骤如下：<br><a id="more"></a></p>
-<h4 id="要-python-git-mdk-这几个软件"><a href="#要-python-git-mdk-这几个软件" class="headerlink" title="要 python   git   mdk 这几个软件"></a>要 <code>python</code>   <code>git</code>   <code>mdk</code> 这几个软件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/mbedmicro/DAPLink     // git 克隆官方项目下来</span><br><span class="line"><span class="built_in">cd</span> DAPLink                                         // 进入这个项目</span><br><span class="line">pip install virtualenv                             // 安装 virtualenv</span><br><span class="line">virtualenv venv                                    </span><br><span class="line"></span><br><span class="line">venv\Scripts\activate.bat                          // 运行</span><br><span class="line">pip install -r requirements.txt                    // 安装需要的依赖包</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">编译输出全部目标版文件</span><br><span class="line">progen generate -t uvision</span><br><span class="line"></span><br><span class="line">编译输出局部目标板文件</span><br><span class="line">progen generate -p stm32f103xb_bl -t uvision                   //  bootloader文件  需要编译后烧录到目标板</span><br><span class="line">progen generate -p stm32f103xb_stm32f103rb_if -t uvision	//  _if_crc.bin文件  需要把nRST引脚接地插入目标板试别成U盘再考进去，再上啦nRST即可  nRst不是单片机的自身复位</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>通过MDK打开目标板的工程文件，记住，换工程的时候不能关闭这个命令打开的MDK，只能在这个MDK中openProject<br>tools\launch_uvision.bat<br>这一步可能会报错， 因为每个人的MDK安装路径不一样，  打开这个文件  修改安装路径即可 DAPLink\tools\launch_uvision.bat 文件</p>
+    <title>Vue-cli 2.* 配置mock模拟数据</title>
+    <url>/2018/03/12/Vue-cli-2-%E9%85%8D%E7%BD%AEmock%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE/</url>
+    <content><![CDATA[<p><img src="/Dom/imgs/2018_03_12/m4.png" width="70%"></p>
+<h2 id="mockjs介绍："><a href="#mockjs介绍：" class="headerlink" title="mockjs介绍："></a>mockjs介绍：</h2><blockquote>
+<p>你是否遇见过，前端开发过程中需要数据测试，但后端却迟迟没给你，没感情了分手吧。<br>是否遇见过需要亲自收集各种各样的数据。<br>那mock.js便可以很好的帮你解决问题。有了它前端就可以事先模拟数据，前提是和后端约定好了数据接口，怎样的数据。使用mock就可以生成你要的数据了，从而实现开发时前后端分离。<br><a id="more"></a></p>
 </blockquote>
-<p><img src="/Dom/imgs/2019_06_27/01.png" width="40%"></p>
-<blockquote>
-<p>编译的过程中。可能也会报错  python3<br>DAPLink\tools\flash_algo.py   文件中的 StringIO   改为  io   还有 StringIO.StringIO(data)  改为  io.StringIO(data)<br>DAPLink\tools\post_build_script.py  文件中  0xffffffffL  改为  0xffffffff</p>
+<h2 id="mockjs主要功能："><a href="#mockjs主要功能：" class="headerlink" title="mockjs主要功能："></a>mockjs主要功能：</h2><blockquote>
+<ul>
+<li>基于数据模板生成模拟数据。</li>
+<li>基于HTML模板生成模拟数据。</li>
+<li>拦截并模拟 ajax 请求。</li>
+</ul>
 </blockquote>
-<p>编译完  _bl 文件  直接通过MDK烧录到目标板中   拔掉目标板，  将nRST下拉  插入 会试别为U盘<br>编译 _if 文件  将 _if_crc.bin  结尾的文件考到U盘中 拔掉U盘  nRST上拉  完成</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">venv\Scripts\deactivate.bat</span><br></pre></td></tr></table></figure>
-<p>完成</p>
+<h2 id="mockjs简单使用栗子："><a href="#mockjs简单使用栗子：" class="headerlink" title="mockjs简单使用栗子："></a>mockjs简单使用栗子：</h2><p><code>1.引入mockjs，引入jquery（此处用jq封装好的ajax发送请求）</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"jquery-3.0.0.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/mockjs.com/</span>dist/mock.js<span class="string">"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>2.使用mock生成数据模板</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的第一个参数http://api.cn 就是下面ajax请求的url，mock对该url进行拦截'</span></span><br><span class="line"><span class="comment">//这里的第二个参数就是template数据模板，mock会返回模板生成的数据</span></span><br><span class="line">Mock.mock(<span class="string">'http://api.cn'</span>, &#123;</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'@name'</span>,</span><br><span class="line">    <span class="string">'age|1-100'</span>: <span class="number">100</span>,</span><br><span class="line">    <span class="string">'city'</span>: <span class="string">'@city'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><code>3.ajax发送请求</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//url需要和上面的mock的url相同</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">'http://api.cn'</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">data, status, xhr</span>) </span>&#123;</span><br><span class="line">    alert(</span><br><span class="line">        <span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>)</span><br><span class="line">    )</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><code>4.效果：</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">键值对</span><br></pre></td></tr></table></figure></p>
+<h2 id="那么Vue-cli-2-怎么配置这个东西呢"><a href="#那么Vue-cli-2-怎么配置这个东西呢" class="headerlink" title="那么Vue-cli 2.*怎么配置这个东西呢"></a>那么Vue-cli 2.*怎么配置这个东西呢</h2><blockquote>
+<p>在使用vue开发过程中，难免需要去本地数据地址进行请求，而原版配置在<code>dev-server.js</code>中，新版<code>vue-webpack-template</code>已经删除<code>dev-server.js</code>，改用<code>webpack.dev.conf.js</code>代替，所以 配置本地访问在<code>webpack.dev.conf.js</code>里配置即可。</p>
+</blockquote>
+<h3 id="配置-webpack-dev-conf-js-文件"><a href="#配置-webpack-dev-conf-js-文件" class="headerlink" title="配置 webpack.dev.conf.js 文件"></a>配置 webpack.dev.conf.js 文件</h3><pre><code>该文件在cli构建出的项目的 build 目录下。
+在 const portfinder = require(&apos;portfinder&apos;) 添加内容
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="keyword">const</span> appData = <span class="built_in">require</span>(<span class="string">'../data/data.json'</span>)    <span class="comment">// JSON数据是假数据</span></span><br><span class="line"><span class="keyword">const</span> ratings = appData</span><br><span class="line"><span class="keyword">const</span> apiRouter = express.Router()</span><br><span class="line">app.use(<span class="string">'/api'</span>,apiRouter)</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>如图：<br><img src="/Dom/imgs/2018_03_12/m1.png" width="100%"></p>
+</blockquote>
+<pre><code>再在 webpack.dev.conf.js 文件下的 devServer 对象里面添加路由
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">before(app) &#123;</span><br><span class="line">    app.post(<span class="string">'/api/post/ratings'</span>,(req, res) =&gt; &#123;</span><br><span class="line">        <span class="comment">// res.send(ratings.seller);</span></span><br><span class="line">        res.json(&#123;</span><br><span class="line">        errno: <span class="number">0</span>,</span><br><span class="line">        data: ratings.seller</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">    &#125;),</span><br><span class="line">    app.get(<span class="string">'/api/ratings'</span>,(req, res) =&gt; &#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">        errno: <span class="number">0</span>,</span><br><span class="line">        data: ratings.goods</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">console</span>.log(req.query);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>如图：<br><img src="/Dom/imgs/2018_03_12/m2.png" width="100%"><br>    在自己写的代码中加入ajax请求，请求你想要的接口  这样就可以了<br>如图1:<br><img src="/Dom/imgs/2018_03_12/m3.png" width="100%"><br>如图2:<br><img src="/Dom/imgs/2018_03_12/m4.png" width="100%"><br>如图3:<br><img src="/Dom/imgs/2018_03_12/m5.png" width="100%"><br>如图4:<br><img src="/Dom/imgs/2018_03_12/m6.png" width="100%"><br>如图5:<br><img src="/Dom/imgs/2018_03_12/m7.png" width="100%"></p>
+</blockquote>
 ]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>Web前端</tag>
+        <tag>Vue</tag>
+        <tag>mock模拟请求数据</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>以前简单个人主页，部分内容在里里面</title>
+    <url>/2018/03/12/%E4%BB%A5%E5%89%8D%E7%AE%80%E5%8D%95%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%EF%BC%8C%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%E5%9C%A8%E9%87%8C%E9%87%8C%E9%9D%A2/</url>
+    <content><![CDATA[<h2 id="老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1"><a href="#老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1" class="headerlink" title="老版本个人静态页面地址   https://idrnyu.github.io/idrnyu1/"></a><a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">老版本个人静态页面地址</a>   <a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">https://idrnyu.github.io/idrnyu1/</a></h2>]]></content>
+      <tags>
+        <tag>个人博客</tag>
+      </tags>
   </entry>
   <entry>
     <title>WGS-48坐标转GCJ-02页面</title>
@@ -274,32 +297,6 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
       </tags>
   </entry>
   <entry>
-    <title>STM32的ADC及内部温度传感器的使用</title>
-    <url>/2018/03/13/STM32%E7%9A%84ADC%E5%8F%8A%E5%86%85%E9%83%A8%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="STM32的ADC及内部温度传感器的使用"><a href="#STM32的ADC及内部温度传感器的使用" class="headerlink" title="STM32的ADC及内部温度传感器的使用"></a>STM32的ADC及内部温度传感器的使用</h2><blockquote>
-<p>ADC的用途范围可以说是非常的广泛~甚至是可以说差不多必不可少了~大部分单片机嵌入式系统ADC都基本要用到~包括牛人CZZ也一样！<br>STM32 自带1-3个ADC模块，采样精度达到了12位，比起当年使用的AVR单片机的10位来说，上了个小档次了~本测试程序采用了ADCDMA的中断方式，这 样CPU就可以把ADC的任务交给DMA这个勤劳肯干的部下了，当DMA完成了一次任务之后会产生中断，告诉CPU可以来查收结果了！DMA也是在嵌入式 系统中非常常用的，例如在LCD中，数据拷贝中等。。。在STM32F103RBT6中，ADC1和ADC2共用一组管脚</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="总体编程思路和顺序如下："><a href="#总体编程思路和顺序如下：" class="headerlink" title="总体编程思路和顺序如下："></a>总体编程思路和顺序如下：</h2><pre><code>1. 初始化RCC相关，使得系统有时钟，功能模块如ADC、DMA有时钟。
-2. GPIO相关初始化，比如常用的指示灯，ADC的管家要设置为输入等。
-3. NVIC向量中断的配置，因为这里使用了DMA中断和中断服务程序编写（下例中暂不使用）
-4. DMA配置（下例中暂不使用）
-5. ADC初始化
-</code></pre><h2 id="以下是参考代码，使用ADC1的IN0脚"><a href="#以下是参考代码，使用ADC1的IN0脚" class="headerlink" title="以下是参考代码，使用ADC1的IN0脚"></a>以下是参考代码，使用ADC1的IN0脚</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_GPIO_Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_ADC1,ENABLE);</span><br><span class="line">  GPIO_DeInit(GPIOA);</span><br><span class="line">  GPIO_InitStructure.GPIO_Pin=GPIO_Pin_0;</span><br><span class="line">  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AIN;<span class="comment">//设为模拟输入</span></span><br><span class="line">  GPIO_Init(GPIOA,&amp;GPIO_InitStructure); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_configuration</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  ADC_InitTypeDef ADC_InitStructure;</span><br><span class="line">  ADC_InitStructure.ADC_Mode=ADC_Mode_Independent;<span class="comment">//独立模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ScanConvMode=DISABLE;<span class="comment">//连续多通道模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ContinuousConvMode=DISABLE;<span class="comment">//单次转换</span></span><br><span class="line">  ADC_InitStructure.ADC_ExternalTrigConv=ADC_ExternalTrigConv_None;<span class="comment">//转换由软件而不是外部触发启动</span></span><br><span class="line">  ADC_InitStructure.ADC_DataAlign=ADC_DataAlign_Right;<span class="comment">//右对齐</span></span><br><span class="line">  ADC_InitStructure.ADC_NbrOfChannel=<span class="number">1</span>;<span class="comment">//扫描通道数</span></span><br><span class="line">  ADC_Init(ADC1,&amp;ADC_InitStructure);</span><br><span class="line">  <span class="comment">//ADC_RegularChannelConfig(ADC1,ADC_Channel_0,1,ADC_SampleTime_7Cycles5);</span></span><br><span class="line">  ADC_Cmd(ADC1,ENABLE);<span class="comment">//使能或者失能指定的ADC</span></span><br><span class="line">  ADC_ResetCalibration(ADC1);<span class="comment">//重置指定的ADC的校准寄存器</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetResetCalibrationStatus(ADC1));<span class="comment">//等待校准寄存器初始化</span></span><br><span class="line">  ADC_StartCalibration(ADC1);<span class="comment">//开始校准</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetCalibrationStatus(ADC1));<span class="comment">//等待校准完成 </span></span><br><span class="line">  <span class="comment">//ADC_SoftwareStartConvCmd(ADC1,ENABLE);//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">u16 <span class="title">GetADCValue</span><span class="params">(u8 ADC_Channel)</span><span class="comment">//ADC_Channel_x 0~17</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u16 adc_value;</span><br><span class="line">  ADC_RegularChannelConfig(ADC1,ADC_Channel,<span class="number">1</span>,ADC_SampleTime_7Cycles5);</span><br><span class="line">  ADC_SoftwareStartConvCmd(ADC1,ENABLE);<span class="comment">//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetFlagStatus(ADC1,ADC_FLAG_EOC)==RESET);<span class="comment">//检查制定ADC标志位置1与否 ADC_FLAG_EOC 转换结束标志位</span></span><br><span class="line">  adc_value=ADC_GetConversionValue(ADC1);</span><br><span class="line">  <span class="keyword">return</span> adc_value;<span class="comment">//返回最近一次ADCx规则组的转换结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>当使用内部温度传感器时，需要使能温度传感器通  <code>ADC_TempSensorVrefintCmd(ENABLE);</code><br>    温度传感器通道号是ADC_Channel_16，此通道的采样时间调到最大，来保证精度；</p>
-</blockquote>
-<h2 id="温度的计算公式如下："><a href="#温度的计算公式如下：" class="headerlink" title="温度的计算公式如下："></a>温度的计算公式如下：</h2><p><img src="/Dom/imgs/2018_03_13/313stmADC.png" width="100%"><br>    V25、Avg_Slope的典型值分别为1.43、4.3mV/C<br>    TEMP=(1.43-Vsense)/0.0043+25;</p>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>c语言</tag>
-        <tag>STM32, 单片机</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>vue-monaco-editor网页嵌入编辑器</title>
     <url>/2018/04/22/vue-monaco-editor%E7%BD%91%E9%A1%B5%E5%B5%8C%E5%85%A5%E7%BC%96%E8%BE%91%E5%99%A8/</url>
     <content><![CDATA[<p><img src="/Dom/imgs/2018_04_22/vue-monaco-editor_10.png" width="40%"></p>
@@ -342,68 +339,34 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
       </tags>
   </entry>
   <entry>
-    <title>以前简单个人主页，部分内容在里里面</title>
-    <url>/2018/03/12/%E4%BB%A5%E5%89%8D%E7%AE%80%E5%8D%95%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%EF%BC%8C%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%E5%9C%A8%E9%87%8C%E9%87%8C%E9%9D%A2/</url>
-    <content><![CDATA[<h2 id="老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1"><a href="#老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1" class="headerlink" title="老版本个人静态页面地址   https://idrnyu.github.io/idrnyu1/"></a><a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">老版本个人静态页面地址</a>   <a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">https://idrnyu.github.io/idrnyu1/</a></h2>]]></content>
-      <tags>
-        <tag>个人博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>荔枝派-linux内核编译</title>
-    <url>/2022/05/15/%E8%8D%94%E6%9E%9D%E6%B4%BE-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<h1 id="一、-获取Linux内核源码"><a href="#一、-获取Linux内核源码" class="headerlink" title="一、 获取Linux内核源码"></a>一、 获取Linux内核源码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Lichee-Pi/linux.git</span><br></pre></td></tr></table></figure>
-<p><code>源码切换到最新分支 zero-4.13.y</code></p>
-<p>！！！文件大小大概有 2.54G</p>
-<h1 id="二、-内核选项配置"><a href="#二、-内核选项配置" class="headerlink" title="二、 内核选项配置"></a>二、 内核选项配置</h1><p>执行 <code>make ARCH=arm menuconfig</code> 打开内核配置菜单</p>
-<p><img src="/Dom/imgs/2022_04_07/menuconfigHome.png" alt="menuconfigHome"></p>
-<p>进入 <code>Device Drivers &gt; Memory Technology Device (MTD) support</code> 选项</p>
-<p><img src="/Dom/imgs/2022_04_07/menuconfigDeviceMTD.png" alt="menuconfigDeviceMTD"></p>
-<p>确保选择上 <code>TMD</code> 的 <code>&lt;*&gt; Command line partition table parsing</code>  支持，该项目用来解析uboot传递过来的flash分区信息；以及SPI-NOR 设备的支持。</p>
-<p><img src="/Dom/imgs/2022_04_07/menuconfigDeviceMTD-sub.png" alt="menuconfigDeviceMTD-sub"></p>
-<p>添加对jffs2文件系统的支持，路径在 <code>File systems &gt; Miscellaneous filesystems ‣ Journalling Flash File System v2 (JFFS2) support</code></p>
-<p><img src="/Dom/imgs/2022_04_07/menuconfigJffs2File.png" alt="menuconfigJffs2File"></p>
-<h1 id="三、修改设备树文件，使其支持-SPI-Flash"><a href="#三、修改设备树文件，使其支持-SPI-Flash" class="headerlink" title="三、修改设备树文件，使其支持 SPI Flash"></a>三、修改设备树文件，使其支持 SPI Flash</h1><p>修改设备树文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts</span><br></pre></td></tr></table></figure>
-<p>添加 SPI 节点配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;spi0 &#123;</span><br><span class="line">        status =&quot;okay&quot;;</span><br><span class="line"></span><br><span class="line">        xt25f128b:xt25f128b@0 &#123;</span><br><span class="line">                compatible = &quot;jedec,spi-nor&quot;;</span><br><span class="line">                reg = &lt;0x0&gt;;</span><br><span class="line">                spi-max-frequency = &lt;50000000&gt;;</span><br><span class="line">                #address-cells = &lt;1&gt;;</span><br><span class="line">                #size-cells = &lt;1&gt;;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p><code>xt25f128b</code> 此型号必须是在 <code>drivers/mtd/spi-nor/spi-nor.c</code> 中支持的spi设备</p>
-<p>修改 <code>drivers/mtd/spi-nor/spi-nor.c</code> 文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim drivers/mtd/spi-nor/spi-nor.c</span><br></pre></td></tr></table></figure>
-<p>添加以下代码<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123; <span class="string">"xt25f128b"</span>, INFO(<span class="number">0x0b4018</span>, <span class="number">0</span>, <span class="number">64</span> * <span class="number">1024</span>, <span class="number">256</span>, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) &#125;,</span><br></pre></td></tr></table></figure></p>
-<p><img src="/Dom/imgs/2022_04_07/spiFlash.png" alt="spiFlash"></p>
-<h1 id="四、-内核编译"><a href="#四、-内核编译" class="headerlink" title="四、 内核编译"></a>四、 内核编译</h1><p>！！！ 此命令将会还原以上的 <code>menuconfig</code> 的一系列配置  如果还原需要重新 <code>make ARCH=arm menuconfig</code> 来配置 <code>make ARCH=arm licheepi_zero_defconfig</code></p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure>
-<p>或者使用 -jn 来加速编译 n = 参与编译的内核个数</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4</span><br></pre></td></tr></table></figure>
-<p>编译需要话较长的时间！！！</p>
-<p>镜像编译完成后  在 arch/arm/boot/ 文件夹下生成 zImage 文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gongyu@gongyu-VirtualBox:~/Lichee_Pi/linux$ ls arch/arm/boot/</span><br><span class="line">bootp  compressed  dts  Image  install.sh  Makefile  zImage</span><br></pre></td></tr></table></figure>
-<h2 id="编译错误"><a href="#编译错误" class="headerlink" title="编译错误"></a>编译错误</h2><h3 id="错误信息1"><a href="#错误信息1" class="headerlink" title="错误信息1"></a>错误信息1</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error New address family defined, please update secclass_map.</span><br></pre></td></tr></table></figure>
-<p><img src="/Dom/imgs/2022_04_07/zimageCompileError1.png" alt="zimageCompileError1"></p>
-<p>（1）、修改 <code>vim scripts/selinux/mdp/mdp.c</code> 文件</p>
-<p>注释掉 <code>#include &lt;sys/socket.h&gt;</code></p>
-<p><img src="/Dom/imgs/2022_04_07/zimageCompileError1pass.png" alt="zimageCompileError1pass"></p>
-<p>（2）、修改 <code>im security/selinux/include/classmap.h</code> 文件</p>
-<p>添加 <code>#include &lt;linux/socket.h&gt;</code></p>
-<p><img src="/Dom/imgs/2022_04_07/zimageCompileError1pass2.png" alt="zimageCompileError1pass2"></p>
-<h3 id="错误信息2"><a href="#错误信息2" class="headerlink" title="错误信息2"></a>错误信息2</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fatal error: openssl/opensslv.h: No such file or directory</span><br></pre></td></tr></table></figure>
-<p><img src="/Dom/imgs/2022_04_07/zimageCompileError2.png" alt="zimageCompileError2"></p>
-<p>需要安装 OpenSSL 开发包</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
-<h3 id="错误信息3"><a href="#错误信息3" class="headerlink" title="错误信息3"></a>错误信息3</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">没有规则可制作目标“debian/canonical-revoked-certs.pem”，由“certs/x509_revocation_list” 需求。 停止。</span><br></pre></td></tr></table></figure>
-<p><img src="/Dom/imgs/2022_04_07/zimageCompileError3.png" alt="zimageCompileError3"></p>
-<p>编辑 <code>.config</code> 配置文件 <code>vim .config</code></p>
-<p>清空这两项配置</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CONFIG_SYSTEM_TRUSTED_KEYS=<span class="string">"debian/canonical-certs.pem"</span></span><br><span class="line">CONFIG_SYSTEM_REVOCATION_KEYS=<span class="string">"debian/canonical-revoked-certs.pem"</span></span><br><span class="line"></span><br><span class="line">to</span><br><span class="line"></span><br><span class="line">CONFIG_SYSTEM_TRUSTED_KEYS=<span class="string">""</span></span><br><span class="line">CONFIG_SYSTEM_REVOCATION_KEYS=<span class="string">""</span></span><br></pre></td></tr></table></figure>
-<p>生成 dtbs</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- dtbs</span><br><span class="line"></span><br><span class="line"><span class="comment"># arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</span></span><br><span class="line"><span class="comment"># arch/arm/boot/dts/sun8i-v3s-licheepi-zero-dock.dtb</span></span><br></pre></td></tr></table></figure>
-<p>dtb文件在 <code>arch/arm/boot/dts/</code></p>
-<p>zImage在<code>arch/arm/boot/</code></p>
-<p>生成内核模块 驱动模块（@TODO）</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 INSTALL_MOD_PATH=out modules</span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 INSTALL_MOD_PATH=out modules_install</span><br></pre></td></tr></table></figure>
-<p>驱动模块在 <code>out/</code> 目录下</p>
+    <title>使用Cordova打包vue-cli构建的项目为APP配置</title>
+    <url>/2018/03/12/%E4%BD%BF%E7%94%A8Cordova%E6%89%93%E5%8C%85vue-cli%E6%9E%84%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%BAAPP%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p><img src="/Dom/imgs/2018_03_12/c4.jpg" width="15%"></p>
+<h2 id="Cordova-打包-Vue-cli-项目配置"><a href="#Cordova-打包-Vue-cli-项目配置" class="headerlink" title="Cordova 打包 Vue-cli 项目配置"></a>Cordova 打包 Vue-cli 项目配置</h2><blockquote>
+<p>Vue-cli 搭建出来的基于 <code>weipack</code> 的Vue项目，</p>
+</blockquote>
+<hr>
+<a id="more"></a>
+<h2 id="配置-index-html-中的-head-中的-meta-标签"><a href="#配置-index-html-中的-head-中的-meta-标签" class="headerlink" title="配置 index.html 中的 head 中的 meta 标签"></a>配置 index.html 中的 head 中的 meta 标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"&gt; 可选项--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="配置-index-html-中引入Cordova"><a href="#配置-index-html-中引入Cordova" class="headerlink" title="配置 index.html 中引入Cordova"></a>配置 index.html 中引入Cordova</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"cordova.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="如下图-1-配置-index-html-文件"><a href="#如下图-1-配置-index-html-文件" class="headerlink" title="如下图 1 配置 index.html 文件:"></a>如下图 1 配置 index.html 文件:</h3><p><img src="/Dom/imgs/2018_03_12/c1.png" width="100%"></p>
+<h2 id="配置-main-js-文件"><a href="#配置-main-js-文件" class="headerlink" title="配置 main.js 文件"></a>配置 main.js 文件</h2><p><code>在 项目目录下 src/main.js 中插入代码如下</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//用于判断运行环境，好用于调试</span></span><br><span class="line"><span class="keyword">if</span> (<span class="string">'ontouchstart'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    router.start(App, <span class="string">'#app'</span>); <span class="comment">//启动路由</span></span><br><span class="line">  &#125;, <span class="literal">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  router.start(App, <span class="string">'#app'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="如下图-2-配置-main-js-文件"><a href="#如下图-2-配置-main-js-文件" class="headerlink" title="如下图 2 配置 main.js 文件:"></a>如下图 2 配置 main.js 文件:</h3><p><img src="/Dom/imgs/2018_03_12/c2.png" width="100%"></p>
+<h2 id="配置-config-index-js-文件"><a href="#配置-config-index-js-文件" class="headerlink" title="配置 config/index.js 文件"></a>配置 config/index.js 文件</h2><p><code>在 项目目录下 config/index.js 中修改代码如下</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Template for index.html</span></span><br><span class="line">index: path.resolve(__dirname, <span class="string">'../www/index.html'</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">// Paths</span></span><br><span class="line">assetsRoot: path.resolve(__dirname, <span class="string">'../www'</span>),</span><br><span class="line">assetsSubDirectory: <span class="string">''</span>,</span><br><span class="line">assetsPublicPath: <span class="string">'./'</span>,</span><br></pre></td></tr></table></figure></p>
+<h3 id="如下图-3-配置-index-js-文件"><a href="#如下图-3-配置-index-js-文件" class="headerlink" title="如下图 3 配置 index.js 文件:"></a>如下图 3 配置 index.js 文件:</h3><p><img src="/Dom/imgs/2018_03_12/c3.png" width="100%"></p>
+<pre><code>使用 npm run build 打包后 将生成的 www 文件替换 Cordova 项目中的 www 文件夹
+</code></pre><h2 id="效果图1："><a href="#效果图1：" class="headerlink" title="效果图1："></a>效果图1：</h2><p><img src="/Dom/imgs/2018_03_12/c4.jpg" width="15%"></p>
+<h2 id="效果图2："><a href="#效果图2：" class="headerlink" title="效果图2："></a>效果图2：</h2><p><img src="/Dom/imgs/2018_03_12/c5.jpg" width="50%"></p>
 ]]></content>
+      <categories>
+        <category>Vue</category>
+        <category>Cordova</category>
+      </categories>
+      <tags>
+        <tag>Web前端</tag>
+        <tag>Vue</tag>
+        <tag>Cordova</tag>
+      </tags>
   </entry>
   <entry>
     <title>学习搭建个人博客</title>
@@ -494,96 +457,62 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
 ]]></content>
   </entry>
   <entry>
-    <title>使用Cordova打包vue-cli构建的项目为APP配置</title>
-    <url>/2018/03/12/%E4%BD%BF%E7%94%A8Cordova%E6%89%93%E5%8C%85vue-cli%E6%9E%84%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%BAAPP%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p><img src="/Dom/imgs/2018_03_12/c4.jpg" width="15%"></p>
-<h2 id="Cordova-打包-Vue-cli-项目配置"><a href="#Cordova-打包-Vue-cli-项目配置" class="headerlink" title="Cordova 打包 Vue-cli 项目配置"></a>Cordova 打包 Vue-cli 项目配置</h2><blockquote>
-<p>Vue-cli 搭建出来的基于 <code>weipack</code> 的Vue项目，</p>
-</blockquote>
-<hr>
+    <title>荔枝派_SPI-Flash烧录</title>
+    <url>/2022/05/16/%E8%8D%94%E6%9E%9D%E6%B4%BE-SPI-Flash%E7%83%A7%E5%BD%95/</url>
+    <content><![CDATA[<p>烧录 <code>uboot</code> <code>Linux主线Kernel</code> <code>buildroot文件系统</code> 到 全志v3s；</p>
+<figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="attribute">http://localhost:4000/2022/03/12/荔枝派-u-boot编译/</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"><span class="attribute">http://localhost:4000/2022/05/15/荔枝派-linux内核编译/</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"><span class="attribute">http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/</span></span><br></pre></td></tr></table></figure>
+<h1 id="一、-准备烧录文件"><a href="#一、-准备烧录文件" class="headerlink" title="一、 准备烧录文件"></a>一、 准备烧录文件</h1><ol>
+<li>uboot编译后的产物：<code>u-boot-sunxi-with-spl.bin</code>;</li>
+<li>linux内核编译后的产物：<code>arch/arm/boot/zImage</code> 和 <code>arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</code>;</li>
+<li>buildroot根文件系统编译后的产物：<code>output/images/rootfs.tar</code>;</li>
+</ol>
+<p>将4个文件放在一个文件夹下 如 v0.1</p>
+<h1 id="二、-将根文件系统生成jffs2-img"><a href="#二、-将根文件系统生成jffs2-img" class="headerlink" title="二、 将根文件系统生成jffs2.img"></a>二、 将根文件系统生成jffs2.img</h1><p>使用使用各种文件系统生成工具生成的文件系统文件一般都类似是： <code>rootfs.tar</code> 的压缩包文件，这个是无法没有办法适应nor flash的需要使用转换的工具软件转成类似<code>jffs2.img</code>的文件。</p>
+<p>安装 jffs2 文件系统制作工具</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install mtd-utils</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="配置-index-html-中的-head-中的-meta-标签"><a href="#配置-index-html-中的-head-中的-meta-标签" class="headerlink" title="配置 index.html 中的 head 中的 meta 标签"></a>配置 index.html 中的 head 中的 meta 标签</h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- &lt;meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;"&gt; 可选项--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"msapplication-tap-highlight"</span> <span class="attr">content</span>=<span class="string">"no"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置-index-html-中引入Cordova"><a href="#配置-index-html-中引入Cordova" class="headerlink" title="配置 index.html 中引入Cordova"></a>配置 index.html 中引入Cordova</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"cordova.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="如下图-1-配置-index-html-文件"><a href="#如下图-1-配置-index-html-文件" class="headerlink" title="如下图 1 配置 index.html 文件:"></a>如下图 1 配置 index.html 文件:</h3><p><img src="/Dom/imgs/2018_03_12/c1.png" width="100%"></p>
-<h2 id="配置-main-js-文件"><a href="#配置-main-js-文件" class="headerlink" title="配置 main.js 文件"></a>配置 main.js 文件</h2><p><code>在 项目目录下 src/main.js 中插入代码如下</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//用于判断运行环境，好用于调试</span></span><br><span class="line"><span class="keyword">if</span> (<span class="string">'ontouchstart'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">  <span class="built_in">document</span>.addEventListener(<span class="string">'deviceready'</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    router.start(App, <span class="string">'#app'</span>); <span class="comment">//启动路由</span></span><br><span class="line">  &#125;, <span class="literal">false</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  router.start(App, <span class="string">'#app'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="如下图-2-配置-main-js-文件"><a href="#如下图-2-配置-main-js-文件" class="headerlink" title="如下图 2 配置 main.js 文件:"></a>如下图 2 配置 main.js 文件:</h3><p><img src="/Dom/imgs/2018_03_12/c2.png" width="100%"></p>
-<h2 id="配置-config-index-js-文件"><a href="#配置-config-index-js-文件" class="headerlink" title="配置 config/index.js 文件"></a>配置 config/index.js 文件</h2><p><code>在 项目目录下 config/index.js 中修改代码如下</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Template for index.html</span></span><br><span class="line">index: path.resolve(__dirname, <span class="string">'../www/index.html'</span>),</span><br><span class="line"></span><br><span class="line"><span class="comment">// Paths</span></span><br><span class="line">assetsRoot: path.resolve(__dirname, <span class="string">'../www'</span>),</span><br><span class="line">assetsSubDirectory: <span class="string">''</span>,</span><br><span class="line">assetsPublicPath: <span class="string">'./'</span>,</span><br></pre></td></tr></table></figure></p>
-<h3 id="如下图-3-配置-index-js-文件"><a href="#如下图-3-配置-index-js-文件" class="headerlink" title="如下图 3 配置 index.js 文件:"></a>如下图 3 配置 index.js 文件:</h3><p><img src="/Dom/imgs/2018_03_12/c3.png" width="100%"></p>
-<pre><code>使用 npm run build 打包后 将生成的 www 文件替换 Cordova 项目中的 www 文件夹
-</code></pre><h2 id="效果图1："><a href="#效果图1：" class="headerlink" title="效果图1："></a>效果图1：</h2><p><img src="/Dom/imgs/2018_03_12/c4.jpg" width="15%"></p>
-<h2 id="效果图2："><a href="#效果图2：" class="headerlink" title="效果图2："></a>效果图2：</h2><p><img src="/Dom/imgs/2018_03_12/c5.jpg" width="50%"></p>
-]]></content>
-      <categories>
-        <category>Vue</category>
-        <category>Cordova</category>
-      </categories>
-      <tags>
-        <tag>Web前端</tag>
-        <tag>Vue</tag>
-        <tag>Cordova</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue-cli 2.* 配置mock模拟数据</title>
-    <url>/2018/03/12/Vue-cli-2-%E9%85%8D%E7%BD%AEmock%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE/</url>
-    <content><![CDATA[<p><img src="/Dom/imgs/2018_03_12/m4.png" width="70%"></p>
-<h2 id="mockjs介绍："><a href="#mockjs介绍：" class="headerlink" title="mockjs介绍："></a>mockjs介绍：</h2><blockquote>
-<p>你是否遇见过，前端开发过程中需要数据测试，但后端却迟迟没给你，没感情了分手吧。<br>是否遇见过需要亲自收集各种各样的数据。<br>那mock.js便可以很好的帮你解决问题。有了它前端就可以事先模拟数据，前提是和后端约定好了数据接口，怎样的数据。使用mock就可以生成你要的数据了，从而实现开发时前后端分离。<br><a id="more"></a></p>
-</blockquote>
-<h2 id="mockjs主要功能："><a href="#mockjs主要功能：" class="headerlink" title="mockjs主要功能："></a>mockjs主要功能：</h2><blockquote>
+<p>解压rootfs文件系统</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir rootfs</span><br><span class="line">tar vxf rootfs.tar -C rootfs</span><br></pre></td></tr></table></figure>
+<p>使用命令生成：<br>这里使用的是16M的flash所以<code>-p</code>后面需要填的值即文件系统的空间为：16M-1M-64K-4M=0xAF 0000</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkfs.jffs2 -s 0x100 -e 0x10000 -p 0xAF0000 -d rootfs/ -o jffs2.img</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
-<li>基于数据模板生成模拟数据。</li>
-<li>基于HTML模板生成模拟数据。</li>
-<li>拦截并模拟 ajax 请求。</li>
+<li><code>-s</code> 页大小0x100 即：256Byte (可选选项)</li>
+<li><code>-e</code> 块大小0x10000 即：64KByte (可选选项)</li>
+<li><code>-p</code> 十六进制表示输出的文件大小即文件系统的大小</li>
+<li><code>-d</code> 要做成img的源文件夹</li>
+<li>jffs2分区总空间0xAF0000 即：10MB 又 960KB</li>
+<li>jffs2.img是生成的文件系统镜像。</li>
 </ul>
 </blockquote>
-<h2 id="mockjs简单使用栗子："><a href="#mockjs简单使用栗子：" class="headerlink" title="mockjs简单使用栗子："></a>mockjs简单使用栗子：</h2><p><code>1.引入mockjs，引入jquery（此处用jq封装好的ajax发送请求）</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"jquery-3.0.0.min.js"</span>&gt;&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/mockjs.com/</span>dist/mock.js<span class="string">"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p><code>2.使用mock生成数据模板</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里的第一个参数http://api.cn 就是下面ajax请求的url，mock对该url进行拦截'</span></span><br><span class="line"><span class="comment">//这里的第二个参数就是template数据模板，mock会返回模板生成的数据</span></span><br><span class="line">Mock.mock(<span class="string">'http://api.cn'</span>, &#123;</span><br><span class="line">    <span class="string">'name'</span>: <span class="string">'@name'</span>,</span><br><span class="line">    <span class="string">'age|1-100'</span>: <span class="number">100</span>,</span><br><span class="line">    <span class="string">'city'</span>: <span class="string">'@city'</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><code>3.ajax发送请求</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//url需要和上面的mock的url相同</span></span><br><span class="line">$.ajax(&#123;</span><br><span class="line">    url: <span class="string">'http://api.cn'</span>,</span><br><span class="line">    dataType: <span class="string">'json'</span></span><br><span class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">data, status, xhr</span>) </span>&#123;</span><br><span class="line">    alert(</span><br><span class="line">        <span class="built_in">JSON</span>.stringify(data, <span class="literal">null</span>, <span class="number">4</span>)</span><br><span class="line">    )</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p><code>4.效果：</code><br><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">键值对</span><br></pre></td></tr></table></figure></p>
-<h2 id="那么Vue-cli-2-怎么配置这个东西呢"><a href="#那么Vue-cli-2-怎么配置这个东西呢" class="headerlink" title="那么Vue-cli 2.*怎么配置这个东西呢"></a>那么Vue-cli 2.*怎么配置这个东西呢</h2><blockquote>
-<p>在使用vue开发过程中，难免需要去本地数据地址进行请求，而原版配置在<code>dev-server.js</code>中，新版<code>vue-webpack-template</code>已经删除<code>dev-server.js</code>，改用<code>webpack.dev.conf.js</code>代替，所以 配置本地访问在<code>webpack.dev.conf.js</code>里配置即可。</p>
-</blockquote>
-<h3 id="配置-webpack-dev-conf-js-文件"><a href="#配置-webpack-dev-conf-js-文件" class="headerlink" title="配置 webpack.dev.conf.js 文件"></a>配置 webpack.dev.conf.js 文件</h3><pre><code>该文件在cli构建出的项目的 build 目录下。
-在 const portfinder = require(&apos;portfinder&apos;) 添加内容
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"><span class="keyword">const</span> appData = <span class="built_in">require</span>(<span class="string">'../data/data.json'</span>)    <span class="comment">// JSON数据是假数据</span></span><br><span class="line"><span class="keyword">const</span> ratings = appData</span><br><span class="line"><span class="keyword">const</span> apiRouter = express.Router()</span><br><span class="line">app.use(<span class="string">'/api'</span>,apiRouter)</span><br></pre></td></tr></table></figure>
-</code></pre><blockquote>
-<p>如图：<br><img src="/Dom/imgs/2018_03_12/m1.png" width="100%"></p>
-</blockquote>
-<pre><code>再在 webpack.dev.conf.js 文件下的 devServer 对象里面添加路由
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">before(app) &#123;</span><br><span class="line">    app.post(<span class="string">'/api/post/ratings'</span>,(req, res) =&gt; &#123;</span><br><span class="line">        <span class="comment">// res.send(ratings.seller);</span></span><br><span class="line">        res.json(&#123;</span><br><span class="line">        errno: <span class="number">0</span>,</span><br><span class="line">        data: ratings.seller</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">    &#125;),</span><br><span class="line">    app.get(<span class="string">'/api/ratings'</span>,(req, res) =&gt; &#123;</span><br><span class="line">        res.json(&#123;</span><br><span class="line">        errno: <span class="number">0</span>,</span><br><span class="line">        data: ratings.goods</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="built_in">console</span>.log(req.query);</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
-</code></pre><blockquote>
-<p>如图：<br><img src="/Dom/imgs/2018_03_12/m2.png" width="100%"><br>    在自己写的代码中加入ajax请求，请求你想要的接口  这样就可以了<br>如图1:<br><img src="/Dom/imgs/2018_03_12/m3.png" width="100%"><br>如图2:<br><img src="/Dom/imgs/2018_03_12/m4.png" width="100%"><br>如图3:<br><img src="/Dom/imgs/2018_03_12/m5.png" width="100%"><br>如图4:<br><img src="/Dom/imgs/2018_03_12/m6.png" width="100%"><br>如图5:<br><img src="/Dom/imgs/2018_03_12/m7.png" width="100%"></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>Web前端</tag>
-        <tag>Vue</tag>
-        <tag>mock模拟请求数据</tag>
-      </tags>
+<p>生成后</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rw-r--r--  1 gongyu gongyu 5.0M 5月  15 21:37 jffs2.img</span><br></pre></td></tr></table></figure>
+<h1 id="三、-打包二进制包：flashimg-bin"><a href="#三、-打包二进制包：flashimg-bin" class="headerlink" title="三、 打包二进制包：flashimg.bin"></a>三、 打包二进制包：flashimg.bin</h1>]]></content>
   </entry>
   <entry>
-    <title>Hexo基本命令</title>
-    <url>/2017/06/27/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>荔枝派_buildroot文件系统编译</title>
+    <url>/2022/05/16/%E8%8D%94%E6%9E%9D%E6%B4%BE-buildroot%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<h1 id="一、-获取buildroot文件系统源码"><a href="#一、-获取buildroot文件系统源码" class="headerlink" title="一、 获取buildroot文件系统源码"></a>一、 获取buildroot文件系统源码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://buildroot.org/downloads/buildroot-2019.08.tar.gz  <span class="comment"># 下载源码</span></span><br><span class="line">tar xvf buildroot-2019.08.tar.gz  <span class="comment"># 解压</span></span><br><span class="line"><span class="built_in">cd</span> buildroot-2019.08</span><br></pre></td></tr></table></figure>
+<h1 id="二、-配置buildroot"><a href="#二、-配置buildroot" class="headerlink" title="二、 配置buildroot"></a>二、 配置buildroot</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make menuconfig  <span class="comment"># 配置buildroot文件系统</span></span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_05_16/menuconfig.png" alt="menuconfig"></p>
+<a id="more"></a>
+<p>配置 <code>Target options --&gt;</code> 设置目标芯片 配置如下</p>
+<p><img src="/Dom/imgs/2022_05_16/menuconfigTarget.png" alt="menuconfigTarget"></p>
+<p>配置 <code>Toolchain --&gt;</code> 设置编译工具链</p>
+<p>首先需要查看编译工具链所在目录和编译工具链的版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> arm-linux-gnueabihf-gcc  <span class="comment"># 查看编译工具所在目录</span></span><br><span class="line"></span><br><span class="line">vim /opt/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/include/linux/version.h  <span class="comment"># 查看编译工具版本号</span></span><br><span class="line"><span class="comment"># 263680的二进制为0x40600，则对应的内核版本号为4.6.0。</span></span><br></pre></td></tr></table></figure>
+<p>配置目标如下</p>
+<p><img src="/Dom/imgs/2022_05_16/menuconfigToolchain.png" alt="menuconfigToolchain"></p>
+<h1 id="三、-编译buildroot"><a href="#三、-编译buildroot" class="headerlink" title="三、 编译buildroot"></a>三、 编译buildroot</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make <span class="comment"># 编译buildroot 此过程需要半个小时左右</span></span><br></pre></td></tr></table></figure>
+<p>编译完成后，生成的文件系统在 <code>output/images/rootfs.tar</code></p>
 ]]></content>
   </entry>
   <entry>
     <title>荔枝派_u-boot编译</title>
     <url>/2022/03/12/%E8%8D%94%E6%9E%9D%E6%B4%BE-u-boot%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<h1 id="一、基础编译"><a href="#一、基础编译" class="headerlink" title="一、基础编译"></a>一、基础编译</h1><p><code>linux（ubuntu）</code>、<code>git</code>、<code>python2</code>、<code>全志v3s</code>、<code>5寸电阻触摸屏（RTB屏）</code>、<code>USB TO UART</code></p>
+    <content><![CDATA[<h1 id="一、基础编译"><a href="#一、基础编译" class="headerlink" title="一、基础编译"></a>一、基础编译</h1><p><code>linux（ubuntu）</code>、<code>git</code>、<code>python2</code>、<code>全志v3s</code>、<code>5寸电阻触摸屏（RGB屏）</code>、<code>USB TO UART</code></p>
 <h2 id="1、安装python2"><a href="#1、安装python2" class="headerlink" title="1、安装python2"></a>1、安装python2</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update <span class="comment"># 更新源</span></span><br><span class="line">sudo apt update</span><br><span class="line"></span><br><span class="line">sudo apt-get install python2.7 <span class="comment"># 安装python2.7</span></span><br><span class="line">sudo apt install python-pip <span class="comment"># 安装python2.7对应的pip</span></span><br><span class="line"></span><br><span class="line">python -V <span class="comment"># 查看python版本验证是否安装成功</span></span><br><span class="line">pyp -V <span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果python -V 无法读取到版本信息 或者不是2.7的版本  需要创建一个快捷方式（软连接）</span></span><br><span class="line">ls /usr/bin/python*  <span class="comment"># 查看python安装状态</span></span><br><span class="line"></span><br><span class="line">irtualBox:~/Lichee_Pi/u-boot$ ls /usr/bin/python*</span><br><span class="line">/usr/bin/python2.7  /usr/bin/python3  /usr/bin/python3.8</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建软连接</span></span><br><span class="line">sudo ln -s /usr/bin/python2.7 /usr/bin/python</span><br><span class="line"></span><br><span class="line">ls /usr/bin/pip  <span class="comment"># 查看安装目录</span></span><br><span class="line">ls /usr/bin/python*</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如需卸载 python2.7 与 python-pip 执行下面两条命令</span></span><br><span class="line">sudo apt-get purge python2.7</span><br><span class="line">sudo apt-get purge --auto-remove python2.7  <span class="comment"># 卸载python 及其依赖</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># python2 与 python3 不兼容</span></span><br><span class="line"><span class="comment"># 如果系统有安装python3 则需要重新安装python2 因为编译u-boot时的工具链里面需要python2的环境 否则报错</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <p><img src="/Dom/imgs/2022_03_12/python.png" alt="python"></p>
 <h2 id="2、安装交叉编译器与工具链"><a href="#2、安装交叉编译器与工具链" class="headerlink" title="2、安装交叉编译器与工具链"></a>2、安装交叉编译器与工具链</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gcc-arm-linux-gnueabihf</span><br><span class="line"><span class="comment"># ARMHF 架构交叉编译器 安装此版本 gcc-linaro-6.3.1-2017.02-x86_64_arm-linux-gnueabihf (需手动下载)</span></span><br><span class="line"></span><br><span class="line">device-tree-compiler</span><br><span class="line"><span class="comment"># ARM Linux 设备树  DTC (device tree compiler) 将.dts编译为.dtb的工具  dtc编译器</span></span><br><span class="line"></span><br><span class="line">libncurses5-dev</span><br><span class="line"><span class="comment"># curses库 游标移动及屏幕的显示库</span></span><br></pre></td></tr></table></figure>
 <h3 id="gcc-arm-linux-gnueabihf-安装"><a href="#gcc-arm-linux-gnueabihf-安装" class="headerlink" title="gcc-arm-linux-gnueabihf  安装"></a>gcc-arm-linux-gnueabihf  安装</h3><p>链接: <a href="https://pan.baidu.com/s/1VjjnR4zSwde1HUAbgcg64A?pwd=4jbn" target="_blank" rel="noopener">https://pan.baidu.com/s/1VjjnR4zSwde1HUAbgcg64A?pwd=4jbn</a> 提取码: 4jbn 复制这段内容后打开百度网盘手机App，操作更方便哦</p>
@@ -704,5 +633,130 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
 <p><img src="/Dom/imgs/2022_03_12/ubootimg1.jpg" alt="ubootimg1"></p>
 <h1 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo ln -s /opt/工具 /usr/<span class="built_in">local</span>/bin/工具  <span class="comment"># 将opt目录下指定的文件 软连接到 /usr/local/bin/文件 中（创建快捷方式）</span></span><br><span class="line">sudo mv /工具 /opt/ <span class="comment"># 将的文件移动到 opt 下</span></span><br><span class="line">tar -xJf 工具.tar.xz  <span class="comment"># 解压指定压缩包（不显示进度，静默解压）</span></span><br><span class="line">tar -xvf 工具.tar.xz  <span class="comment"># 解压指定压缩包（显示详细解压进度）</span></span><br><span class="line">sudo apt-get purge 工具 <span class="comment"># 卸载指定工具</span></span><br><span class="line">sudo apt-get purge --auto-remove 工具  <span class="comment"># 卸载指定工具 及其依赖</span></span><br><span class="line">rm -rf 文件或者文件夹  <span class="comment"># 删除指定的文件或者文件夹</span></span><br><span class="line">mkdir 文件夹 <span class="comment"># 创建文件夹</span></span><br><span class="line">sudo cp ./文件 /某某文件夹  <span class="comment"># 将指定的文件拷贝到指定的文件目录</span></span><br><span class="line"></span><br><span class="line">ls /usr/bin/python <span class="comment"># 查看运行目录下是否有安装指定的应用</span></span><br><span class="line">ls /usr/<span class="built_in">local</span>/bin/python <span class="comment"># 查看本地运行目录下是否有安装的指定应用</span></span><br><span class="line">ls /usr/bin/pyth* <span class="comment"># 模糊查询</span></span><br><span class="line"></span><br><span class="line">dmesg | grep tty <span class="comment"># 查看串口设备</span></span><br><span class="line"></span><br><span class="line">sudo tzselect <span class="comment"># 修改系统时区</span></span><br><span class="line">sudo hwclock --systohc <span class="comment"># 时区同步到硬件</span></span><br></pre></td></tr></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>荔枝派-linux内核编译</title>
+    <url>/2022/05/15/%E8%8D%94%E6%9E%9D%E6%B4%BE-linux%E5%86%85%E6%A0%B8%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<h1 id="一、-获取Linux内核源码"><a href="#一、-获取Linux内核源码" class="headerlink" title="一、 获取Linux内核源码"></a>一、 获取Linux内核源码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Lichee-Pi/linux.git</span><br></pre></td></tr></table></figure>
+<p><code>源码切换到最新分支 zero-4.13.y</code></p>
+<p style="color: red;"> ！！！文件大小大概有 2.54G </p>
+
+<h1 id="二、-内核选项配置"><a href="#二、-内核选项配置" class="headerlink" title="二、 内核选项配置"></a>二、 内核选项配置</h1><p>执行 <code>make ARCH=arm menuconfig</code> 打开内核配置菜单</p>
+<p><img src="/Dom/imgs/2022_04_07/menuconfigHome.png" alt="menuconfigHome"></p>
+<a id="more"></a>
+<p>进入 <code>Device Drivers &gt; Memory Technology Device (MTD) support</code> 选项</p>
+<p><img src="/Dom/imgs/2022_04_07/menuconfigDeviceMTD.png" alt="menuconfigDeviceMTD"></p>
+<p>确保选择上 <code>TMD</code> 的 <code>&lt;*&gt; Command line partition table parsing</code>  支持，该项目用来解析uboot传递过来的flash分区信息；以及SPI-NOR 设备的支持。</p>
+<p><img src="/Dom/imgs/2022_04_07/menuconfigDeviceMTD-sub.png" alt="menuconfigDeviceMTD-sub"></p>
+<p>添加对jffs2文件系统的支持，路径在 <code>File systems &gt; Miscellaneous filesystems ‣ Journalling Flash File System v2 (JFFS2) support</code></p>
+<p><img src="/Dom/imgs/2022_04_07/menuconfigJffs2File.png" alt="menuconfigJffs2File"></p>
+<h1 id="三、修改设备树文件，使其支持-SPI-Flash"><a href="#三、修改设备树文件，使其支持-SPI-Flash" class="headerlink" title="三、修改设备树文件，使其支持 SPI Flash"></a>三、修改设备树文件，使其支持 SPI Flash</h1><p>修改设备树文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dts</span><br></pre></td></tr></table></figure>
+<p>添加 SPI 节点配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&amp;spi0 &#123;</span><br><span class="line">        status =&quot;okay&quot;;</span><br><span class="line"></span><br><span class="line">        xt25f128b:xt25f128b@0 &#123;</span><br><span class="line">                compatible = &quot;jedec,spi-nor&quot;;</span><br><span class="line">                reg = &lt;0x0&gt;;</span><br><span class="line">                spi-max-frequency = &lt;50000000&gt;;</span><br><span class="line">                #address-cells = &lt;1&gt;;</span><br><span class="line">                #size-cells = &lt;1&gt;;</span><br><span class="line">        &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>xt25f128b</code> 此型号必须是在 <code>drivers/mtd/spi-nor/spi-nor.c</code> 中支持的spi设备</p>
+<p>修改 <code>drivers/mtd/spi-nor/spi-nor.c</code> 文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim drivers/mtd/spi-nor/spi-nor.c</span><br></pre></td></tr></table></figure>
+<p>添加以下代码<br><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">&#123; <span class="string">"xt25f128b"</span>, INFO(<span class="number">0x0b4018</span>, <span class="number">0</span>, <span class="number">64</span> * <span class="number">1024</span>, <span class="number">256</span>, SPI_NOR_DUAL_READ | SPI_NOR_QUAD_READ) &#125;,</span><br></pre></td></tr></table></figure></p>
+<p><img src="/Dom/imgs/2022_04_07/spiFlash.png" alt="spiFlash"></p>
+<h1 id="四、-内核编译"><a href="#四、-内核编译" class="headerlink" title="四、 内核编译"></a>四、 内核编译</h1><p>！！！ 此命令将会还原以上的 <code>menuconfig</code> 的一系列配置  如果还原需要重新 <code>make ARCH=arm menuconfig</code> 来配置 <code>make ARCH=arm licheepi_zero_defconfig</code></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf-</span><br></pre></td></tr></table></figure>
+<p>或者使用 -jn 来加速编译 n = 参与编译的内核个数</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j4</span><br></pre></td></tr></table></figure>
+<p>编译需要话较长的时间！！！</p>
+<p>镜像编译完成后  在 arch/arm/boot/ 文件夹下生成 zImage 文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gongyu@gongyu-VirtualBox:~/Lichee_Pi/linux$ ls arch/arm/boot/</span><br><span class="line">bootp  compressed  dts  Image  install.sh  Makefile  zImage</span><br></pre></td></tr></table></figure>
+<h2 id="编译错误"><a href="#编译错误" class="headerlink" title="编译错误"></a>编译错误</h2><h3 id="错误信息1"><a href="#错误信息1" class="headerlink" title="错误信息1"></a>错误信息1</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">error New address family defined, please update secclass_map.</span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_04_07/zimageCompileError1.png" alt="zimageCompileError1"></p>
+<p>（1）、修改 <code>vim scripts/selinux/mdp/mdp.c</code> 文件</p>
+<p>注释掉 <code>#include &lt;sys/socket.h&gt;</code></p>
+<p><img src="/Dom/imgs/2022_04_07/zimageCompileError1pass.png" alt="zimageCompileError1pass"></p>
+<p>（2）、修改 <code>im security/selinux/include/classmap.h</code> 文件</p>
+<p>添加 <code>#include &lt;linux/socket.h&gt;</code></p>
+<p><img src="/Dom/imgs/2022_04_07/zimageCompileError1pass2.png" alt="zimageCompileError1pass2"></p>
+<h3 id="错误信息2"><a href="#错误信息2" class="headerlink" title="错误信息2"></a>错误信息2</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">fatal error: openssl/opensslv.h: No such file or directory</span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_04_07/zimageCompileError2.png" alt="zimageCompileError2"></p>
+<p>需要安装 OpenSSL 开发包</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install libssl-dev</span><br></pre></td></tr></table></figure>
+<h3 id="错误信息3"><a href="#错误信息3" class="headerlink" title="错误信息3"></a>错误信息3</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">没有规则可制作目标“debian/canonical-revoked-certs.pem”，由“certs/x509_revocation_list” 需求。 停止。</span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_04_07/zimageCompileError3.png" alt="zimageCompileError3"></p>
+<p>编辑 <code>.config</code> 配置文件 <code>vim .config</code></p>
+<p>清空这两项配置</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">CONFIG_SYSTEM_TRUSTED_KEYS=<span class="string">"debian/canonical-certs.pem"</span></span><br><span class="line">CONFIG_SYSTEM_REVOCATION_KEYS=<span class="string">"debian/canonical-revoked-certs.pem"</span></span><br><span class="line"></span><br><span class="line">to</span><br><span class="line"></span><br><span class="line">CONFIG_SYSTEM_TRUSTED_KEYS=<span class="string">""</span></span><br><span class="line">CONFIG_SYSTEM_REVOCATION_KEYS=<span class="string">""</span></span><br></pre></td></tr></table></figure>
+<p>生成 dtbs</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- dtbs</span><br><span class="line"></span><br><span class="line"><span class="comment"># arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</span></span><br><span class="line"><span class="comment"># arch/arm/boot/dts/sun8i-v3s-licheepi-zero-dock.dtb</span></span><br></pre></td></tr></table></figure>
+<p>dtb文件在 <code>arch/arm/boot/dts/</code></p>
+<p>zImage在<code>arch/arm/boot/</code></p>
+<p>生成内核模块 驱动模块（@TODO）</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 INSTALL_MOD_PATH=out modules</span><br><span class="line">make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- -j16 INSTALL_MOD_PATH=out modules_install</span><br></pre></td></tr></table></figure>
+<p>驱动模块在 <code>out/</code> 目录下</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>STM32F1-DAPLink源码编译</title>
+    <url>/2019/06/27/STM32F1-DAPLink%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<h1 id="DAPLink也带有虚拟串口-web-usb-U盘拖拽下载功能"><a href="#DAPLink也带有虚拟串口-web-usb-U盘拖拽下载功能" class="headerlink" title="DAPLink也带有虚拟串口  web-usb   U盘拖拽下载功能"></a>DAPLink也带有虚拟串口  web-usb   U盘拖拽下载功能</h1><pre><code>DAPLink电路  GitHub  ARM官方
+https://github.com/ARMmbed/mbed-HDK-Eagle-Projects
+DAPLink源码  GitHub  ARM官方 开发文档
+https://github.com/ARMmbed/DAPLink/blob/master/docs/DEVELOPERS-GUIDE.md
+
+淘宝买的Daplink
+http://www.eemaker.com/daplink-data.html  资料在这
+
+别人把DAPLink移植到STLink上
+https://bh3nvn.github.io/2019/05/DAPLink2STlink/
+</code></pre><p>步骤如下：<br><a id="more"></a></p>
+<h4 id="要-python-git-mdk-这几个软件"><a href="#要-python-git-mdk-这几个软件" class="headerlink" title="要 python   git   mdk 这几个软件"></a>要 <code>python</code>   <code>git</code>   <code>mdk</code> 这几个软件</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/mbedmicro/DAPLink     // git 克隆官方项目下来</span><br><span class="line"><span class="built_in">cd</span> DAPLink                                         // 进入这个项目</span><br><span class="line">pip install virtualenv                             // 安装 virtualenv</span><br><span class="line">virtualenv venv                                    </span><br><span class="line"></span><br><span class="line">venv\Scripts\activate.bat                          // 运行</span><br><span class="line">pip install -r requirements.txt                    // 安装需要的依赖包</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">编译输出全部目标版文件</span><br><span class="line">progen generate -t uvision</span><br><span class="line"></span><br><span class="line">编译输出局部目标板文件</span><br><span class="line">progen generate -p stm32f103xb_bl -t uvision                   //  bootloader文件  需要编译后烧录到目标板</span><br><span class="line">progen generate -p stm32f103xb_stm32f103rb_if -t uvision	//  _if_crc.bin文件  需要把nRST引脚接地插入目标板试别成U盘再考进去，再上啦nRST即可  nRst不是单片机的自身复位</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>通过MDK打开目标板的工程文件，记住，换工程的时候不能关闭这个命令打开的MDK，只能在这个MDK中openProject<br>tools\launch_uvision.bat<br>这一步可能会报错， 因为每个人的MDK安装路径不一样，  打开这个文件  修改安装路径即可 DAPLink\tools\launch_uvision.bat 文件</p>
+</blockquote>
+<p><img src="/Dom/imgs/2019_06_27/01.png" width="40%"></p>
+<blockquote>
+<p>编译的过程中。可能也会报错  python3<br>DAPLink\tools\flash_algo.py   文件中的 StringIO   改为  io   还有 StringIO.StringIO(data)  改为  io.StringIO(data)<br>DAPLink\tools\post_build_script.py  文件中  0xffffffffL  改为  0xffffffff</p>
+</blockquote>
+<p>编译完  _bl 文件  直接通过MDK烧录到目标板中   拔掉目标板，  将nRST下拉  插入 会试别为U盘<br>编译 _if 文件  将 _if_crc.bin  结尾的文件考到U盘中 拔掉U盘  nRST上拉  完成</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">venv\Scripts\deactivate.bat</span><br></pre></td></tr></table></figure>
+<p>完成</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Hexo基本命令</title>
+    <url>/2017/06/27/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>STM32的ADC及内部温度传感器的使用</title>
+    <url>/2018/03/13/STM32%E7%9A%84ADC%E5%8F%8A%E5%86%85%E9%83%A8%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="STM32的ADC及内部温度传感器的使用"><a href="#STM32的ADC及内部温度传感器的使用" class="headerlink" title="STM32的ADC及内部温度传感器的使用"></a>STM32的ADC及内部温度传感器的使用</h2><blockquote>
+<p>ADC的用途范围可以说是非常的广泛~甚至是可以说差不多必不可少了~大部分单片机嵌入式系统ADC都基本要用到~包括牛人CZZ也一样！<br>STM32 自带1-3个ADC模块，采样精度达到了12位，比起当年使用的AVR单片机的10位来说，上了个小档次了~本测试程序采用了ADCDMA的中断方式，这 样CPU就可以把ADC的任务交给DMA这个勤劳肯干的部下了，当DMA完成了一次任务之后会产生中断，告诉CPU可以来查收结果了！DMA也是在嵌入式 系统中非常常用的，例如在LCD中，数据拷贝中等。。。在STM32F103RBT6中，ADC1和ADC2共用一组管脚</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="总体编程思路和顺序如下："><a href="#总体编程思路和顺序如下：" class="headerlink" title="总体编程思路和顺序如下："></a>总体编程思路和顺序如下：</h2><pre><code>1. 初始化RCC相关，使得系统有时钟，功能模块如ADC、DMA有时钟。
+2. GPIO相关初始化，比如常用的指示灯，ADC的管家要设置为输入等。
+3. NVIC向量中断的配置，因为这里使用了DMA中断和中断服务程序编写（下例中暂不使用）
+4. DMA配置（下例中暂不使用）
+5. ADC初始化
+</code></pre><h2 id="以下是参考代码，使用ADC1的IN0脚"><a href="#以下是参考代码，使用ADC1的IN0脚" class="headerlink" title="以下是参考代码，使用ADC1的IN0脚"></a>以下是参考代码，使用ADC1的IN0脚</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_GPIO_Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_ADC1,ENABLE);</span><br><span class="line">  GPIO_DeInit(GPIOA);</span><br><span class="line">  GPIO_InitStructure.GPIO_Pin=GPIO_Pin_0;</span><br><span class="line">  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AIN;<span class="comment">//设为模拟输入</span></span><br><span class="line">  GPIO_Init(GPIOA,&amp;GPIO_InitStructure); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_configuration</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  ADC_InitTypeDef ADC_InitStructure;</span><br><span class="line">  ADC_InitStructure.ADC_Mode=ADC_Mode_Independent;<span class="comment">//独立模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ScanConvMode=DISABLE;<span class="comment">//连续多通道模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ContinuousConvMode=DISABLE;<span class="comment">//单次转换</span></span><br><span class="line">  ADC_InitStructure.ADC_ExternalTrigConv=ADC_ExternalTrigConv_None;<span class="comment">//转换由软件而不是外部触发启动</span></span><br><span class="line">  ADC_InitStructure.ADC_DataAlign=ADC_DataAlign_Right;<span class="comment">//右对齐</span></span><br><span class="line">  ADC_InitStructure.ADC_NbrOfChannel=<span class="number">1</span>;<span class="comment">//扫描通道数</span></span><br><span class="line">  ADC_Init(ADC1,&amp;ADC_InitStructure);</span><br><span class="line">  <span class="comment">//ADC_RegularChannelConfig(ADC1,ADC_Channel_0,1,ADC_SampleTime_7Cycles5);</span></span><br><span class="line">  ADC_Cmd(ADC1,ENABLE);<span class="comment">//使能或者失能指定的ADC</span></span><br><span class="line">  ADC_ResetCalibration(ADC1);<span class="comment">//重置指定的ADC的校准寄存器</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetResetCalibrationStatus(ADC1));<span class="comment">//等待校准寄存器初始化</span></span><br><span class="line">  ADC_StartCalibration(ADC1);<span class="comment">//开始校准</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetCalibrationStatus(ADC1));<span class="comment">//等待校准完成 </span></span><br><span class="line">  <span class="comment">//ADC_SoftwareStartConvCmd(ADC1,ENABLE);//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">u16 <span class="title">GetADCValue</span><span class="params">(u8 ADC_Channel)</span><span class="comment">//ADC_Channel_x 0~17</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u16 adc_value;</span><br><span class="line">  ADC_RegularChannelConfig(ADC1,ADC_Channel,<span class="number">1</span>,ADC_SampleTime_7Cycles5);</span><br><span class="line">  ADC_SoftwareStartConvCmd(ADC1,ENABLE);<span class="comment">//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetFlagStatus(ADC1,ADC_FLAG_EOC)==RESET);<span class="comment">//检查制定ADC标志位置1与否 ADC_FLAG_EOC 转换结束标志位</span></span><br><span class="line">  adc_value=ADC_GetConversionValue(ADC1);</span><br><span class="line">  <span class="keyword">return</span> adc_value;<span class="comment">//返回最近一次ADCx规则组的转换结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当使用内部温度传感器时，需要使能温度传感器通  <code>ADC_TempSensorVrefintCmd(ENABLE);</code><br>    温度传感器通道号是ADC_Channel_16，此通道的采样时间调到最大，来保证精度；</p>
+</blockquote>
+<h2 id="温度的计算公式如下："><a href="#温度的计算公式如下：" class="headerlink" title="温度的计算公式如下："></a>温度的计算公式如下：</h2><p><img src="/Dom/imgs/2018_03_13/313stmADC.png" width="100%"><br>    V25、Avg_Slope的典型值分别为1.43、4.3mV/C<br>    TEMP=(1.43-Vsense)/0.0043+25;</p>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>c语言</tag>
+        <tag>STM32, 单片机</tag>
+      </tags>
   </entry>
 </search>
