@@ -7,7 +7,7 @@ comments: false
 
 # 一、基础编译 
 
-`linux（ubuntu）`、`git`、`python2`、`全志v3s`、`5寸电阻触摸屏（RTB屏）`、`USB TO UART`
+`linux（ubuntu）`、`git`、`python2`、`全志v3s`、`5寸电阻触摸屏（RGB屏）`、`USB TO UART`
 
 ## 1、安装python2
 
@@ -41,6 +41,8 @@ sudo apt-get purge --auto-remove python2.7  # 卸载python 及其依赖
 # 如果系统有安装python3 则需要重新安装python2 因为编译u-boot时的工具链里面需要python2的环境 否则报错
 
 ````
+<!-- more -->
+
 ![python](/Dom/imgs/2022_03_12/python.png)
 
 ## 2、安装交叉编译器与工具链

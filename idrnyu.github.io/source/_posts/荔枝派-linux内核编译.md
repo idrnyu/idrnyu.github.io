@@ -12,13 +12,15 @@ git clone https://github.com/Lichee-Pi/linux.git
 
 `源码切换到最新分支 zero-4.13.y`
 
-！！！文件大小大概有 2.54G
+<p style="color: red;"> ！！！文件大小大概有 2.54G </p>
 
 # 二、 内核选项配置
 
 执行 `make ARCH=arm menuconfig` 打开内核配置菜单
 
 ![menuconfigHome](/Dom/imgs/2022_04_07/menuconfigHome.png)
+
+<!-- more -->
 
 进入 `Device Drivers > Memory Technology Device (MTD) support` 选项
 
