@@ -8,9 +8,11 @@ tags:
 
 ```bash
 git clone https://github.com/Lichee-Pi/linux.git
-```
 
-`源码切换到最新分支 zero-4.13.y`
+# 默认是zero-4.10.y分支
+# zero-4.13.y 对网卡支持较好
+```
+`源码切换到分支 zero-4.13.y`
 
 <p style="color: red;"> ！！！文件大小大概有 2.54G </p>
 
