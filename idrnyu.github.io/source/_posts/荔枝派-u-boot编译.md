@@ -271,6 +271,21 @@ Device Drivers  --->
 
 ![config_sun8i_h](/Dom/imgs/2022_03_12/config_sun8i_h.png)
 
+```c
+// 如果需要在LCD上也显示日志  加入  console=tty0
+#define CONFIG_BOOTARGS      "console=tty0 console=ttyS0,115200 earlyprintk panic=5 rootwait " \
+                             "mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2"
+```
+
+如果需要USB输入显示在LCD交互上，请在系统启动成功后修改 `vi /etc/inittab`
+
+```bash
+# console::respawn:-/bin/sh  # 注释掉原有的console  加入如下两行
+ttyS0::respawn:-/bin/sh
+tty0::respawn:-/bin/sh
+
+```
+
 #### （1）、环境命令解析：
 
 - `sf probe 0;`   初始化 Flash 设备 （CS 拉低）
