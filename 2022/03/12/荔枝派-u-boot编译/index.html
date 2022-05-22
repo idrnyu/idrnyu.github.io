@@ -115,7 +115,7 @@
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325151309.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/20220325153053.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_03_12/ubootimg1.jpg">
-<meta property="og:updated_time" content="2022-05-16T11:29:13.715Z">
+<meta property="og:updated_time" content="2022-05-22T11:23:01.451Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="荔枝派_u-boot编译">
 <meta name="twitter:description" content="一、基础编译linux（ubuntu）、git、python2、全志v3s、5寸电阻触摸屏（RGB屏）、USB TO UART 1、安装python2123456789101112131415161718192021222324252627sudo apt-get update # 更新源sudo apt updatesudo apt-get install python2.7 # 安装pytho">
@@ -387,7 +387,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,323
+                  3,427
                 </span>
               
 
@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  15
+                  16
                 </span>
               
             </div>
@@ -497,6 +497,9 @@
 <p>命令：<code>vim include/configs/sun8i.h</code> 在 <code>#include &lt;configs/sunxi-common.h&gt;</code> 前面添加以下代码</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONFIG_BOOTCOMMAND   <span class="meta-string">"sf probe 0; "</span>                           \</span></span><br><span class="line">                             <span class="string">"sf read 0x41800000 0x100000 0x10000; "</span>  \</span><br><span class="line">                             <span class="string">"sf read 0x41000000 0x110000 0x400000; "</span> \</span><br><span class="line">                             <span class="string">"bootz 0x41000000 - 0x41800000"</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONFIG_BOOTARGS      <span class="meta-string">"console=ttyS0,115200 earlyprintk panic=5 rootwait "</span> \</span></span><br><span class="line">                             <span class="string">"mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2"</span></span><br></pre></td></tr></table></figure>
 <p><img src="/Dom/imgs/2022_03_12/config_sun8i_h.png" alt="config_sun8i_h"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果需要在LCD上也显示日志  加入  console=tty0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CONFIG_BOOTARGS      <span class="meta-string">"console=tty0 console=ttyS0,115200 earlyprintk panic=5 rootwait "</span> \</span></span><br><span class="line">                             <span class="string">"mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(rootfs) root=31:03 rw rootfstype=jffs2"</span></span><br></pre></td></tr></table></figure>
+<p>如果需要USB输入显示在LCD交互上，请在系统启动成功后修改 <code>vi /etc/inittab</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># console::respawn:-/bin/sh  # 注释掉原有的console  加入如下两行</span></span><br><span class="line">ttyS0::respawn:-/bin/sh</span><br><span class="line">tty0::respawn:-/bin/sh</span><br></pre></td></tr></table></figure>
 <h4 id="（1）、环境命令解析："><a href="#（1）、环境命令解析：" class="headerlink" title="（1）、环境命令解析："></a>（1）、环境命令解析：</h4><ul>
 <li><code>sf probe 0;</code>   初始化 Flash 设备 （CS 拉低）</li>
 <li><code>sf read 0x41800000 0x100000 0x10000;</code>   从 Flash 0x100000 （1MB） 位置读取 dtb 放到内存  0x41800000 偏移地址。如果是 bsp 的 bin， 则是 0x41d00000 偏移地址。</li>
