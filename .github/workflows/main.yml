@@ -33,6 +33,40 @@ jobs:
       # 给项目安装依赖
       - name: npm install
         run: npm install
+      
+      # 清除缓存
+      - name: npx hexo clean
+        run: npx hexo clean
+
+      # 生成静态网页
+      - name: npx hexo g
+        run: npx hexo g
+
+      # 开始部署
+      # - name: npx hexo d
+      #  run: npx hexo d
+
+      # 将打包好的public文件复制到项目
+      - name: Upload the public file to the master branch
+        # Deploy to GitHub Pages
+        # https://github.com/marketplace/actions/deploy-to-github-pages
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
+        with:
+          token: ${{ secrets.SHOP_CI_TOKEN }}
+          branch: master #部署提交到的分支
+          folder: public # 打包好的目录
+
+  # 工作流中又包含了一个 console-test 任务，依赖 build 任务
+  console-test:
+    runs-on: ubuntu-latest
+    needs: [build] # 任务依赖关系
+
+    steps:
+      - name: 输出上下文
+        run: |
+          pwd
+          echo ${{ needs.build.outputs.test }}
+          exit
         
         
   
