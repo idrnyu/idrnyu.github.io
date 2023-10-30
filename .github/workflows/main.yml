@@ -59,7 +59,7 @@ jobs:
         # https://github.com/marketplace/actions/deploy-to-github-pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
-          token: ${{ secrets.SHOP_CI_TOKEN }}
+          token: ${{ secrets.IDRNYU_CI_TOKEN }}
           branch: master #部署提交到的分支
           folder: ./idrnyu.github.io/public # 打包好的目录
 
