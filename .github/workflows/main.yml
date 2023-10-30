@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-node@v3
         # 安装 node 的具体命令
         with:
-          node-version: "12.16.x"
+          node-version: "12.16.0"
       
       # 给项目安装依赖
       - name: npm install
