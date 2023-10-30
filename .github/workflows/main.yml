@@ -44,7 +44,7 @@ jobs:
 
       # 开始部署
       - name: npx hexo d
-       run: npx hexo d
+        run: npx hexo d
 
       # 将打包好的public文件复制到项目
       - name: Upload the public file to the master branch
