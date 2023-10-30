@@ -35,8 +35,8 @@ jobs:
         run: npm install
       
       # 清除缓存
-      - name: npx hexo clean
-        run: npx hexo clean
+      # - name: npx hexo clean
+      #   run: npx hexo clean
 
       # 生成静态网页
       - name: npx hexo g
