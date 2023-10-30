@@ -29,6 +29,9 @@ jobs:
         # 安装 node 的具体命令
         with:
           node-version: "12.16.0"
+
+      - name: cd object
+        run: ls
       
       # 给项目安装依赖
       - name: npm install
@@ -36,7 +39,8 @@ jobs:
       
       # 清除缓存
       - name: npx hexo clean
-        run: npx hexo clean
+        # run: npx hexo clean
+        run: ls
 
       # 生成静态网页
       - name: npx hexo g
