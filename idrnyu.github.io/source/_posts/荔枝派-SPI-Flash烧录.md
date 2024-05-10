@@ -4,15 +4,15 @@ date: 2022-05-16 20:59:10
 tags:
 ---
 
-烧录 `uboot` `Linux主线Kernel` `buildroot文件系统` 到 全志v3s；
+烧录 `uboot` `Linux主线Kernel` `buildroot文件系统` 到 全志v3s；参考往期内容；
 
-```http
-http://localhost:4000/2022/03/12/荔枝派-u-boot编译/
+[荔枝派-u-boot编译](//2022/03/12/荔枝派-u-boot编译/)
 
-http://localhost:4000/2022/05/15/荔枝派-linux内核编译/
+[荔枝派-linux内核编译](//2022/05/15/荔枝派-linux内核编译/)
 
-http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/
-```
+[荔枝派-buildroot文件系统编译](//2022/05/16/荔枝派-buildroot文件系统编译/)
+
+
 # 一、 准备烧录文件
 1. uboot编译后的产物：`u-boot-sunxi-with-spl.bin`;
 2. linux内核编译后的产物：`arch/arm/boot/zImage` 和 `arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb`;
