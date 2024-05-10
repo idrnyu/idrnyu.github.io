@@ -96,20 +96,20 @@
 
 
 
-<meta name="description" content="烧录 uboot Linux主线Kernel buildroot文件系统 到 全志v3s； 12345http://localhost:4000/2022/03/12/荔枝派-u-boot编译/http://localhost:4000/2022/05/15/荔枝派-linux内核编译/http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/ 一、">
+<meta name="description" content="烧录 uboot Linux主线Kernel buildroot文件系统 到 全志v3s；参考往期内容； 荔枝派-u-boot编译 荔枝派-linux内核编译 荔枝派-buildroot文件系统编译 一、 准备烧录文件 uboot编译后的产物：u-boot-sunxi-with-spl.bin; linux内核编译后的产物：arch/arm/boot/zImage 和 arch/arm/boot/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="荔枝派_SPI-Flash烧录">
 <meta property="og:url" content="http://yoursite.com/2022/05/16/荔枝派-SPI-Flash烧录/index.html">
 <meta property="og:site_name" content="iDRnYu">
-<meta property="og:description" content="烧录 uboot Linux主线Kernel buildroot文件系统 到 全志v3s； 12345http://localhost:4000/2022/03/12/荔枝派-u-boot编译/http://localhost:4000/2022/05/15/荔枝派-linux内核编译/http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/ 一、">
+<meta property="og:description" content="烧录 uboot Linux主线Kernel buildroot文件系统 到 全志v3s；参考往期内容； 荔枝派-u-boot编译 荔枝派-linux内核编译 荔枝派-buildroot文件系统编译 一、 准备烧录文件 uboot编译后的产物：u-boot-sunxi-with-spl.bin; linux内核编译后的产物：arch/arm/boot/zImage 和 arch/arm/boot/">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_05_16/buildBin.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_05_16/minicom.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2022_05_16/setminicom.png">
-<meta property="og:updated_time" content="2023-10-30T04:01:25.880Z">
+<meta property="og:updated_time" content="2024-05-10T08:11:31.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="荔枝派_SPI-Flash烧录">
-<meta name="twitter:description" content="烧录 uboot Linux主线Kernel buildroot文件系统 到 全志v3s； 12345http://localhost:4000/2022/03/12/荔枝派-u-boot编译/http://localhost:4000/2022/05/15/荔枝派-linux内核编译/http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/ 一、">
+<meta name="twitter:description" content="烧录 uboot Linux主线Kernel buildroot文件系统 到 全志v3s；参考往期内容； 荔枝派-u-boot编译 荔枝派-linux内核编译 荔枝派-buildroot文件系统编译 一、 准备烧录文件 uboot编译后的产物：u-boot-sunxi-with-spl.bin; linux内核编译后的产物：arch/arm/boot/zImage 和 arch/arm/boot/">
 <meta name="twitter:image" content="http://yoursite.com/Dom/imgs/2022_05_16/buildBin.png">
 
 
@@ -380,7 +380,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2,858
+                  2,841
                 </span>
               
 
@@ -417,8 +417,10 @@
       
 
       
-        <p>烧录 <code>uboot</code> <code>Linux主线Kernel</code> <code>buildroot文件系统</code> 到 全志v3s；</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">http://localhost:4000/2022/03/12/荔枝派-u-boot编译/</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"><span class="attribute">http://localhost:4000/2022/05/15/荔枝派-linux内核编译/</span></span><br><span class="line"><span class="attribute"></span></span><br><span class="line"><span class="attribute">http://localhost:4000/2022/05/16/荔枝派-buildroot文件系统编译/</span></span><br></pre></td></tr></table></figure>
+        <p>烧录 <code>uboot</code> <code>Linux主线Kernel</code> <code>buildroot文件系统</code> 到 全志v3s；参考往期内容；</p>
+<p><a href="//2022/03/12/荔枝派-u-boot编译/">荔枝派-u-boot编译</a></p>
+<p><a href="//2022/05/15/荔枝派-linux内核编译/">荔枝派-linux内核编译</a></p>
+<p><a href="//2022/05/16/荔枝派-buildroot文件系统编译/">荔枝派-buildroot文件系统编译</a></p>
 <h1 id="一、-准备烧录文件"><a href="#一、-准备烧录文件" class="headerlink" title="一、 准备烧录文件"></a>一、 准备烧录文件</h1><ol>
 <li>uboot编译后的产物：<code>u-boot-sunxi-with-spl.bin</code>;</li>
 <li>linux内核编译后的产物：<code>arch/arm/boot/zImage</code> 和 <code>arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</code>;</li>
@@ -691,7 +693,7 @@ var jiathis_config={
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2023</span>
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
