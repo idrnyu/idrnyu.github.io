@@ -96,13 +96,13 @@
 
 
 
-<meta name="description" content="如果我们使用 git stash 藏匿了一个修改  然后不小心删除了藏匿的条目 可以通过 git fsck --unreachable 命令查看记录 使用 git show --name-only &amp;lt;commitID&amp;gt; 查看特征 找到后使用 git stash apply &amp;lt;commitID&amp;gt; 恢复删除的内容 使用 git stash 的建议 在藏匿时，记得添加备注信息，以">
+<meta name="description" content="如果我们使用 git stash 藏匿了一个修改">
 <meta name="keywords" content="git stash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git stash 藏匿的条目被删除如何恢复">
 <meta property="og:url" content="http://yoursite.com/2024/05/10/git-stash藏匿的条目被删除如何恢复/index.html">
 <meta property="og:site_name" content="iDRnYu">
-<meta property="og:description" content="如果我们使用 git stash 藏匿了一个修改  然后不小心删除了藏匿的条目 可以通过 git fsck --unreachable 命令查看记录 使用 git show --name-only &amp;lt;commitID&amp;gt; 查看特征 找到后使用 git stash apply &amp;lt;commitID&amp;gt; 恢复删除的内容 使用 git stash 的建议 在藏匿时，记得添加备注信息，以">
+<meta property="og:description" content="如果我们使用 git stash 藏匿了一个修改">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2024-05-10/藏匿未提交的修改.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2024-05-10/藏匿未提交的修改-0.png">
@@ -111,10 +111,10 @@
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2024-05-10/查找被删除的藏匿commit_id-并查看特征是否与目标一致.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2024-05-10/恢复删除的藏匿.png">
 <meta property="og:image" content="http://yoursite.com/Dom/imgs/2024-05-10/藏匿的建议.png">
-<meta property="og:updated_time" content="2024-05-10T08:47:29.260Z">
+<meta property="og:updated_time" content="2024-05-10T08:49:47.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git stash 藏匿的条目被删除如何恢复">
-<meta name="twitter:description" content="如果我们使用 git stash 藏匿了一个修改  然后不小心删除了藏匿的条目 可以通过 git fsck --unreachable 命令查看记录 使用 git show --name-only &amp;lt;commitID&amp;gt; 查看特征 找到后使用 git stash apply &amp;lt;commitID&amp;gt; 恢复删除的内容 使用 git stash 的建议 在藏匿时，记得添加备注信息，以">
+<meta name="twitter:description" content="如果我们使用 git stash 藏匿了一个修改">
 <meta name="twitter:image" content="http://yoursite.com/Dom/imgs/2024-05-10/藏匿未提交的修改.png">
 
 
@@ -445,6 +445,7 @@
 
       
         <h2 id="如果我们使用-git-stash-藏匿了一个修改"><a href="#如果我们使用-git-stash-藏匿了一个修改" class="headerlink" title="如果我们使用 git stash 藏匿了一个修改"></a>如果我们使用 git stash 藏匿了一个修改</h2><p><img src="/Dom/imgs/2024-05-10/藏匿未提交的修改.png" alt="藏匿未提交的修改"></p>
+<a id="more"></a>
 <p><img src="/Dom/imgs/2024-05-10/藏匿未提交的修改-0.png" alt="藏匿未提交的修改-0"></p>
 <h2 id="然后不小心删除了藏匿的条目"><a href="#然后不小心删除了藏匿的条目" class="headerlink" title="然后不小心删除了藏匿的条目"></a>然后不小心删除了藏匿的条目</h2><p><img src="/Dom/imgs/2024-05-10/删除藏匿条目.png" alt="删除藏匿条目"></p>
 <h2 id="可以通过-git-fsck-unreachable-命令查看记录"><a href="#可以通过-git-fsck-unreachable-命令查看记录" class="headerlink" title="可以通过 git fsck --unreachable 命令查看记录"></a>可以通过 <code>git fsck --unreachable</code> 命令查看记录</h2><p><img src="/Dom/imgs/2024-05-10/查找被删除的藏匿commit_id.png" alt="查找被删除的藏匿commit_id"></p>
