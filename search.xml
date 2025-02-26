@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>STM32F072-JlinkOB固件提取</title>
-    <url>/2019/06/27/STM32F072-JlinkOB%E5%9B%BA%E4%BB%B6%E6%8F%90%E5%8F%96/</url>
-    <content><![CDATA[<h1 id="Github-地址：-https-github-com-idrnyu-dllGetSt072JlinkOb"><a href="#Github-地址：-https-github-com-idrnyu-dllGetSt072JlinkOb" class="headerlink" title="Github 地址： https://github.com/idrnyu/dllGetSt072JlinkOb"></a>Github 地址： <a href="https://github.com/idrnyu/dllGetSt072JlinkOb" target="_blank" rel="noopener">https://github.com/idrnyu/dllGetSt072JlinkOb</a></h1><h3 id="视频见详情观看-没有声音-，-里面也有电路-还有工具-STM32F072-Jlink-OB-带虚拟串口"><a href="#视频见详情观看-没有声音-，-里面也有电路-还有工具-STM32F072-Jlink-OB-带虚拟串口" class="headerlink" title="视频见详情观看(没有声音)，  里面也有电路  还有工具  STM32F072-Jlink-OB 带虚拟串口"></a>视频见详情观看(没有声音)，  里面也有电路  还有工具  STM32F072-Jlink-OB 带虚拟串口</h3><a id="more"></a>
-<video controls name="media" width="100%"><br>  <source src="https://idrnyu.github.io/dllGetSt072JlinkOb/%E5%9C%A8jlinkARM.dll%E4%B8%AD%E6%8F%90%E5%8F%96Jlink072%E5%9B%BA%E4%BB%B62.mp4" type="video/mp4"><br></video>
-
-]]></content>
-  </entry>
-  <entry>
     <title>STM32F1-DAPLink源码编译</title>
     <url>/2019/06/27/STM32F1-DAPLink%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91/</url>
     <content><![CDATA[<h1 id="DAPLink也带有虚拟串口-web-usb-U盘拖拽下载功能"><a href="#DAPLink也带有虚拟串口-web-usb-U盘拖拽下载功能" class="headerlink" title="DAPLink也带有虚拟串口  web-usb   U盘拖拽下载功能"></a>DAPLink也带有虚拟串口  web-usb   U盘拖拽下载功能</h1><pre><code>DAPLink电路  GitHub  ARM官方
@@ -34,6 +26,40 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">venv\Scripts\deactivate.bat</span><br></pre></td></tr></table></figure>
 <p>完成</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>STM32F072-JlinkOB固件提取</title>
+    <url>/2019/06/27/STM32F072-JlinkOB%E5%9B%BA%E4%BB%B6%E6%8F%90%E5%8F%96/</url>
+    <content><![CDATA[<h1 id="Github-地址：-https-github-com-idrnyu-dllGetSt072JlinkOb"><a href="#Github-地址：-https-github-com-idrnyu-dllGetSt072JlinkOb" class="headerlink" title="Github 地址： https://github.com/idrnyu/dllGetSt072JlinkOb"></a>Github 地址： <a href="https://github.com/idrnyu/dllGetSt072JlinkOb" target="_blank" rel="noopener">https://github.com/idrnyu/dllGetSt072JlinkOb</a></h1><h3 id="视频见详情观看-没有声音-，-里面也有电路-还有工具-STM32F072-Jlink-OB-带虚拟串口"><a href="#视频见详情观看-没有声音-，-里面也有电路-还有工具-STM32F072-Jlink-OB-带虚拟串口" class="headerlink" title="视频见详情观看(没有声音)，  里面也有电路  还有工具  STM32F072-Jlink-OB 带虚拟串口"></a>视频见详情观看(没有声音)，  里面也有电路  还有工具  STM32F072-Jlink-OB 带虚拟串口</h3><a id="more"></a>
+<video controls name="media" width="100%"><br>  <source src="https://idrnyu.github.io/dllGetSt072JlinkOb/%E5%9C%A8jlinkARM.dll%E4%B8%AD%E6%8F%90%E5%8F%96Jlink072%E5%9B%BA%E4%BB%B62.mp4" type="video/mp4"><br></video>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>STM32的ADC及内部温度传感器的使用</title>
+    <url>/2018/03/13/STM32%E7%9A%84ADC%E5%8F%8A%E5%86%85%E9%83%A8%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h2 id="STM32的ADC及内部温度传感器的使用"><a href="#STM32的ADC及内部温度传感器的使用" class="headerlink" title="STM32的ADC及内部温度传感器的使用"></a>STM32的ADC及内部温度传感器的使用</h2><blockquote>
+<p>ADC的用途范围可以说是非常的广泛~甚至是可以说差不多必不可少了~大部分单片机嵌入式系统ADC都基本要用到~包括牛人CZZ也一样！<br>STM32 自带1-3个ADC模块，采样精度达到了12位，比起当年使用的AVR单片机的10位来说，上了个小档次了~本测试程序采用了ADCDMA的中断方式，这 样CPU就可以把ADC的任务交给DMA这个勤劳肯干的部下了，当DMA完成了一次任务之后会产生中断，告诉CPU可以来查收结果了！DMA也是在嵌入式 系统中非常常用的，例如在LCD中，数据拷贝中等。。。在STM32F103RBT6中，ADC1和ADC2共用一组管脚</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="总体编程思路和顺序如下："><a href="#总体编程思路和顺序如下：" class="headerlink" title="总体编程思路和顺序如下："></a>总体编程思路和顺序如下：</h2><pre><code>1. 初始化RCC相关，使得系统有时钟，功能模块如ADC、DMA有时钟。
+2. GPIO相关初始化，比如常用的指示灯，ADC的管家要设置为输入等。
+3. NVIC向量中断的配置，因为这里使用了DMA中断和中断服务程序编写（下例中暂不使用）
+4. DMA配置（下例中暂不使用）
+5. ADC初始化
+</code></pre><h2 id="以下是参考代码，使用ADC1的IN0脚"><a href="#以下是参考代码，使用ADC1的IN0脚" class="headerlink" title="以下是参考代码，使用ADC1的IN0脚"></a>以下是参考代码，使用ADC1的IN0脚</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_GPIO_Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_ADC1,ENABLE);</span><br><span class="line">  GPIO_DeInit(GPIOA);</span><br><span class="line">  GPIO_InitStructure.GPIO_Pin=GPIO_Pin_0;</span><br><span class="line">  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AIN;<span class="comment">//设为模拟输入</span></span><br><span class="line">  GPIO_Init(GPIOA,&amp;GPIO_InitStructure); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_configuration</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  ADC_InitTypeDef ADC_InitStructure;</span><br><span class="line">  ADC_InitStructure.ADC_Mode=ADC_Mode_Independent;<span class="comment">//独立模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ScanConvMode=DISABLE;<span class="comment">//连续多通道模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ContinuousConvMode=DISABLE;<span class="comment">//单次转换</span></span><br><span class="line">  ADC_InitStructure.ADC_ExternalTrigConv=ADC_ExternalTrigConv_None;<span class="comment">//转换由软件而不是外部触发启动</span></span><br><span class="line">  ADC_InitStructure.ADC_DataAlign=ADC_DataAlign_Right;<span class="comment">//右对齐</span></span><br><span class="line">  ADC_InitStructure.ADC_NbrOfChannel=<span class="number">1</span>;<span class="comment">//扫描通道数</span></span><br><span class="line">  ADC_Init(ADC1,&amp;ADC_InitStructure);</span><br><span class="line">  <span class="comment">//ADC_RegularChannelConfig(ADC1,ADC_Channel_0,1,ADC_SampleTime_7Cycles5);</span></span><br><span class="line">  ADC_Cmd(ADC1,ENABLE);<span class="comment">//使能或者失能指定的ADC</span></span><br><span class="line">  ADC_ResetCalibration(ADC1);<span class="comment">//重置指定的ADC的校准寄存器</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetResetCalibrationStatus(ADC1));<span class="comment">//等待校准寄存器初始化</span></span><br><span class="line">  ADC_StartCalibration(ADC1);<span class="comment">//开始校准</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetCalibrationStatus(ADC1));<span class="comment">//等待校准完成 </span></span><br><span class="line">  <span class="comment">//ADC_SoftwareStartConvCmd(ADC1,ENABLE);//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">u16 <span class="title">GetADCValue</span><span class="params">(u8 ADC_Channel)</span><span class="comment">//ADC_Channel_x 0~17</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u16 adc_value;</span><br><span class="line">  ADC_RegularChannelConfig(ADC1,ADC_Channel,<span class="number">1</span>,ADC_SampleTime_7Cycles5);</span><br><span class="line">  ADC_SoftwareStartConvCmd(ADC1,ENABLE);<span class="comment">//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetFlagStatus(ADC1,ADC_FLAG_EOC)==RESET);<span class="comment">//检查制定ADC标志位置1与否 ADC_FLAG_EOC 转换结束标志位</span></span><br><span class="line">  adc_value=ADC_GetConversionValue(ADC1);</span><br><span class="line">  <span class="keyword">return</span> adc_value;<span class="comment">//返回最近一次ADCx规则组的转换结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>当使用内部温度传感器时，需要使能温度传感器通  <code>ADC_TempSensorVrefintCmd(ENABLE);</code><br>    温度传感器通道号是ADC_Channel_16，此通道的采样时间调到最大，来保证精度；</p>
+</blockquote>
+<h2 id="温度的计算公式如下："><a href="#温度的计算公式如下：" class="headerlink" title="温度的计算公式如下："></a>温度的计算公式如下：</h2><p><img src="/Dom/imgs/2018_03_13/313stmADC.png" width="100%"><br>    V25、Avg_Slope的典型值分别为1.43、4.3mV/C<br>    TEMP=(1.43-Vsense)/0.0043+25;</p>
+]]></content>
+      <categories>
+        <category>STM32</category>
+      </categories>
+      <tags>
+        <tag>c语言</tag>
+        <tag>STM32, 单片机</tag>
+      </tags>
   </entry>
   <entry>
     <title>Vue-cli 2.* 配置mock模拟数据</title>
@@ -75,69 +101,6 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
         <tag>Web前端</tag>
         <tag>Vue</tag>
         <tag>mock模拟请求数据</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo基本命令</title>
-    <url>/2017/06/27/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>git stash 藏匿的条目被删除如何恢复</title>
-    <url>/2024/05/10/git-stash%E8%97%8F%E5%8C%BF%E7%9A%84%E6%9D%A1%E7%9B%AE%E8%A2%AB%E5%88%A0%E9%99%A4%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D/</url>
-    <content><![CDATA[<h2 id="如果我们使用-git-stash-藏匿了一个修改"><a href="#如果我们使用-git-stash-藏匿了一个修改" class="headerlink" title="如果我们使用 git stash 藏匿了一个修改"></a>如果我们使用 git stash 藏匿了一个修改</h2><p><img src="/Dom/imgs/2024-05-10/藏匿未提交的修改.png" alt="藏匿未提交的修改"></p>
-<a id="more"></a>
-<p><img src="/Dom/imgs/2024-05-10/藏匿未提交的修改-0.png" alt="藏匿未提交的修改-0"></p>
-<h2 id="然后不小心删除了藏匿的条目"><a href="#然后不小心删除了藏匿的条目" class="headerlink" title="然后不小心删除了藏匿的条目"></a>然后不小心删除了藏匿的条目</h2><p><img src="/Dom/imgs/2024-05-10/删除藏匿条目.png" alt="删除藏匿条目"></p>
-<h2 id="可以通过-git-fsck-unreachable-命令查看记录"><a href="#可以通过-git-fsck-unreachable-命令查看记录" class="headerlink" title="可以通过 git fsck --unreachable 命令查看记录"></a>可以通过 <code>git fsck --unreachable</code> 命令查看记录</h2><p><img src="/Dom/imgs/2024-05-10/查找被删除的藏匿commit_id.png" alt="查找被删除的藏匿commit_id"></p>
-<h2 id="使用-git-show-name-only-lt-commitID-gt-查看特征"><a href="#使用-git-show-name-only-lt-commitID-gt-查看特征" class="headerlink" title="使用 git show --name-only &lt;commitID&gt; 查看特征"></a>使用 <code>git show --name-only &lt;commitID&gt;</code> 查看特征</h2><p><img src="/Dom/imgs/2024-05-10/查找被删除的藏匿commit_id-并查看特征是否与目标一致.png" alt="查找被删除的藏匿commit_id-并查看特征是否与目标一致"></p>
-<h2 id="找到后使用-git-stash-apply-lt-commitID-gt-恢复删除的内容"><a href="#找到后使用-git-stash-apply-lt-commitID-gt-恢复删除的内容" class="headerlink" title="找到后使用 git stash apply &lt;commitID&gt; 恢复删除的内容"></a>找到后使用 <code>git stash apply &lt;commitID&gt;</code> 恢复删除的内容</h2><p><img src="/Dom/imgs/2024-05-10/恢复删除的藏匿.png" alt="恢复删除的藏匿"></p>
-<h2 id="使用-git-stash-的建议"><a href="#使用-git-stash-的建议" class="headerlink" title="使用 git stash 的建议"></a>使用 git stash 的建议</h2><ul>
-<li>在藏匿时，记得添加备注信息，以便查找到相关的内容；</li>
-<li>删除单个藏匿时，会返回删除的 commitID ，可以直接拿到这个ID还原即可</li>
-</ul>
-<p><img src="/Dom/imgs/2024-05-10/藏匿的建议.png" alt="藏匿的建议"></p>
-]]></content>
-      <categories>
-        <category>git</category>
-      </categories>
-      <tags>
-        <tag>git stash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>STM32的ADC及内部温度传感器的使用</title>
-    <url>/2018/03/13/STM32%E7%9A%84ADC%E5%8F%8A%E5%86%85%E9%83%A8%E6%B8%A9%E5%BA%A6%E4%BC%A0%E6%84%9F%E5%99%A8%E7%9A%84%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h2 id="STM32的ADC及内部温度传感器的使用"><a href="#STM32的ADC及内部温度传感器的使用" class="headerlink" title="STM32的ADC及内部温度传感器的使用"></a>STM32的ADC及内部温度传感器的使用</h2><blockquote>
-<p>ADC的用途范围可以说是非常的广泛~甚至是可以说差不多必不可少了~大部分单片机嵌入式系统ADC都基本要用到~包括牛人CZZ也一样！<br>STM32 自带1-3个ADC模块，采样精度达到了12位，比起当年使用的AVR单片机的10位来说，上了个小档次了~本测试程序采用了ADCDMA的中断方式，这 样CPU就可以把ADC的任务交给DMA这个勤劳肯干的部下了，当DMA完成了一次任务之后会产生中断，告诉CPU可以来查收结果了！DMA也是在嵌入式 系统中非常常用的，例如在LCD中，数据拷贝中等。。。在STM32F103RBT6中，ADC1和ADC2共用一组管脚</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="总体编程思路和顺序如下："><a href="#总体编程思路和顺序如下：" class="headerlink" title="总体编程思路和顺序如下："></a>总体编程思路和顺序如下：</h2><pre><code>1. 初始化RCC相关，使得系统有时钟，功能模块如ADC、DMA有时钟。
-2. GPIO相关初始化，比如常用的指示灯，ADC的管家要设置为输入等。
-3. NVIC向量中断的配置，因为这里使用了DMA中断和中断服务程序编写（下例中暂不使用）
-4. DMA配置（下例中暂不使用）
-5. ADC初始化
-</code></pre><h2 id="以下是参考代码，使用ADC1的IN0脚"><a href="#以下是参考代码，使用ADC1的IN0脚" class="headerlink" title="以下是参考代码，使用ADC1的IN0脚"></a>以下是参考代码，使用ADC1的IN0脚</h2><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_GPIO_Init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  GPIO_InitTypeDef GPIO_InitStructure;</span><br><span class="line">  RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOA|RCC_APB2Periph_ADC1,ENABLE);</span><br><span class="line">  GPIO_DeInit(GPIOA);</span><br><span class="line">  GPIO_InitStructure.GPIO_Pin=GPIO_Pin_0;</span><br><span class="line">  GPIO_InitStructure.GPIO_Mode=GPIO_Mode_AIN;<span class="comment">//设为模拟输入</span></span><br><span class="line">  GPIO_Init(GPIOA,&amp;GPIO_InitStructure); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ADC_configuration</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  ADC_InitTypeDef ADC_InitStructure;</span><br><span class="line">  ADC_InitStructure.ADC_Mode=ADC_Mode_Independent;<span class="comment">//独立模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ScanConvMode=DISABLE;<span class="comment">//连续多通道模式</span></span><br><span class="line">  ADC_InitStructure.ADC_ContinuousConvMode=DISABLE;<span class="comment">//单次转换</span></span><br><span class="line">  ADC_InitStructure.ADC_ExternalTrigConv=ADC_ExternalTrigConv_None;<span class="comment">//转换由软件而不是外部触发启动</span></span><br><span class="line">  ADC_InitStructure.ADC_DataAlign=ADC_DataAlign_Right;<span class="comment">//右对齐</span></span><br><span class="line">  ADC_InitStructure.ADC_NbrOfChannel=<span class="number">1</span>;<span class="comment">//扫描通道数</span></span><br><span class="line">  ADC_Init(ADC1,&amp;ADC_InitStructure);</span><br><span class="line">  <span class="comment">//ADC_RegularChannelConfig(ADC1,ADC_Channel_0,1,ADC_SampleTime_7Cycles5);</span></span><br><span class="line">  ADC_Cmd(ADC1,ENABLE);<span class="comment">//使能或者失能指定的ADC</span></span><br><span class="line">  ADC_ResetCalibration(ADC1);<span class="comment">//重置指定的ADC的校准寄存器</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetResetCalibrationStatus(ADC1));<span class="comment">//等待校准寄存器初始化</span></span><br><span class="line">  ADC_StartCalibration(ADC1);<span class="comment">//开始校准</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetCalibrationStatus(ADC1));<span class="comment">//等待校准完成 </span></span><br><span class="line">  <span class="comment">//ADC_SoftwareStartConvCmd(ADC1,ENABLE);//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">u16 <span class="title">GetADCValue</span><span class="params">(u8 ADC_Channel)</span><span class="comment">//ADC_Channel_x 0~17</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  u16 adc_value;</span><br><span class="line">  ADC_RegularChannelConfig(ADC1,ADC_Channel,<span class="number">1</span>,ADC_SampleTime_7Cycles5);</span><br><span class="line">  ADC_SoftwareStartConvCmd(ADC1,ENABLE);<span class="comment">//使能指定的ADC的软件转换启动功能</span></span><br><span class="line">  <span class="keyword">while</span>(ADC_GetFlagStatus(ADC1,ADC_FLAG_EOC)==RESET);<span class="comment">//检查制定ADC标志位置1与否 ADC_FLAG_EOC 转换结束标志位</span></span><br><span class="line">  adc_value=ADC_GetConversionValue(ADC1);</span><br><span class="line">  <span class="keyword">return</span> adc_value;<span class="comment">//返回最近一次ADCx规则组的转换结果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>当使用内部温度传感器时，需要使能温度传感器通  <code>ADC_TempSensorVrefintCmd(ENABLE);</code><br>    温度传感器通道号是ADC_Channel_16，此通道的采样时间调到最大，来保证精度；</p>
-</blockquote>
-<h2 id="温度的计算公式如下："><a href="#温度的计算公式如下：" class="headerlink" title="温度的计算公式如下："></a>温度的计算公式如下：</h2><p><img src="/Dom/imgs/2018_03_13/313stmADC.png" width="100%"><br>    V25、Avg_Slope的典型值分别为1.43、4.3mV/C<br>    TEMP=(1.43-Vsense)/0.0043+25;</p>
-]]></content>
-      <categories>
-        <category>STM32</category>
-      </categories>
-      <tags>
-        <tag>c语言</tag>
-        <tag>STM32, 单片机</tag>
       </tags>
   </entry>
   <entry>
@@ -214,7 +177,6 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
 			<ul>
 				<li><a href="http://lbs.amap.com/api/webservice/guide/api/convert" target="_blank">高德地图的坐标转换</a></li>
 				<li><a href="http://lbs.amap.com/console/show/picker" target="_blank">高德地图坐标恰取和坐标收索</a></li>
-				<li><a href="http://www.265.me/" target="_blank">地球在线</a></li>
 			</ul>
 			<div id="jisuan">
 				<p style="color: #FF7F50;">GPS接收的数据为:</p>
@@ -379,6 +341,364 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
       </tags>
   </entry>
   <entry>
+    <title>git stash 藏匿的条目被删除如何恢复</title>
+    <url>/2024/05/10/git-stash%E8%97%8F%E5%8C%BF%E7%9A%84%E6%9D%A1%E7%9B%AE%E8%A2%AB%E5%88%A0%E9%99%A4%E5%A6%82%E4%BD%95%E6%81%A2%E5%A4%8D/</url>
+    <content><![CDATA[<h2 id="如果我们使用-git-stash-藏匿了一个修改"><a href="#如果我们使用-git-stash-藏匿了一个修改" class="headerlink" title="如果我们使用 git stash 藏匿了一个修改"></a>如果我们使用 git stash 藏匿了一个修改</h2><p><img src="/Dom/imgs/2024-05-10/藏匿未提交的修改.png" alt="藏匿未提交的修改"></p>
+<a id="more"></a>
+<p><img src="/Dom/imgs/2024-05-10/藏匿未提交的修改-0.png" alt="藏匿未提交的修改-0"></p>
+<h2 id="然后不小心删除了藏匿的条目"><a href="#然后不小心删除了藏匿的条目" class="headerlink" title="然后不小心删除了藏匿的条目"></a>然后不小心删除了藏匿的条目</h2><p><img src="/Dom/imgs/2024-05-10/删除藏匿条目.png" alt="删除藏匿条目"></p>
+<h2 id="可以通过-git-fsck-unreachable-命令查看记录"><a href="#可以通过-git-fsck-unreachable-命令查看记录" class="headerlink" title="可以通过 git fsck --unreachable 命令查看记录"></a>可以通过 <code>git fsck --unreachable</code> 命令查看记录</h2><p><img src="/Dom/imgs/2024-05-10/查找被删除的藏匿commit_id.png" alt="查找被删除的藏匿commit_id"></p>
+<h2 id="使用-git-show-name-only-lt-commitID-gt-查看特征"><a href="#使用-git-show-name-only-lt-commitID-gt-查看特征" class="headerlink" title="使用 git show --name-only &lt;commitID&gt; 查看特征"></a>使用 <code>git show --name-only &lt;commitID&gt;</code> 查看特征</h2><p><img src="/Dom/imgs/2024-05-10/查找被删除的藏匿commit_id-并查看特征是否与目标一致.png" alt="查找被删除的藏匿commit_id-并查看特征是否与目标一致"></p>
+<h2 id="找到后使用-git-stash-apply-lt-commitID-gt-恢复删除的内容"><a href="#找到后使用-git-stash-apply-lt-commitID-gt-恢复删除的内容" class="headerlink" title="找到后使用 git stash apply &lt;commitID&gt; 恢复删除的内容"></a>找到后使用 <code>git stash apply &lt;commitID&gt;</code> 恢复删除的内容</h2><p><img src="/Dom/imgs/2024-05-10/恢复删除的藏匿.png" alt="恢复删除的藏匿"></p>
+<h2 id="使用-git-stash-的建议"><a href="#使用-git-stash-的建议" class="headerlink" title="使用 git stash 的建议"></a>使用 git stash 的建议</h2><ul>
+<li>在藏匿时，记得添加备注信息，以便查找到相关的内容；</li>
+<li>删除单个藏匿时，会返回删除的 commitID ，可以直接拿到这个ID还原即可</li>
+</ul>
+<p><img src="/Dom/imgs/2024-05-10/藏匿的建议.png" alt="藏匿的建议"></p>
+]]></content>
+      <categories>
+        <category>git</category>
+      </categories>
+      <tags>
+        <tag>git stash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>WGS-48坐标转GCJ-02页面-2</title>
+    <url>/2018/03/12/WGS-48%E8%BD%AC%E7%81%AB%E6%98%9F%E5%9D%90%E6%A0%87-2/</url>
+    <content><![CDATA[
+<img src="https://idrnyu.github.io/idrnyu1/img/gps.png" width="40%" style="display:none">
+<a id="more"></a>
+
+<!DOCTYPE html>
+<html>
+
+<head><meta name="generator" content="Hexo 3.9.0">
+	<meta charset="utf-8">
+	<title>GPS坐标转火星坐标-2</title>
+	<link rel="icon" type="image/png" href="https://avatars0.githubusercontent.com/u/27189085?v=3&s=460">
+	<style type="text/css">
+		#ge {
+			width: 600px;
+			margin: 50px auto;
+			padding: 20px 0px 50px 50px;
+			position: relative;
+		}
+
+		a {
+			display: block;
+			widows: auto;
+			margin: 20px 0;
+			text-decoration: none;
+			/*删除下划线*/
+			color: blue;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		ul {
+			padding: 0;
+			margin-top: 0;
+			display: inline-block;
+		}
+
+		#jisuan {
+			width: 300px;
+			float: right;
+			/* position: absolute;
+			top: 35px;
+			right: 10px; */
+		}
+
+		p {
+			margin: 0;
+			font-size: 13px;
+		}
+
+		.intext {
+			width: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	<fieldset id="ge">
+		<legend style="color: red;">纠偏+度分秒(DMS)转度(DDD) 非大陆地区不需要转为GCJ-02</legend>
+		<div style="margin-bottom: 20px;">
+			<ul>
+				<li><a href="http://lbs.amap.com/api/webservice/guide/api/convert" target="_blank">高德地图的坐标转换</a></li>
+				<li><a href="http://lbs.amap.com/console/show/picker" target="_blank">高德地图坐标恰取和坐标收索</a></li>
+			</ul>
+			<div id="jisuan">
+				<p style="color: #FF7F50;">GPS接收的数据为:</p>
+				<p>dddmm.mmmm&nbsp;&nbsp;经度 &nbsp;如:&nbsp;11345.2245 </p>
+				<p>ddmm.mmmm&nbsp;&nbsp;&nbsp;&nbsp;纬度&nbsp;&nbsp;如:&nbsp;2234.1773</p>
+				<p style="color: #FF7F50;">换算为ddmmss.ss</p>
+				<p>ddd&nbsp;mm+0.mmmm*60&nbsp;=&nbsp;113°45′13.47″经度</p>
+				<p>dd&nbsp;mm+0.mmmm*60&nbsp;=&nbsp;22°34′10.64″纬度</p>
+				<p style="color: #FF7F50;">换ddmmss.ss到ddd</p>
+				<p>ddd°mm′ss.ss″&nbsp;=&nbsp;ddd+(mm/60)+(ss.ss/3600)</p>
+			</div>
+		</div>
+		<br>
+		<input type="text" name id class="intext" value placeholder="度°">°
+		<input type="text" name id class="intext" value placeholder="分′">′
+		<input type="text" name id class="intext" value placeholder="秒″">″ 经度&nbsp;&nbsp;&nbsp;&nbsp;
+		<label><input type="radio" name="latitude" checked="checked">东经E</label>
+		<label><input type="radio" name="latitude">西经W</label>
+		<br>
+		<br>
+		<input type="text" name id class="intext" value placeholder="度°">°
+		<input type="text" name id class="intext" value placeholder="分′">′
+		<input type="text" name id class="intext" value placeholder="秒″">″ 纬度&nbsp;&nbsp;&nbsp;&nbsp;
+		<label><input type="radio" name="longitude" checked="checked">北纬N</label>
+		<label><input type="radio" name="longitude">南纬S</label>
+		<br>
+		<br>
+		<input type="button" name id value="转换为DDD格式">
+		<br>
+		<br>
+		<span id="EN">0,0</span>（WGS-84 经纬度）
+		<br>
+		<br>
+		<input type="button" name="sess" id="sess" value="WGS84转换火星坐标">
+		<br>
+		<br>
+		<span id="GEN">0,0</span>（GCJ-02 经纬度）
+
+		<br>
+		<a id="gaode" href="https://uri.amap.com/marker" target="_blank">高德地图（GCJ-02）</a>
+		<a id="google" href="https://www.google.com/maps" target="_blank">GoogleMap（GCJ-02）</a>
+		<a id="google-img" href="https://www.google.com/maps" target="_blank">GoogleMap 卫星图（WGS-84）</a>
+		<a id="openstreetmap" href="https://www.openstreetmap.org" target="_blank">OpenStreetMap（WGS-84）</a>
+	</fieldset>
+
+</body>
+
+<script type="text/javascript">
+	var inps = document.getElementsByTagName("input");
+	var spa = document.getElementById("EN");
+	var gaode = document.getElementById("gaode");
+	var google = document.getElementById("google");
+	var googleImg = document.getElementById("google-img");
+	var openStreetMap = document.getElementById("openstreetmap");
+	var ens = new Array(0, 0);
+
+	inps[10].onclick = function () {
+		var du = +inps[0].value;
+		var fen = +inps[1].value / 60;
+		var mis = +inps[2].value / 3600;
+		if (inps[4].checked)
+			ens[0] = -(du + fen + mis);
+		else
+			ens[0] = du + fen + mis;
+
+		du = +inps[5].value;
+		fen = +inps[6].value / 60;
+		mis = +inps[7].value / 3600;
+		if (inps[9].checked)
+			ens[1] = -(du + fen + mis);
+		else
+			ens[1] = du + fen + mis;
+
+
+		spa.innerText = ens.join();
+	}
+
+	inps[0].focus();  //获取光标
+
+
+	var btn = document.getElementById("sess");//获取计算按钮
+	var sge = document.getElementById("GEN");
+
+	//火星坐标转换
+	btn.onclick = function () {
+		var datess = GPS.gcj_encrypt(ens[1], ens[0])
+
+		sge.innerText = datess.lon + ',' + datess.lat;
+		gaode.href = "https://uri.amap.com/marker?position=" + datess.lon + "," + datess.lat;
+		google.href = "https://www.google.com/maps/@" + datess.lat + "," + datess.lon + ",20z";
+		googleImg.href = "https://www.google.com/maps/@" + ens[1] + "," + ens[0] + ",171m";
+		openStreetMap.href = "https://www.openstreetmap.org/#map=19/" + ens[1] + "/" + ens[0];
+	}
+
+	var GPS = {
+		PI: 3.14159265358979324,
+		x_pi: 3.14159265358979324 * 3000.0 / 180.0,
+		delta: function (lat, lon) {
+			// Krasovsky 1940
+			//
+			// a = 6378245.0, 1/f = 298.3
+			// b = a * (1 - f)
+			// ee = (a^2 - b^2) / a^2;
+			var a = 6378245.0; //  a: 卫星椭球坐标投影到平面地图坐标系的投影因子。
+			var ee = 0.00669342162296594323; //  ee: 椭球的偏心率。
+			var dLat = this.transformLat(lon - 105.0, lat - 35.0);
+			var dLon = this.transformLon(lon - 105.0, lat - 35.0);
+			var radLat = lat / 180.0 * this.PI;
+			var magic = Math.sin(radLat);
+			magic = 1 - ee * magic * magic;
+			var sqrtMagic = Math.sqrt(magic);
+			dLat = (dLat * 180.0) / ((a * (1 - ee)) / (magic * sqrtMagic) * this.PI);
+			dLon = (dLon * 180.0) / (a / sqrtMagic * Math.cos(radLat) * this.PI);
+			return { 'lat': dLat, 'lon': dLon };
+		},
+
+		//WGS-84 to GCJ-02
+		gcj_encrypt: function (wgsLat, wgsLon) {
+			if (this.outOfChina(wgsLat, wgsLon))
+				return { 'lat': wgsLat, 'lon': wgsLon };
+
+			var d = this.delta(wgsLat, wgsLon);
+			return { 'lat': wgsLat + d.lat, 'lon': wgsLon + d.lon };
+		},
+		//GCJ-02 to WGS-84
+		gcj_decrypt: function (gcjLat, gcjLon) {
+			if (this.outOfChina(gcjLat, gcjLon))
+				return { 'lat': gcjLat, 'lon': gcjLon };
+
+			var d = this.delta(gcjLat, gcjLon);
+			return { 'lat': gcjLat - d.lat, 'lon': gcjLon - d.lon };
+		},
+		//GCJ-02 to WGS-84 exactly
+		gcj_decrypt_exact: function (gcjLat, gcjLon) {
+			var initDelta = 0.01;
+			var threshold = 0.000000001;
+			var dLat = initDelta, dLon = initDelta;
+			var mLat = gcjLat - dLat, mLon = gcjLon - dLon;
+			var pLat = gcjLat + dLat, pLon = gcjLon + dLon;
+			var wgsLat, wgsLon, i = 0;
+			while (1) {
+				wgsLat = (mLat + pLat) / 2;
+				wgsLon = (mLon + pLon) / 2;
+				var tmp = this.gcj_encrypt(wgsLat, wgsLon)
+				dLat = tmp.lat - gcjLat;
+				dLon = tmp.lon - gcjLon;
+				if ((Math.abs(dLat) < threshold) && (Math.abs(dLon) < threshold))
+					break;
+
+				if (dLat > 0) pLat = wgsLat; else mLat = wgsLat;
+				if (dLon > 0) pLon = wgsLon; else mLon = wgsLon;
+
+				if (++i > 10000) break;
+			}
+			//console.log(i);
+			return { 'lat': wgsLat, 'lon': wgsLon };
+		},
+		//GCJ-02 to BD-09
+		bd_encrypt: function (gcjLat, gcjLon) {
+			var x = gcjLon, y = gcjLat;
+			var z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * this.x_pi);
+			var theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * this.x_pi);
+			bdLon = z * Math.cos(theta) + 0.0065;
+			bdLat = z * Math.sin(theta) + 0.006;
+			return { 'lat': bdLat, 'lon': bdLon };
+		},
+		//BD-09 to GCJ-02
+		bd_decrypt: function (bdLat, bdLon) {
+			var x = bdLon - 0.0065, y = bdLat - 0.006;
+			var z = Math.sqrt(x * x + y * y) - 0.00002 * Math.sin(y * this.x_pi);
+			var theta = Math.atan2(y, x) - 0.000003 * Math.cos(x * this.x_pi);
+			var gcjLon = z * Math.cos(theta);
+			var gcjLat = z * Math.sin(theta);
+			return { 'lat': gcjLat, 'lon': gcjLon };
+		},
+		//WGS-84 to Web mercator
+		//mercatorLat -> y mercatorLon -> x
+		mercator_encrypt: function (wgsLat, wgsLon) {
+			var x = wgsLon * 20037508.34 / 180.;
+			var y = Math.log(Math.tan((90. + wgsLat) * this.PI / 360.)) / (this.PI / 180.);
+			y = y * 20037508.34 / 180.;
+			return { 'lat': y, 'lon': x };
+			/*
+			if ((Math.abs(wgsLon) > 180 || Math.abs(wgsLat) > 90))
+					return null;
+			var x = 6378137.0 * wgsLon * 0.017453292519943295;
+			var a = wgsLat * 0.017453292519943295;
+			var y = 3189068.5 * Math.log((1.0 + Math.sin(a)) / (1.0 - Math.sin(a)));
+			return {'lat' : y, 'lon' : x};
+			//*/
+		},
+		// Web mercator to WGS-84
+		// mercatorLat -> y mercatorLon -> x
+		mercator_decrypt: function (mercatorLat, mercatorLon) {
+			var x = mercatorLon / 20037508.34 * 180.;
+			var y = mercatorLat / 20037508.34 * 180.;
+			y = 180 / this.PI * (2 * Math.atan(Math.exp(y * this.PI / 180.)) - this.PI / 2);
+			return { 'lat': y, 'lon': x };
+			/*
+			if (Math.abs(mercatorLon) < 180 && Math.abs(mercatorLat) < 90)
+					return null;
+			if ((Math.abs(mercatorLon) > 20037508.3427892) || (Math.abs(mercatorLat) > 20037508.3427892))
+					return null;
+			var a = mercatorLon / 6378137.0 * 57.295779513082323;
+			var x = a - (Math.floor(((a + 180.0) / 360.0)) * 360.0);
+			var y = (1.5707963267948966 - (2.0 * Math.atan(Math.exp((-1.0 * mercatorLat) / 6378137.0)))) * 57.295779513082323;
+			return {'lat' : y, 'lon' : x};
+			//*/
+		},
+		// two point's distance
+		distance: function (latA, lonA, latB, lonB) {
+			var earthR = 6371000.;
+			var x = Math.cos(latA * this.PI / 180.) * Math.cos(latB * this.PI / 180.) * Math.cos((lonA - lonB) * this.PI / 180);
+			var y = Math.sin(latA * this.PI / 180.) * Math.sin(latB * this.PI / 180.);
+			var s = x + y;
+			if (s > 1) s = 1;
+			if (s < -1) s = -1;
+			var alpha = Math.acos(s);
+			var distance = alpha * earthR;
+			return distance;
+		},
+		outOfChina: function (lat, lon) {
+			if (lon < 72.004 || lon > 137.8347)
+				return true;
+			if (lat < 0.8293 || lat > 55.8271)
+				return true;
+			return false;
+		},
+		transformLat: function (x, y) {
+			var ret = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+			ret += (20.0 * Math.sin(6.0 * x * this.PI) + 20.0 * Math.sin(2.0 * x * this.PI)) * 2.0 / 3.0;
+			ret += (20.0 * Math.sin(y * this.PI) + 40.0 * Math.sin(y / 3.0 * this.PI)) * 2.0 / 3.0;
+			ret += (160.0 * Math.sin(y / 12.0 * this.PI) + 320 * Math.sin(y * this.PI / 30.0)) * 2.0 / 3.0;
+			return ret;
+		},
+		transformLon: function (x, y) {
+			var ret = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+			ret += (20.0 * Math.sin(6.0 * x * this.PI) + 20.0 * Math.sin(2.0 * x * this.PI)) * 2.0 / 3.0;
+			ret += (20.0 * Math.sin(x * this.PI) + 40.0 * Math.sin(x / 3.0 * this.PI)) * 2.0 / 3.0;
+			ret += (150.0 * Math.sin(x / 12.0 * this.PI) + 300.0 * Math.sin(x / 30.0 * this.PI)) * 2.0 / 3.0;
+			return ret;
+		}
+	};
+</script>
+
+</html>]]></content>
+      <categories>
+        <category>单片机</category>
+      </categories>
+      <tags>
+        <tag>GPS</tag>
+        <tag>地图坐标转换</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo基本命令</title>
+    <url>/2017/06/27/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>stm32寄存器点亮LED</title>
     <url>/2018/11/08/stm32%E5%AF%84%E5%AD%98%E5%99%A8%E7%82%B9%E4%BA%AELED/</url>
     <content><![CDATA[<h3 id="使用MED编写STM32点亮LED程序"><a href="#使用MED编写STM32点亮LED程序" class="headerlink" title="使用MED编写STM32点亮LED程序"></a>使用MED编写STM32点亮LED程序</h3><p><img src="/Dom/imgs/2018_11_11/02.png" width="40%"><br><a id="more"></a></p>
@@ -387,14 +707,6 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
 <h4 id="改动C文件"><a href="#改动C文件" class="headerlink" title="改动C文件"></a>改动C文件</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stm32f10x.h"</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">int</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 首先找到起始地址 再 加上寄存器偏移地址，给他们写入数据即可</span></span><br><span class="line"><span class="comment">// 首先打开时钟，设置GPIO模式，配置GPIO端口数据</span></span><br><span class="line"><span class="comment">// 指针操作</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="comment">//  RCC_APB2ENR |= (1 &lt;&lt; 2);</span></span><br><span class="line"><span class="comment">//  GPIOA_CRL |= (3 &lt;&lt; (4*1));</span></span><br><span class="line"><span class="comment">//  GPIOA_ODR &amp;= ~(1 &lt;&lt; 1);</span></span><br><span class="line"><span class="comment">//  while(1)&#123;</span></span><br><span class="line"><span class="comment">//      delay(500);</span></span><br><span class="line"><span class="comment">//      GPIOA_ODR ^= (1 &lt;&lt; 1);</span></span><br><span class="line"><span class="comment">//	&#125;</span></span><br><span class="line">    RCC-&gt;APB2ENR |= (<span class="number">1</span> &lt;&lt; <span class="number">2</span>);   <span class="comment">// 置位某一位</span></span><br><span class="line">    GPIOA-&gt;CRL &amp;= ~(<span class="number">0x0f</span> &lt;&lt; (<span class="number">4</span>*<span class="number">4</span>)); <span class="comment">// 先清零  不然下面置位就会置位为  0111</span></span><br><span class="line">    GPIOA-&gt;CRL |= (<span class="number">3</span> &lt;&lt; (<span class="number">4</span>*<span class="number">4</span>));  <span class="comment">//  置位某一位</span></span><br><span class="line">    GPIOA-&gt;ODR &amp;= ~(<span class="number">1</span> &lt;&lt; <span class="number">4</span>);		<span class="comment">//  清零某一位</span></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)&#123;</span><br><span class="line">        delay(<span class="number">100</span>);</span><br><span class="line">        GPIOA-&gt;ODR ^= (<span class="number">1</span> &lt;&lt; <span class="number">4</span>);  <span class="comment">// 取反</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">delay</span><span class="params">(<span class="keyword">int</span> num)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;num; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;<span class="number">500</span>; j++);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SystemInit</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><img src="/Dom/imgs/2018_11_11/01.png" width="100%"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>以前简单个人主页，部分内容在里里面</title>
-    <url>/2018/03/12/%E4%BB%A5%E5%89%8D%E7%AE%80%E5%8D%95%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%EF%BC%8C%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%E5%9C%A8%E9%87%8C%E9%87%8C%E9%9D%A2/</url>
-    <content><![CDATA[<h2 id="老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1"><a href="#老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1" class="headerlink" title="老版本个人静态页面地址   https://idrnyu.github.io/idrnyu1/"></a><a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">老版本个人静态页面地址</a>   <a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">https://idrnyu.github.io/idrnyu1/</a></h2>]]></content>
-      <tags>
-        <tag>个人博客</tag>
-      </tags>
   </entry>
   <entry>
     <title>vue-monaco-editor网页嵌入编辑器</title>
@@ -439,6 +751,14 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
       </tags>
   </entry>
   <entry>
+    <title>以前简单个人主页，部分内容在里里面</title>
+    <url>/2018/03/12/%E4%BB%A5%E5%89%8D%E7%AE%80%E5%8D%95%E4%B8%AA%E4%BA%BA%E4%B8%BB%E9%A1%B5%EF%BC%8C%E9%83%A8%E5%88%86%E5%86%85%E5%AE%B9%E5%9C%A8%E9%87%8C%E9%87%8C%E9%9D%A2/</url>
+    <content><![CDATA[<h2 id="老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1"><a href="#老版本个人静态页面地址-https-idrnyu-github-io-idrnyu1" class="headerlink" title="老版本个人静态页面地址   https://idrnyu.github.io/idrnyu1/"></a><a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">老版本个人静态页面地址</a>   <a href="https://idrnyu.github.io/idrnyu1/" target="_blank" rel="noopener">https://idrnyu.github.io/idrnyu1/</a></h2>]]></content>
+      <tags>
+        <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用Cordova打包vue-cli构建的项目为APP配置</title>
     <url>/2018/03/12/%E4%BD%BF%E7%94%A8Cordova%E6%89%93%E5%8C%85vue-cli%E6%9E%84%E5%BB%BA%E7%9A%84%E9%A1%B9%E7%9B%AE%E4%B8%BAAPP%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<p><img src="/Dom/imgs/2018_03_12/c4.jpg" width="15%"></p>
@@ -467,6 +787,83 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
         <tag>Vue</tag>
         <tag>Cordova</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>荔枝派_buildroot文件系统编译</title>
+    <url>/2022/05/16/%E8%8D%94%E6%9E%9D%E6%B4%BE-buildroot%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/</url>
+    <content><![CDATA[<h1 id="一、-获取buildroot文件系统源码"><a href="#一、-获取buildroot文件系统源码" class="headerlink" title="一、 获取buildroot文件系统源码"></a>一、 获取buildroot文件系统源码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://buildroot.org/downloads/buildroot-2019.08.tar.gz  <span class="comment"># 下载源码</span></span><br><span class="line">tar xvf buildroot-2019.08.tar.gz  <span class="comment"># 解压</span></span><br><span class="line"><span class="built_in">cd</span> buildroot-2019.08</span><br></pre></td></tr></table></figure>
+<h1 id="二、-配置buildroot"><a href="#二、-配置buildroot" class="headerlink" title="二、 配置buildroot"></a>二、 配置buildroot</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make menuconfig  <span class="comment"># 配置buildroot文件系统</span></span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_05_16/menuconfig.png" alt="menuconfig"></p>
+<a id="more"></a>
+<p>配置 <code>Target options --&gt;</code> 设置目标芯片 配置如下</p>
+<p><img src="/Dom/imgs/2022_05_16/menuconfigTarget.png" alt="menuconfigTarget"></p>
+<p>配置 <code>Toolchain --&gt;</code> 设置编译工具链</p>
+<p>首先需要查看编译工具链所在目录和编译工具链的版本</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> arm-linux-gnueabihf-gcc  <span class="comment"># 查看编译工具所在目录</span></span><br><span class="line"></span><br><span class="line">vim /opt/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/include/linux/version.h  <span class="comment"># 查看编译工具版本号</span></span><br><span class="line"><span class="comment"># 263680的二进制为0x40600，则对应的内核版本号为4.6.0。</span></span><br></pre></td></tr></table></figure>
+<p>配置目标如下</p>
+<p><img src="/Dom/imgs/2022_05_16/menuconfigToolchain.png" alt="menuconfigToolchain"></p>
+<h1 id="三、-编译buildroot"><a href="#三、-编译buildroot" class="headerlink" title="三、 编译buildroot"></a>三、 编译buildroot</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make <span class="comment"># 编译buildroot 此过程需要半个小时左右</span></span><br></pre></td></tr></table></figure>
+<p>编译完成后，生成的文件系统在 <code>output/images/rootfs.tar</code></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>荔枝派_SPI-Flash烧录</title>
+    <url>/2022/05/16/%E8%8D%94%E6%9E%9D%E6%B4%BE-SPI-Flash%E7%83%A7%E5%BD%95/</url>
+    <content><![CDATA[<p>烧录 <code>uboot</code> <code>Linux主线Kernel</code> <code>buildroot文件系统</code> 到 全志v3s；参考往期内容；</p>
+<p><a href="/2022/03/12/荔枝派-u-boot编译/">荔枝派-u-boot编译</a></p>
+<p><a href="/2022/05/15/荔枝派-linux内核编译/">荔枝派-linux内核编译</a></p>
+<p><a href="/2022/05/16/荔枝派-buildroot文件系统编译/">荔枝派-buildroot文件系统编译</a></p>
+<h1 id="一、-准备烧录文件"><a href="#一、-准备烧录文件" class="headerlink" title="一、 准备烧录文件"></a>一、 准备烧录文件</h1><ol>
+<li>uboot编译后的产物：<code>u-boot-sunxi-with-spl.bin</code>;</li>
+<li>linux内核编译后的产物：<code>arch/arm/boot/zImage</code> 和 <code>arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</code>;</li>
+<li>buildroot根文件系统编译后的产物：<code>output/images/rootfs.tar</code>;</li>
+</ol>
+<p>将4个文件放在一个文件夹下 如 v0.1</p>
+<h1 id="二、-将根文件系统生成jffs2-img"><a href="#二、-将根文件系统生成jffs2-img" class="headerlink" title="二、 将根文件系统生成jffs2.img"></a>二、 将根文件系统生成jffs2.img</h1><p>使用使用各种文件系统生成工具生成的文件系统文件一般都类似是： <code>rootfs.tar</code> 的压缩包文件，这个是无法没有办法适应nor flash的需要使用转换的工具软件转成类似<code>jffs2.img</code>的文件。</p>
+<p>安装 jffs2 文件系统制作工具</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install mtd-utils</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>解压rootfs文件系统</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir rootfs</span><br><span class="line">tar vxf rootfs.tar -C rootfs</span><br></pre></td></tr></table></figure>
+<p>使用命令生成：<br>这里使用的是16M的flash所以<code>-p</code>后面需要填的值即文件系统的空间为：16M-1M-64K-4M=0xAF 0000</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkfs.jffs2 -s 0x100 -e 0x10000 -p 0xAF0000 -d rootfs/ -o jffs2.img</span><br></pre></td></tr></table></figure>
+<blockquote>
+<ul>
+<li><code>-s</code> 页大小0x100 即：256Byte (可选选项)</li>
+<li><code>-e</code> 块大小0x10000 即：64KByte (可选选项)</li>
+<li><code>-p</code> 十六进制表示输出的文件大小即文件系统的大小</li>
+<li><code>-d</code> 要做成img的源文件夹</li>
+<li>jffs2分区总空间0xAF0000 即：10MB 又 960KB</li>
+<li>jffs2.img是生成的文件系统镜像。</li>
+</ul>
+</blockquote>
+<p>生成后</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rw-r--r--  1 gongyu gongyu 5.0M 5月  15 21:37 jffs2.img</span><br></pre></td></tr></table></figure>
+<h1 id="三、-打包二进制包：flashimg-bin"><a href="#三、-打包二进制包：flashimg-bin" class="headerlink" title="三、 打包二进制包：flashimg.bin"></a>三、 打包二进制包：flashimg.bin</h1><blockquote>
+<ul>
+<li>第一步： 生成一个空文件名字为flashimg.bin，大小是32MB或者是16MB</li>
+<li>第二步： 将uboot添加到文件开头</li>
+<li>第三步： 将dtb放到1M偏移处</li>
+<li>第四步： 将kernel放到1M+64K偏移处</li>
+<li>第五步： 将rootfs放到1M+64K+4M偏移处</li>
+</ul>
+</blockquote>
+<p>偏移大小是seek，单位是KB。</p>
+<p>16M Flash 打包脚本</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=flashimg.bin bs=1M count=16</span><br><span class="line">dd <span class="keyword">if</span>=u-boot-sunxi-with-spl.bin of=flashimg.bin bs=1K conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=sun8i-v3s-licheepi-zero.dtb of=flashimg.bin bs=1K seek=1024  conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=zImage of=flashimg.bin bs=1K seek=1088  conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=jffs2.img of=flashimg.bin  bs=1K seek=5184  conv=notrunc</span><br></pre></td></tr></table></figure>
+<p>32M Flash 打包脚本</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">dd if=/dev/zero of=flashimg.bin bs=1M count=$1</span><br><span class="line">dd if=u-boot-sunxi-with-spl-$2.bin of=flashimg.bin bs=1K conv=notrunc</span><br><span class="line">dd if=sun8i-v3s-licheepi-zero-$2.dtb of=flashimg.bin bs=1K seek=1024  conv=notrunc</span><br><span class="line">dd if=zImage of=flashimg.bin bs=1K seek=1088  conv=notrunc</span><br><span class="line">dd if=jffs2.img of=flashimg.bin  bs=1K seek=5184  conv=notrunc</span><br></pre></td></tr></table></figure>
+<p>将对应的打包脚本命名并指定运行权限</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim bin.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入 16M Flash 打包脚本 保存并退出</span></span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line">chmod 777 bin.sh  <span class="comment"># 给予权限</span></span><br><span class="line"></span><br><span class="line">./bin.sh <span class="comment"># 运行脚本</span></span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_05_16/buildBin.png" alt="buildBin"></p>
+<p>烧录bin到 v3s</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gongyu@gongyu-VirtualBox:~/Lichee_Pi/v1.1$ sudo sunxi-fel -p spiflash-write 0 flashimg.bin</span><br><span class="line">100% [================================================] 16777 kB,   82.3 kB/s</span><br></pre></td></tr></table></figure>
+<p>烧录成功后重新重新上电板子 打开串口即可</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo minicom -s <span class="comment"># 配置串口</span></span><br></pre></td></tr></table></figure>
+<p><img src="/Dom/imgs/2022_05_16/minicom.png" alt="minicom"><br><img src="/Dom/imgs/2022_05_16/setminicom.png" alt="setminicom"></p>
+<p>运行结果如下</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Welcome to minicom 2.7</span><br><span class="line"></span><br><span class="line">OPTIONS: I18n</span><br><span class="line">Compiled on Apr 22 2017, 09:14:19.</span><br><span class="line">Port /dev/ttyUSB0</span><br><span class="line"></span><br><span class="line">Press CTRL-A Z <span class="keyword">for</span> <span class="built_in">help</span> on special keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">U-Boot SPL 2017.01-rc2-00073-gdd6e8740dc-dirty (May 15 2022 - 18:46:47)</span><br><span class="line">DRAM: 64 MiB</span><br><span class="line">Trying to boot from sunxi SPI</span><br><span class="line"></span><br><span class="line">U-Boot 2017.01-rc2-00073-gdd6e8740dc-dirty (May 15 2022 - 18:46:47 +0800) Allwinner Technology</span><br><span class="line"></span><br><span class="line">CPU:   Allwinner V3s (SUN8I 1681)</span><br><span class="line">Model: Lichee Pi Zero</span><br><span class="line">DRAM:  64 MiB</span><br><span class="line">MMC:   SUNXI SD/MMC: 0</span><br><span class="line">SF: Detected xt25f128b with page size 256 Bytes, erase size 4 KiB, total 16 MiB</span><br><span class="line">*** Warning - bad CRC, using default environment</span><br><span class="line"></span><br><span class="line">Setting up a 800x480 lcd console (overscan 0x0)</span><br><span class="line">dotclock: 33000kHz = 33000kHz: (1 * 3MHz * 66) / 6</span><br><span class="line">In:    serial@01c28000</span><br><span class="line">Out:   serial@01c28000</span><br><span class="line">Err:   serial@01c28000</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">U-Boot 2017.01-rc2-00073-gdd6e8740dc-dirty (May 15 2022 - 18:46:47 +0800) Allwinner Technology</span><br><span class="line"></span><br><span class="line">CPU:   Allwinner V3s (SUN8I 1681)</span><br><span class="line">Model: Lichee Pi Zero</span><br><span class="line">DRAM:  64 MiB</span><br><span class="line">MMC:   SUNXI SD/MMC: 0</span><br><span class="line">SF: Detected xt25f128b with page size 256 Bytes, erase size 4 KiB, total 16 MiB</span><br><span class="line">*** Warning - bad CRC, using default environment</span><br><span class="line"></span><br><span class="line">Setting up a 800x480 lcd console (overscan 0x0)</span><br><span class="line">dotclock: 33000kHz = 33000kHz: (1 * 3MHz * 66) / 6</span><br><span class="line">In:    serial@01c28000</span><br><span class="line">Out:   serial@01c28000</span><br><span class="line">Err:   serial@01c28000</span><br><span class="line">Net:   No ethernet found.</span><br><span class="line">starting USB...</span><br><span class="line">No controllers found</span><br><span class="line">Hit any key to stop autoboot:  0</span><br><span class="line">SF: Detected xt25f128b with page size 256 Bytes, erase size 4 KiB, total 16 MiB</span><br><span class="line">device 0 offset 0x100000, size 0x10000</span><br><span class="line">SF: 65536 bytes @ 0x100000 Read: OK</span><br><span class="line">device 0 offset 0x110000, size 0x400000</span><br><span class="line">SF: 4194304 bytes @ 0x110000 Read: OK</span><br><span class="line"><span class="comment">## Flattened Device Tree blob at 41800000</span></span><br><span class="line">   Booting using the fdt blob at 0x41800000</span><br><span class="line">   Loading Device Tree to 42dfa000, end 42dffc30 ... OK</span><br><span class="line"></span><br><span class="line">Starting kernel ...</span><br><span class="line"></span><br><span class="line">[    0.000000] Booting Linux on physical CPU 0x0</span><br><span class="line">[    0.000000] Linux version 4.13.16-licheepi-zero+ (gongyu@gongyu-VirtualBox) (gcc version 6.3.1 20170404 (Linaro GCC 6.3-2017.05)) <span class="comment">#3 SMP Sun M2</span></span><br><span class="line">[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d</span><br><span class="line">[    0.000000] CPU: div instructions available: patching division code</span><br><span class="line">[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache</span><br><span class="line">[    0.000000] OF: fdt: Machine model: Lichee Pi Zero</span><br><span class="line">[    0.000000] Memory policy: Data cache writealloc</span><br><span class="line">[    0.000000] percpu: Embedded 16 pages/cpu @c3de6000 s33868 r8192 d23476 u65536</span><br><span class="line">[    0.000000] Built 1 zonelists <span class="keyword">in</span> Zone order, mobility grouping on.  Total pages: 15883</span><br><span class="line">[    0.000000] Kernel <span class="built_in">command</span> line: console=ttyS0,115200 earlyprintk panic=5 rootwait mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(r2</span><br><span class="line">[    0.000000] PID <span class="built_in">hash</span> table entries: 256 (order: -2, 1024 bytes)</span><br><span class="line">[    0.000000] Dentry cache <span class="built_in">hash</span> table entries: 8192 (order: 3, 32768 bytes)</span><br><span class="line">[    0.000000] Inode-cache <span class="built_in">hash</span> table entries: 4096 (order: 2, 16384 bytes)</span><br><span class="line">[    0.000000] Memory: 53584K/64036K available (6144K kernel code, 217K rwdata, 1456K rodata, 1024K init, 264K bss, 10452K reserved, 0K cma-reser)</span><br><span class="line">[    0.000000] Virtual kernel memory layout:</span><br><span class="line">[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)</span><br><span class="line">[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)</span><br><span class="line">[    0.000000]     vmalloc : 0xc4000000 - 0xff800000   ( 952 MB)</span><br><span class="line">[    0.000000]     lowmem  : 0xc0000000 - 0xc3e89000   (  62 MB)</span><br><span class="line">[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)</span><br><span class="line">[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)</span><br><span class="line">[    0.000000]       .text : 0xc0008000 - 0xc0700000   (7136 kB)</span><br><span class="line">[    0.000000]       .init : 0xc0900000 - 0xc0a00000   (1024 kB)</span><br><span class="line">[    0.000000]       .data : 0xc0a00000 - 0xc0a367c0   ( 218 kB)</span><br><span class="line">[    0.000000]        .bss : 0xc0a3daf0 - 0xc0a7fcac   ( 265 kB)</span><br><span class="line">[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1</span><br><span class="line">[    0.000000] Hierarchical RCU implementation.</span><br><span class="line">[    0.000000]  RCU event tracing is enabled.</span><br><span class="line">[    0.000000]  RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=1.</span><br><span class="line">[    0.000000] RCU: Adjusting geometry <span class="keyword">for</span> rcu_fanout_leaf=16, nr_cpu_ids=1</span><br><span class="line">[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16</span><br><span class="line">[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (virt).</span><br><span class="line">[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns</span><br><span class="line">[    0.000009] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns</span><br><span class="line">[    0.000021] Switching to timer-based delay loop, resolution 41ns</span><br><span class="line">[    0.000185] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns</span><br><span class="line">[    0.000409] Console: colour dummy device 80x30</span><br><span class="line">[    0.000447] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)</span><br><span class="line">[    0.000462] pid_max: default: 32768 minimum: 301</span><br><span class="line">[    0.000591] Mount-cache <span class="built_in">hash</span> table entries: 1024 (order: 0, 4096 bytes)</span><br><span class="line">[    0.000607] Mountpoint-cache <span class="built_in">hash</span> table entries: 1024 (order: 0, 4096 bytes)</span><br><span class="line">[    0.001201] CPU: Testing write buffer coherency: ok</span><br><span class="line">[    0.001571] /cpus/cpu@0 missing clock-frequency property</span><br><span class="line">[    0.001594] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000</span><br><span class="line">[    0.002022] Setting up static identity map <span class="keyword">for</span> 0x40100000 - 0x40100060</span><br><span class="line">[    0.002208] Hierarchical SRCU implementation.</span><br><span class="line">[    0.002727] smp: Bringing up secondary CPUs ...</span><br><span class="line">[    0.002740] smp: Brought up 1 node, 1 CPU</span><br><span class="line">[    0.002749] SMP: Total of 1 processors activated (48.00 BogoMIPS).</span><br><span class="line">[    0.002756] CPU: All CPU(s) started <span class="keyword">in</span> SVC mode.</span><br><span class="line">[    0.003517] devtmpfs: initialized</span><br><span class="line">[    0.006545] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5</span><br><span class="line">[    0.006807] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns</span><br><span class="line">[    0.006839] futex <span class="built_in">hash</span> table entries: 256 (order: 2, 16384 bytes)</span><br><span class="line">[    0.007006] pinctrl core: initialized pinctrl subsystem</span><br><span class="line">[    0.007883] random: get_random_u32 called from bucket_table_alloc+0xf4/0x244 with crng_init=0</span><br><span class="line">[    0.008014] NET: Registered protocol family 16</span><br><span class="line">[    0.008504] DMA: preallocated 256 KiB pool <span class="keyword">for</span> atomic coherent allocations</span><br><span class="line">[    0.009612] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.</span><br><span class="line">[    0.009629] hw-breakpoint: maximum watchpoint size is 8 bytes.</span><br><span class="line">[    0.022177] SCSI subsystem initialized</span><br><span class="line">[    0.022469] usbcore: registered new interface driver usbfs</span><br><span class="line">[    0.022535] usbcore: registered new interface driver hub</span><br><span class="line">[    0.022631] usbcore: registered new device driver usb</span><br><span class="line">[    0.022870] pps_core: LinuxPPS API ver. 1 registered</span><br><span class="line">[    0.022882] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;</span><br><span class="line">[    0.022905] PTP clock support registered</span><br><span class="line">[    0.023130] Advanced Linux Sound Architecture Driver Initialized.</span><br><span class="line">[    0.024937] clocksource: Switched to clocksource arch_sys_counter</span><br><span class="line">[    0.035847] NET: Registered protocol family 2</span><br><span class="line">[    0.036437] TCP established <span class="built_in">hash</span> table entries: 1024 (order: 0, 4096 bytes)</span><br><span class="line">[    0.036470] TCP <span class="built_in">bind</span> <span class="built_in">hash</span> table entries: 1024 (order: 1, 8192 bytes)</span><br><span class="line">[    0.036494] TCP: Hash tables configured (established 1024 <span class="built_in">bind</span> 1024)</span><br><span class="line">[    0.036622] UDP <span class="built_in">hash</span> table entries: 256 (order: 1, 8192 bytes)</span><br><span class="line">[    0.036672] UDP-Lite <span class="built_in">hash</span> table entries: 256 (order: 1, 8192 bytes)</span><br><span class="line">[    0.036913] NET: Registered protocol family 1</span><br><span class="line">[    0.037502] RPC: Registered named UNIX socket transport module.</span><br><span class="line">[    0.037520] RPC: Registered udp transport module.</span><br><span class="line">[    0.037525] RPC: Registered tcp transport module.</span><br><span class="line">[    0.037531] RPC: Registered tcp NFSv4.1 backchannel transport module.</span><br><span class="line">[    0.039598] workingset: timestamp_bits=30 max_order=14 bucket_order=0</span><br><span class="line">[    0.048527] NFS: Registering the id_resolver key <span class="built_in">type</span></span><br><span class="line">[    0.048579] Key <span class="built_in">type</span> id_resolver registered</span><br><span class="line">[    0.048586] Key <span class="built_in">type</span> id_legacy registered</span><br><span class="line">[    0.048630] jffs2: version 2.2. (NAND) Â© 2001-2006 Red Hat, Inc.</span><br><span class="line">[    0.050156] random: fast init <span class="keyword">done</span></span><br><span class="line">[    0.053011] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)</span><br><span class="line">[    0.053031] io scheduler noop registered</span><br><span class="line">[    0.053039] io scheduler deadline registered</span><br><span class="line">[    0.053310] io scheduler cfq registered (default)</span><br><span class="line">[    0.053322] io scheduler mq-deadline registered</span><br><span class="line">[    0.053329] io scheduler kyber registered</span><br><span class="line">[    0.057685] sun8i-v3s-pinctrl 1c20800.pinctrl: initialized sunXi PIO driver</span><br><span class="line">[    0.126907] Serial: 8250/16550 driver, 8 ports, IRQ sharing disabled</span><br><span class="line">[    0.130262] console [ttyS0] disabled</span><br><span class="line">[    0.150544] 1c28000.serial: ttyS0 at MMIO 0x1c28000 (irq = 33, base_baud = 1500000) is a U6_16550A</span><br><span class="line">[    0.739727] console [ttyS0] enabled</span><br><span class="line">[    0.747572] m25p80 spi32766.0: xt25f128b (16384 Kbytes)</span><br><span class="line">[    0.752833] spi32766.0: parser cmdlinepart: 4</span><br><span class="line">[    0.757272] 4 cmdlinepart partitions found on MTD device spi32766.0</span><br><span class="line">[    0.763533] Creating 4 MTD partitions on <span class="string">"spi32766.0"</span>:</span><br><span class="line">[    0.768701] 0x000000000000-0x000000100000 : <span class="string">"uboot"</span></span><br><span class="line">[    0.774206] 0x000000100000-0x000000110000 : <span class="string">"dtb"</span></span><br><span class="line">[    0.779408] 0x000000110000-0x000000510000 : <span class="string">"kernel"</span></span><br><span class="line">[    0.784706] 0x000000510000-0x000001000000 : <span class="string">"rootfs"</span></span><br><span class="line">[    0.790529] libphy: Fixed MDIO Bus: probed</span><br><span class="line">[    0.795117] ehci_hcd: USB 2.0 <span class="string">'Enhanced'</span> Host Controller (EHCI) Driver</span><br><span class="line">[    0.801643] ehci-platform: EHCI generic platform driver</span><br><span class="line">[    0.807174] ehci-platform 1c1a000.usb: EHCI Host Controller</span><br><span class="line">[    0.812803] ehci-platform 1c1a000.usb: new USB bus registered, assigned bus number 1</span><br><span class="line">[    0.820762] ehci-platform 1c1a000.usb: irq 25, io mem 0x01c1a000</span><br><span class="line">[    0.854971] ehci-platform 1c1a000.usb: USB 2.0 started, EHCI 1.00</span><br><span class="line">[    0.862206] hub 1-0:1.0: USB hub found</span><br><span class="line">[    0.866158] hub 1-0:1.0: 1 port detected</span><br><span class="line">[    0.870659] ohci_hcd: USB 1.1 <span class="string">'Open'</span> Host Controller (OHCI) Driver</span><br><span class="line">[    0.876963] ohci-platform: OHCI generic platform driver</span><br><span class="line">[    0.882528] ohci-platform 1c1a400.usb: Generic Platform OHCI controller</span><br><span class="line">[    0.889256] ohci-platform 1c1a400.usb: new USB bus registered, assigned bus number 2</span><br><span class="line">[    0.897218] ohci-platform 1c1a400.usb: irq 26, io mem 0x01c1a400</span><br><span class="line">[    0.970040] hub 2-0:1.0: USB hub found</span><br><span class="line">[    0.973864] hub 2-0:1.0: 1 port detected</span><br><span class="line">[    0.981458] udc-core: couldn<span class="string">'t find an available UDC - added [g_cdc] to list of pending drivers</span></span><br><span class="line"><span class="string">[    0.991180] sun6i-rtc 1c20400.rtc: rtc core: registered rtc-sun6i as rtc0</span></span><br><span class="line"><span class="string">[    0.998080] sun6i-rtc 1c20400.rtc: RTC enabled</span></span><br><span class="line"><span class="string">[    1.002619] i2c /dev entries driver</span></span><br><span class="line"><span class="string">[    1.007604] input: ns2009_ts as /devices/platform/soc/1c2ac00.i2c/i2c-0/0-0048/input/input0</span></span><br><span class="line"><span class="string">[    1.017160] sunxi-wdt 1c20ca0.watchdog: Watchdog enabled (timeout=16 sec, nowayout=0)</span></span><br><span class="line"><span class="string">[    1.085196] sunxi-mmc 1c0f000.mmc: base:0xc4077000 irq:23</span></span><br><span class="line"><span class="string">[    1.092128] usbcore: registered new interface driver usbhid</span></span><br><span class="line"><span class="string">[    1.097807] usbhid: USB HID core driver</span></span><br><span class="line"><span class="string">[    1.103419] NET: Registered protocol family 17</span></span><br><span class="line"><span class="string">[    1.108119] Key type dns_resolver registered</span></span><br><span class="line"><span class="string">[    1.112543] Registering SWP/SWPB emulation handler</span></span><br><span class="line"><span class="string">[    1.123073] simple-framebuffer 43e89000.framebuffer: framebuffer at 0x43e89000, 0x177000 bytes, mapped to 0xc4400000</span></span><br><span class="line"><span class="string">[    1.133733] simple-framebuffer 43e89000.framebuffer: format=x8r8g8b8, mode=800x480x32, linelength=3200</span></span><br><span class="line"><span class="string">[    1.152018] Console: switching to colour frame buffer device 100x30</span></span><br><span class="line"><span class="string">[    1.164514] simple-framebuffer 43e89000.framebuffer: fb0: simplefb registered!</span></span><br><span class="line"><span class="string">[    1.173084] usb_phy_generic usb_phy_generic.0.auto: usb_phy_generic.0.auto supply vcc not found, using dummy regulator</span></span><br><span class="line"><span class="string">[    1.184473] musb-hdrc musb-hdrc.1.auto: MUSB HDRC host driver</span></span><br><span class="line"><span class="string">[    1.190317] musb-hdrc musb-hdrc.1.auto: new USB bus registered, assigned bus number 3</span></span><br><span class="line"><span class="string">[    1.199404] hub 3-0:1.0: USB hub found</span></span><br><span class="line"><span class="string">[    1.203266] hub 3-0:1.0: 1 port detected</span></span><br><span class="line"><span class="string">[    1.208558] using random self ethernet address</span></span><br><span class="line"><span class="string">[    1.213049] using random host ethernet address</span></span><br><span class="line"><span class="string">[    1.218666] usb0: HOST MAC 72:d4:27:dc:c4:8a</span></span><br><span class="line"><span class="string">[    1.222985] usb0: MAC 5a:ef:c7:4f:6c:26</span></span><br><span class="line"><span class="string">[    1.226971] g_cdc gadget: CDC Composite Gadget, version: King Kamehameha Day 2008</span></span><br><span class="line"><span class="string">[    1.234448] g_cdc gadget: g_cdc ready</span></span><br><span class="line"><span class="string">[    1.238489] sun6i-rtc 1c20400.rtc: setting system clock to 1970-01-01 00:00:12 UTC (12)</span></span><br><span class="line"><span class="string">[    1.246780] vcc3v0: disabling</span></span><br><span class="line"><span class="string">[    1.249752] vcc5v0: disabling</span></span><br><span class="line"><span class="string">[    1.252716] ALSA device list:</span></span><br><span class="line"><span class="string">[    1.255732]   No soundcards found.</span></span><br><span class="line"><span class="string">[    1.299597] random: crng init done</span></span><br><span class="line"><span class="string">[    2.213859] VFS: Mounted root (jffs2 filesystem) on device 31:3.</span></span><br><span class="line"><span class="string">[    2.221316] devtmpfs: mounted</span></span><br><span class="line"><span class="string">[    2.225633] Freeing unused kernel memory: 1024K</span></span><br><span class="line"><span class="string">[    2.784077] g_cdc gadget: high-speed config #1: CDC Composite (ECM + ACM)</span></span><br><span class="line"><span class="string">Starting syslogd: OK</span></span><br><span class="line"><span class="string">Starting klogd: OK</span></span><br><span class="line"><span class="string">Running sysctl: OK</span></span><br><span class="line"><span class="string">Initializing random number generator... done.</span></span><br><span class="line"><span class="string">Starting network: OK</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Welcome to Buildroot</span></span><br><span class="line"><span class="string">buildroot login: root</span></span><br><span class="line"><span class="string"># cd /</span></span><br><span class="line"><span class="string"># ls</span></span><br><span class="line"><span class="string">bin      lib      media    proc     sbin     usr</span></span><br><span class="line"><span class="string">dev      lib32    mnt      root     sys      var</span></span><br><span class="line"><span class="string">etc      linuxrc  opt      run      tmp</span></span><br><span class="line"><span class="string">#</span></span><br><span class="line"><span class="string">CTRL-A Z for help | 115200 8N1 | NOR | Minicom 2.7 | VT102 | Offline | ttyUSB0</span></span><br></pre></td></tr></table></figure>
+]]></content>
   </entry>
   <entry>
     <title>学习搭建个人博客</title>
@@ -545,83 +942,6 @@ https://bh3nvn.github.io/2019/05/DAPLink2STlink/
       <tags>
         <tag>实用</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>荔枝派_SPI-Flash烧录</title>
-    <url>/2022/05/16/%E8%8D%94%E6%9E%9D%E6%B4%BE-SPI-Flash%E7%83%A7%E5%BD%95/</url>
-    <content><![CDATA[<p>烧录 <code>uboot</code> <code>Linux主线Kernel</code> <code>buildroot文件系统</code> 到 全志v3s；参考往期内容；</p>
-<p><a href="/2022/03/12/荔枝派-u-boot编译/">荔枝派-u-boot编译</a></p>
-<p><a href="/2022/05/15/荔枝派-linux内核编译/">荔枝派-linux内核编译</a></p>
-<p><a href="/2022/05/16/荔枝派-buildroot文件系统编译/">荔枝派-buildroot文件系统编译</a></p>
-<h1 id="一、-准备烧录文件"><a href="#一、-准备烧录文件" class="headerlink" title="一、 准备烧录文件"></a>一、 准备烧录文件</h1><ol>
-<li>uboot编译后的产物：<code>u-boot-sunxi-with-spl.bin</code>;</li>
-<li>linux内核编译后的产物：<code>arch/arm/boot/zImage</code> 和 <code>arch/arm/boot/dts/sun8i-v3s-licheepi-zero.dtb</code>;</li>
-<li>buildroot根文件系统编译后的产物：<code>output/images/rootfs.tar</code>;</li>
-</ol>
-<p>将4个文件放在一个文件夹下 如 v0.1</p>
-<h1 id="二、-将根文件系统生成jffs2-img"><a href="#二、-将根文件系统生成jffs2-img" class="headerlink" title="二、 将根文件系统生成jffs2.img"></a>二、 将根文件系统生成jffs2.img</h1><p>使用使用各种文件系统生成工具生成的文件系统文件一般都类似是： <code>rootfs.tar</code> 的压缩包文件，这个是无法没有办法适应nor flash的需要使用转换的工具软件转成类似<code>jffs2.img</code>的文件。</p>
-<p>安装 jffs2 文件系统制作工具</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get install mtd-utils</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>解压rootfs文件系统</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkdir rootfs</span><br><span class="line">tar vxf rootfs.tar -C rootfs</span><br></pre></td></tr></table></figure>
-<p>使用命令生成：<br>这里使用的是16M的flash所以<code>-p</code>后面需要填的值即文件系统的空间为：16M-1M-64K-4M=0xAF 0000</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mkfs.jffs2 -s 0x100 -e 0x10000 -p 0xAF0000 -d rootfs/ -o jffs2.img</span><br></pre></td></tr></table></figure>
-<blockquote>
-<ul>
-<li><code>-s</code> 页大小0x100 即：256Byte (可选选项)</li>
-<li><code>-e</code> 块大小0x10000 即：64KByte (可选选项)</li>
-<li><code>-p</code> 十六进制表示输出的文件大小即文件系统的大小</li>
-<li><code>-d</code> 要做成img的源文件夹</li>
-<li>jffs2分区总空间0xAF0000 即：10MB 又 960KB</li>
-<li>jffs2.img是生成的文件系统镜像。</li>
-</ul>
-</blockquote>
-<p>生成后</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">-rw-r--r--  1 gongyu gongyu 5.0M 5月  15 21:37 jffs2.img</span><br></pre></td></tr></table></figure>
-<h1 id="三、-打包二进制包：flashimg-bin"><a href="#三、-打包二进制包：flashimg-bin" class="headerlink" title="三、 打包二进制包：flashimg.bin"></a>三、 打包二进制包：flashimg.bin</h1><blockquote>
-<ul>
-<li>第一步： 生成一个空文件名字为flashimg.bin，大小是32MB或者是16MB</li>
-<li>第二步： 将uboot添加到文件开头</li>
-<li>第三步： 将dtb放到1M偏移处</li>
-<li>第四步： 将kernel放到1M+64K偏移处</li>
-<li>第五步： 将rootfs放到1M+64K+4M偏移处</li>
-</ul>
-</blockquote>
-<p>偏移大小是seek，单位是KB。</p>
-<p>16M Flash 打包脚本</p>
-<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/sh</span></span><br><span class="line">dd <span class="keyword">if</span>=/dev/zero of=flashimg.bin bs=1M count=16</span><br><span class="line">dd <span class="keyword">if</span>=u-boot-sunxi-with-spl.bin of=flashimg.bin bs=1K conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=sun8i-v3s-licheepi-zero.dtb of=flashimg.bin bs=1K seek=1024  conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=zImage of=flashimg.bin bs=1K seek=1088  conv=notrunc</span><br><span class="line">dd <span class="keyword">if</span>=jffs2.img of=flashimg.bin  bs=1K seek=5184  conv=notrunc</span><br></pre></td></tr></table></figure>
-<p>32M Flash 打包脚本</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/sh</span></span><br><span class="line">dd if=/dev/zero of=flashimg.bin bs=1M count=$1</span><br><span class="line">dd if=u-boot-sunxi-with-spl-$2.bin of=flashimg.bin bs=1K conv=notrunc</span><br><span class="line">dd if=sun8i-v3s-licheepi-zero-$2.dtb of=flashimg.bin bs=1K seek=1024  conv=notrunc</span><br><span class="line">dd if=zImage of=flashimg.bin bs=1K seek=1088  conv=notrunc</span><br><span class="line">dd if=jffs2.img of=flashimg.bin  bs=1K seek=5184  conv=notrunc</span><br></pre></td></tr></table></figure>
-<p>将对应的打包脚本命名并指定运行权限</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim bin.sh</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输入 16M Flash 打包脚本 保存并退出</span></span><br><span class="line">:wq</span><br><span class="line"></span><br><span class="line">chmod 777 bin.sh  <span class="comment"># 给予权限</span></span><br><span class="line"></span><br><span class="line">./bin.sh <span class="comment"># 运行脚本</span></span><br></pre></td></tr></table></figure>
-<p><img src="/Dom/imgs/2022_05_16/buildBin.png" alt="buildBin"></p>
-<p>烧录bin到 v3s</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gongyu@gongyu-VirtualBox:~/Lichee_Pi/v1.1$ sudo sunxi-fel -p spiflash-write 0 flashimg.bin</span><br><span class="line">100% [================================================] 16777 kB,   82.3 kB/s</span><br></pre></td></tr></table></figure>
-<p>烧录成功后重新重新上电板子 打开串口即可</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo minicom -s <span class="comment"># 配置串口</span></span><br></pre></td></tr></table></figure>
-<p><img src="/Dom/imgs/2022_05_16/minicom.png" alt="minicom"><br><img src="/Dom/imgs/2022_05_16/setminicom.png" alt="setminicom"></p>
-<p>运行结果如下</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Welcome to minicom 2.7</span><br><span class="line"></span><br><span class="line">OPTIONS: I18n</span><br><span class="line">Compiled on Apr 22 2017, 09:14:19.</span><br><span class="line">Port /dev/ttyUSB0</span><br><span class="line"></span><br><span class="line">Press CTRL-A Z <span class="keyword">for</span> <span class="built_in">help</span> on special keys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">U-Boot SPL 2017.01-rc2-00073-gdd6e8740dc-dirty (May 15 2022 - 18:46:47)</span><br><span class="line">DRAM: 64 MiB</span><br><span class="line">Trying to boot from sunxi SPI</span><br><span class="line"></span><br><span class="line">U-Boot 2017.01-rc2-00073-gdd6e8740dc-dirty (May 15 2022 - 18:46:47 +0800) Allwinner Technology</span><br><span class="line"></span><br><span class="line">CPU:   Allwinner V3s (SUN8I 1681)</span><br><span class="line">Model: Lichee Pi Zero</span><br><span class="line">DRAM:  64 MiB</span><br><span class="line">MMC:   SUNXI SD/MMC: 0</span><br><span class="line">SF: Detected xt25f128b with page size 256 Bytes, erase size 4 KiB, total 16 MiB</span><br><span class="line">*** Warning - bad CRC, using default environment</span><br><span class="line"></span><br><span class="line">Setting up a 800x480 lcd console (overscan 0x0)</span><br><span class="line">dotclock: 33000kHz = 33000kHz: (1 * 3MHz * 66) / 6</span><br><span class="line">In:    serial@01c28000</span><br><span class="line">Out:   serial@01c28000</span><br><span class="line">Err:   serial@01c28000</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">U-Boot 2017.01-rc2-00073-gdd6e8740dc-dirty (May 15 2022 - 18:46:47 +0800) Allwinner Technology</span><br><span class="line"></span><br><span class="line">CPU:   Allwinner V3s (SUN8I 1681)</span><br><span class="line">Model: Lichee Pi Zero</span><br><span class="line">DRAM:  64 MiB</span><br><span class="line">MMC:   SUNXI SD/MMC: 0</span><br><span class="line">SF: Detected xt25f128b with page size 256 Bytes, erase size 4 KiB, total 16 MiB</span><br><span class="line">*** Warning - bad CRC, using default environment</span><br><span class="line"></span><br><span class="line">Setting up a 800x480 lcd console (overscan 0x0)</span><br><span class="line">dotclock: 33000kHz = 33000kHz: (1 * 3MHz * 66) / 6</span><br><span class="line">In:    serial@01c28000</span><br><span class="line">Out:   serial@01c28000</span><br><span class="line">Err:   serial@01c28000</span><br><span class="line">Net:   No ethernet found.</span><br><span class="line">starting USB...</span><br><span class="line">No controllers found</span><br><span class="line">Hit any key to stop autoboot:  0</span><br><span class="line">SF: Detected xt25f128b with page size 256 Bytes, erase size 4 KiB, total 16 MiB</span><br><span class="line">device 0 offset 0x100000, size 0x10000</span><br><span class="line">SF: 65536 bytes @ 0x100000 Read: OK</span><br><span class="line">device 0 offset 0x110000, size 0x400000</span><br><span class="line">SF: 4194304 bytes @ 0x110000 Read: OK</span><br><span class="line"><span class="comment">## Flattened Device Tree blob at 41800000</span></span><br><span class="line">   Booting using the fdt blob at 0x41800000</span><br><span class="line">   Loading Device Tree to 42dfa000, end 42dffc30 ... OK</span><br><span class="line"></span><br><span class="line">Starting kernel ...</span><br><span class="line"></span><br><span class="line">[    0.000000] Booting Linux on physical CPU 0x0</span><br><span class="line">[    0.000000] Linux version 4.13.16-licheepi-zero+ (gongyu@gongyu-VirtualBox) (gcc version 6.3.1 20170404 (Linaro GCC 6.3-2017.05)) <span class="comment">#3 SMP Sun M2</span></span><br><span class="line">[    0.000000] CPU: ARMv7 Processor [410fc075] revision 5 (ARMv7), cr=10c5387d</span><br><span class="line">[    0.000000] CPU: div instructions available: patching division code</span><br><span class="line">[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing instruction cache</span><br><span class="line">[    0.000000] OF: fdt: Machine model: Lichee Pi Zero</span><br><span class="line">[    0.000000] Memory policy: Data cache writealloc</span><br><span class="line">[    0.000000] percpu: Embedded 16 pages/cpu @c3de6000 s33868 r8192 d23476 u65536</span><br><span class="line">[    0.000000] Built 1 zonelists <span class="keyword">in</span> Zone order, mobility grouping on.  Total pages: 15883</span><br><span class="line">[    0.000000] Kernel <span class="built_in">command</span> line: console=ttyS0,115200 earlyprintk panic=5 rootwait mtdparts=spi32766.0:1M(uboot)ro,64k(dtb)ro,4M(kernel)ro,-(r2</span><br><span class="line">[    0.000000] PID <span class="built_in">hash</span> table entries: 256 (order: -2, 1024 bytes)</span><br><span class="line">[    0.000000] Dentry cache <span class="built_in">hash</span> table entries: 8192 (order: 3, 32768 bytes)</span><br><span class="line">[    0.000000] Inode-cache <span class="built_in">hash</span> table entries: 4096 (order: 2, 16384 bytes)</span><br><span class="line">[    0.000000] Memory: 53584K/64036K available (6144K kernel code, 217K rwdata, 1456K rodata, 1024K init, 264K bss, 10452K reserved, 0K cma-reser)</span><br><span class="line">[    0.000000] Virtual kernel memory layout:</span><br><span class="line">[    0.000000]     vector  : 0xffff0000 - 0xffff1000   (   4 kB)</span><br><span class="line">[    0.000000]     fixmap  : 0xffc00000 - 0xfff00000   (3072 kB)</span><br><span class="line">[    0.000000]     vmalloc : 0xc4000000 - 0xff800000   ( 952 MB)</span><br><span class="line">[    0.000000]     lowmem  : 0xc0000000 - 0xc3e89000   (  62 MB)</span><br><span class="line">[    0.000000]     pkmap   : 0xbfe00000 - 0xc0000000   (   2 MB)</span><br><span class="line">[    0.000000]     modules : 0xbf000000 - 0xbfe00000   (  14 MB)</span><br><span class="line">[    0.000000]       .text : 0xc0008000 - 0xc0700000   (7136 kB)</span><br><span class="line">[    0.000000]       .init : 0xc0900000 - 0xc0a00000   (1024 kB)</span><br><span class="line">[    0.000000]       .data : 0xc0a00000 - 0xc0a367c0   ( 218 kB)</span><br><span class="line">[    0.000000]        .bss : 0xc0a3daf0 - 0xc0a7fcac   ( 265 kB)</span><br><span class="line">[    0.000000] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=1, Nodes=1</span><br><span class="line">[    0.000000] Hierarchical RCU implementation.</span><br><span class="line">[    0.000000]  RCU event tracing is enabled.</span><br><span class="line">[    0.000000]  RCU restricting CPUs from NR_CPUS=8 to nr_cpu_ids=1.</span><br><span class="line">[    0.000000] RCU: Adjusting geometry <span class="keyword">for</span> rcu_fanout_leaf=16, nr_cpu_ids=1</span><br><span class="line">[    0.000000] NR_IRQS: 16, nr_irqs: 16, preallocated irqs: 16</span><br><span class="line">[    0.000000] arch_timer: cp15 timer(s) running at 24.00MHz (virt).</span><br><span class="line">[    0.000000] clocksource: arch_sys_counter: mask: 0xffffffffffffff max_cycles: 0x588fe9dc0, max_idle_ns: 440795202592 ns</span><br><span class="line">[    0.000009] sched_clock: 56 bits at 24MHz, resolution 41ns, wraps every 4398046511097ns</span><br><span class="line">[    0.000021] Switching to timer-based delay loop, resolution 41ns</span><br><span class="line">[    0.000185] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851949 ns</span><br><span class="line">[    0.000409] Console: colour dummy device 80x30</span><br><span class="line">[    0.000447] Calibrating delay loop (skipped), value calculated using timer frequency.. 48.00 BogoMIPS (lpj=240000)</span><br><span class="line">[    0.000462] pid_max: default: 32768 minimum: 301</span><br><span class="line">[    0.000591] Mount-cache <span class="built_in">hash</span> table entries: 1024 (order: 0, 4096 bytes)</span><br><span class="line">[    0.000607] Mountpoint-cache <span class="built_in">hash</span> table entries: 1024 (order: 0, 4096 bytes)</span><br><span class="line">[    0.001201] CPU: Testing write buffer coherency: ok</span><br><span class="line">[    0.001571] /cpus/cpu@0 missing clock-frequency property</span><br><span class="line">[    0.001594] CPU0: thread -1, cpu 0, socket 0, mpidr 80000000</span><br><span class="line">[    0.002022] Setting up static identity map <span class="keyword">for</span> 0x40100000 - 0x40100060</span><br><span class="line">[    0.002208] Hierarchical SRCU implementation.</span><br><span class="line">[    0.002727] smp: Bringing up secondary CPUs ...</span><br><span class="line">[    0.002740] smp: Brought up 1 node, 1 CPU</span><br><span class="line">[    0.002749] SMP: Total of 1 processors activated (48.00 BogoMIPS).</span><br><span class="line">[    0.002756] CPU: All CPU(s) started <span class="keyword">in</span> SVC mode.</span><br><span class="line">[    0.003517] devtmpfs: initialized</span><br><span class="line">[    0.006545] VFP support v0.3: implementor 41 architecture 2 part 30 variant 7 rev 5</span><br><span class="line">[    0.006807] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 19112604462750000 ns</span><br><span class="line">[    0.006839] futex <span class="built_in">hash</span> table entries: 256 (order: 2, 16384 bytes)</span><br><span class="line">[    0.007006] pinctrl core: initialized pinctrl subsystem</span><br><span class="line">[    0.007883] random: get_random_u32 called from bucket_table_alloc+0xf4/0x244 with crng_init=0</span><br><span class="line">[    0.008014] NET: Registered protocol family 16</span><br><span class="line">[    0.008504] DMA: preallocated 256 KiB pool <span class="keyword">for</span> atomic coherent allocations</span><br><span class="line">[    0.009612] hw-breakpoint: found 5 (+1 reserved) breakpoint and 4 watchpoint registers.</span><br><span class="line">[    0.009629] hw-breakpoint: maximum watchpoint size is 8 bytes.</span><br><span class="line">[    0.022177] SCSI subsystem initialized</span><br><span class="line">[    0.022469] usbcore: registered new interface driver usbfs</span><br><span class="line">[    0.022535] usbcore: registered new interface driver hub</span><br><span class="line">[    0.022631] usbcore: registered new device driver usb</span><br><span class="line">[    0.022870] pps_core: LinuxPPS API ver. 1 registered</span><br><span class="line">[    0.022882] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti &lt;giometti@linux.it&gt;</span><br><span class="line">[    0.022905] PTP clock support registered</span><br><span class="line">[    0.023130] Advanced Linux Sound Architecture Driver Initialized.</span><br><span class="line">[    0.024937] clocksource: Switched to clocksource arch_sys_counter</span><br><span class="line">[    0.035847] NET: Registered protocol family 2</span><br><span class="line">[    0.036437] TCP established <span class="built_in">hash</span> table entries: 1024 (order: 0, 4096 bytes)</span><br><span class="line">[    0.036470] TCP <span class="built_in">bind</span> <span class="built_in">hash</span> table entries: 1024 (order: 1, 8192 bytes)</span><br><span class="line">[    0.036494] TCP: Hash tables configured (established 1024 <span class="built_in">bind</span> 1024)</span><br><span class="line">[    0.036622] UDP <span class="built_in">hash</span> table entries: 256 (order: 1, 8192 bytes)</span><br><span class="line">[    0.036672] UDP-Lite <span class="built_in">hash</span> table entries: 256 (order: 1, 8192 bytes)</span><br><span class="line">[    0.036913] NET: Registered protocol family 1</span><br><span class="line">[    0.037502] RPC: Registered named UNIX socket transport module.</span><br><span class="line">[    0.037520] RPC: Registered udp transport module.</span><br><span class="line">[    0.037525] RPC: Registered tcp transport module.</span><br><span class="line">[    0.037531] RPC: Registered tcp NFSv4.1 backchannel transport module.</span><br><span class="line">[    0.039598] workingset: timestamp_bits=30 max_order=14 bucket_order=0</span><br><span class="line">[    0.048527] NFS: Registering the id_resolver key <span class="built_in">type</span></span><br><span class="line">[    0.048579] Key <span class="built_in">type</span> id_resolver registered</span><br><span class="line">[    0.048586] Key <span class="built_in">type</span> id_legacy registered</span><br><span class="line">[    0.048630] jffs2: version 2.2. (NAND) Â© 2001-2006 Red Hat, Inc.</span><br><span class="line">[    0.050156] random: fast init <span class="keyword">done</span></span><br><span class="line">[    0.053011] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 249)</span><br><span class="line">[    0.053031] io scheduler noop registered</span><br><span class="line">[    0.053039] io scheduler deadline registered</span><br><span class="line">[    0.053310] io scheduler cfq registered (default)</span><br><span class="line">[    0.053322] io scheduler mq-deadline registered</span><br><span class="line">[    0.053329] io scheduler kyber registered</span><br><span class="line">[    0.057685] sun8i-v3s-pinctrl 1c20800.pinctrl: initialized sunXi PIO driver</span><br><span class="line">[    0.126907] Serial: 8250/16550 driver, 8 ports, IRQ sharing disabled</span><br><span class="line">[    0.130262] console [ttyS0] disabled</span><br><span class="line">[    0.150544] 1c28000.serial: ttyS0 at MMIO 0x1c28000 (irq = 33, base_baud = 1500000) is a U6_16550A</span><br><span class="line">[    0.739727] console [ttyS0] enabled</span><br><span class="line">[    0.747572] m25p80 spi32766.0: xt25f128b (16384 Kbytes)</span><br><span class="line">[    0.752833] spi32766.0: parser cmdlinepart: 4</span><br><span class="line">[    0.757272] 4 cmdlinepart partitions found on MTD device spi32766.0</span><br><span class="line">[    0.763533] Creating 4 MTD partitions on <span class="string">"spi32766.0"</span>:</span><br><span class="line">[    0.768701] 0x000000000000-0x000000100000 : <span class="string">"uboot"</span></span><br><span class="line">[    0.774206] 0x000000100000-0x000000110000 : <span class="string">"dtb"</span></span><br><span class="line">[    0.779408] 0x000000110000-0x000000510000 : <span class="string">"kernel"</span></span><br><span class="line">[    0.784706] 0x000000510000-0x000001000000 : <span class="string">"rootfs"</span></span><br><span class="line">[    0.790529] libphy: Fixed MDIO Bus: probed</span><br><span class="line">[    0.795117] ehci_hcd: USB 2.0 <span class="string">'Enhanced'</span> Host Controller (EHCI) Driver</span><br><span class="line">[    0.801643] ehci-platform: EHCI generic platform driver</span><br><span class="line">[    0.807174] ehci-platform 1c1a000.usb: EHCI Host Controller</span><br><span class="line">[    0.812803] ehci-platform 1c1a000.usb: new USB bus registered, assigned bus number 1</span><br><span class="line">[    0.820762] ehci-platform 1c1a000.usb: irq 25, io mem 0x01c1a000</span><br><span class="line">[    0.854971] ehci-platform 1c1a000.usb: USB 2.0 started, EHCI 1.00</span><br><span class="line">[    0.862206] hub 1-0:1.0: USB hub found</span><br><span class="line">[    0.866158] hub 1-0:1.0: 1 port detected</span><br><span class="line">[    0.870659] ohci_hcd: USB 1.1 <span class="string">'Open'</span> Host Controller (OHCI) Driver</span><br><span class="line">[    0.876963] ohci-platform: OHCI generic platform driver</span><br><span class="line">[    0.882528] ohci-platform 1c1a400.usb: Generic Platform OHCI controller</span><br><span class="line">[    0.889256] ohci-platform 1c1a400.usb: new USB bus registered, assigned bus number 2</span><br><span class="line">[    0.897218] ohci-platform 1c1a400.usb: irq 26, io mem 0x01c1a400</span><br><span class="line">[    0.970040] hub 2-0:1.0: USB hub found</span><br><span class="line">[    0.973864] hub 2-0:1.0: 1 port detected</span><br><span class="line">[    0.981458] udc-core: couldn<span class="string">'t find an available UDC - added [g_cdc] to list of pending drivers</span></span><br><span class="line"><span class="string">[    0.991180] sun6i-rtc 1c20400.rtc: rtc core: registered rtc-sun6i as rtc0</span></span><br><span class="line"><span class="string">[    0.998080] sun6i-rtc 1c20400.rtc: RTC enabled</span></span><br><span class="line"><span class="string">[    1.002619] i2c /dev entries driver</span></span><br><span class="line"><span class="string">[    1.007604] input: ns2009_ts as /devices/platform/soc/1c2ac00.i2c/i2c-0/0-0048/input/input0</span></span><br><span class="line"><span class="string">[    1.017160] sunxi-wdt 1c20ca0.watchdog: Watchdog enabled (timeout=16 sec, nowayout=0)</span></span><br><span class="line"><span class="string">[    1.085196] sunxi-mmc 1c0f000.mmc: base:0xc4077000 irq:23</span></span><br><span class="line"><span class="string">[    1.092128] usbcore: registered new interface driver usbhid</span></span><br><span class="line"><span class="string">[    1.097807] usbhid: USB HID core driver</span></span><br><span class="line"><span class="string">[    1.103419] NET: Registered protocol family 17</span></span><br><span class="line"><span class="string">[    1.108119] Key type dns_resolver registered</span></span><br><span class="line"><span class="string">[    1.112543] Registering SWP/SWPB emulation handler</span></span><br><span class="line"><span class="string">[    1.123073] simple-framebuffer 43e89000.framebuffer: framebuffer at 0x43e89000, 0x177000 bytes, mapped to 0xc4400000</span></span><br><span class="line"><span class="string">[    1.133733] simple-framebuffer 43e89000.framebuffer: format=x8r8g8b8, mode=800x480x32, linelength=3200</span></span><br><span class="line"><span class="string">[    1.152018] Console: switching to colour frame buffer device 100x30</span></span><br><span class="line"><span class="string">[    1.164514] simple-framebuffer 43e89000.framebuffer: fb0: simplefb registered!</span></span><br><span class="line"><span class="string">[    1.173084] usb_phy_generic usb_phy_generic.0.auto: usb_phy_generic.0.auto supply vcc not found, using dummy regulator</span></span><br><span class="line"><span class="string">[    1.184473] musb-hdrc musb-hdrc.1.auto: MUSB HDRC host driver</span></span><br><span class="line"><span class="string">[    1.190317] musb-hdrc musb-hdrc.1.auto: new USB bus registered, assigned bus number 3</span></span><br><span class="line"><span class="string">[    1.199404] hub 3-0:1.0: USB hub found</span></span><br><span class="line"><span class="string">[    1.203266] hub 3-0:1.0: 1 port detected</span></span><br><span class="line"><span class="string">[    1.208558] using random self ethernet address</span></span><br><span class="line"><span class="string">[    1.213049] using random host ethernet address</span></span><br><span class="line"><span class="string">[    1.218666] usb0: HOST MAC 72:d4:27:dc:c4:8a</span></span><br><span class="line"><span class="string">[    1.222985] usb0: MAC 5a:ef:c7:4f:6c:26</span></span><br><span class="line"><span class="string">[    1.226971] g_cdc gadget: CDC Composite Gadget, version: King Kamehameha Day 2008</span></span><br><span class="line"><span class="string">[    1.234448] g_cdc gadget: g_cdc ready</span></span><br><span class="line"><span class="string">[    1.238489] sun6i-rtc 1c20400.rtc: setting system clock to 1970-01-01 00:00:12 UTC (12)</span></span><br><span class="line"><span class="string">[    1.246780] vcc3v0: disabling</span></span><br><span class="line"><span class="string">[    1.249752] vcc5v0: disabling</span></span><br><span class="line"><span class="string">[    1.252716] ALSA device list:</span></span><br><span class="line"><span class="string">[    1.255732]   No soundcards found.</span></span><br><span class="line"><span class="string">[    1.299597] random: crng init done</span></span><br><span class="line"><span class="string">[    2.213859] VFS: Mounted root (jffs2 filesystem) on device 31:3.</span></span><br><span class="line"><span class="string">[    2.221316] devtmpfs: mounted</span></span><br><span class="line"><span class="string">[    2.225633] Freeing unused kernel memory: 1024K</span></span><br><span class="line"><span class="string">[    2.784077] g_cdc gadget: high-speed config #1: CDC Composite (ECM + ACM)</span></span><br><span class="line"><span class="string">Starting syslogd: OK</span></span><br><span class="line"><span class="string">Starting klogd: OK</span></span><br><span class="line"><span class="string">Running sysctl: OK</span></span><br><span class="line"><span class="string">Initializing random number generator... done.</span></span><br><span class="line"><span class="string">Starting network: OK</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Welcome to Buildroot</span></span><br><span class="line"><span class="string">buildroot login: root</span></span><br><span class="line"><span class="string"># cd /</span></span><br><span class="line"><span class="string"># ls</span></span><br><span class="line"><span class="string">bin      lib      media    proc     sbin     usr</span></span><br><span class="line"><span class="string">dev      lib32    mnt      root     sys      var</span></span><br><span class="line"><span class="string">etc      linuxrc  opt      run      tmp</span></span><br><span class="line"><span class="string">#</span></span><br><span class="line"><span class="string">CTRL-A Z for help | 115200 8N1 | NOR | Minicom 2.7 | VT102 | Offline | ttyUSB0</span></span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>荔枝派_buildroot文件系统编译</title>
-    <url>/2022/05/16/%E8%8D%94%E6%9E%9D%E6%B4%BE-buildroot%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%BC%96%E8%AF%91/</url>
-    <content><![CDATA[<h1 id="一、-获取buildroot文件系统源码"><a href="#一、-获取buildroot文件系统源码" class="headerlink" title="一、 获取buildroot文件系统源码"></a>一、 获取buildroot文件系统源码</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">wget https://buildroot.org/downloads/buildroot-2019.08.tar.gz  <span class="comment"># 下载源码</span></span><br><span class="line">tar xvf buildroot-2019.08.tar.gz  <span class="comment"># 解压</span></span><br><span class="line"><span class="built_in">cd</span> buildroot-2019.08</span><br></pre></td></tr></table></figure>
-<h1 id="二、-配置buildroot"><a href="#二、-配置buildroot" class="headerlink" title="二、 配置buildroot"></a>二、 配置buildroot</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">make menuconfig  <span class="comment"># 配置buildroot文件系统</span></span><br></pre></td></tr></table></figure>
-<p><img src="/Dom/imgs/2022_05_16/menuconfig.png" alt="menuconfig"></p>
-<a id="more"></a>
-<p>配置 <code>Target options --&gt;</code> 设置目标芯片 配置如下</p>
-<p><img src="/Dom/imgs/2022_05_16/menuconfigTarget.png" alt="menuconfigTarget"></p>
-<p>配置 <code>Toolchain --&gt;</code> 设置编译工具链</p>
-<p>首先需要查看编译工具链所在目录和编译工具链的版本</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">which</span> arm-linux-gnueabihf-gcc  <span class="comment"># 查看编译工具所在目录</span></span><br><span class="line"></span><br><span class="line">vim /opt/gcc-linaro-6.3.1-2017.05-x86_64_arm-linux-gnueabihf/arm-linux-gnueabihf/libc/usr/include/linux/version.h  <span class="comment"># 查看编译工具版本号</span></span><br><span class="line"><span class="comment"># 263680的二进制为0x40600，则对应的内核版本号为4.6.0。</span></span><br></pre></td></tr></table></figure>
-<p>配置目标如下</p>
-<p><img src="/Dom/imgs/2022_05_16/menuconfigToolchain.png" alt="menuconfigToolchain"></p>
-<h1 id="三、-编译buildroot"><a href="#三、-编译buildroot" class="headerlink" title="三、 编译buildroot"></a>三、 编译buildroot</h1><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">time make <span class="comment"># 编译buildroot 此过程需要半个小时左右</span></span><br></pre></td></tr></table></figure>
-<p>编译完成后，生成的文件系统在 <code>output/images/rootfs.tar</code></p>
-]]></content>
   </entry>
   <entry>
     <title>荔枝派-linux内核编译</title>
